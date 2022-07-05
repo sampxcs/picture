@@ -49,3 +49,6 @@
     font-size: 2.5em;
     cursor: pointer;
 }
+path[class="active"] {
+    color: var(--letter);
+}

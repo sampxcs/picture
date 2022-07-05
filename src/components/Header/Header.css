@@ -33,8 +33,8 @@ header {
 }
 .over-line {
     position: absolute;
-    top: -120px;
-    left: 89px;
+    top: -155px;
+    left: 120px;
     transform: rotate(37deg);
     width: 70%;
     z-index: 10;

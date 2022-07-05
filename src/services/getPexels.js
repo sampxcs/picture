@@ -5,7 +5,15 @@ export default function getPexels({ query = "Nature" } = {}) {
   return client.photos.search({ query, per_page: 12 })
     .then((response) => {
       const data = response.photos;
-      const photos = data.map((photo) => photo.src.original);
-      return photos;
+      const photos = data.map(photo => {
+        const src = photo.src.landscape
+        const id = photo.id
+        const alt = photo.alt
+        const photographer = photo.photographer
+        const photographer_url = photo.photographer_url
+        return { src, id, alt, photographer, photographer_url }
+      });
+      console.log(photos);
+      return photos
     });
 }
