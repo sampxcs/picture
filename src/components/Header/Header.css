@@ -1,0 +1,41 @@
+header {
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+}
+.header-title {
+    position: relative;
+    margin-top: 80px;
+}
+.header-title h1 {
+    font-family: 'DM Serif Display', serif;
+    text-shadow: 4px 8px 30px var(--shadow);
+    color: var(--light-letter);
+    font-size: 12em;
+    line-height: 1.1;
+    letter-spacing: .2em;
+}
+.header-title h3 {
+    position: relative;
+    z-index: 20;
+    font-family: 'DM Serif Display', serif;
+    text-align: center;
+    color: var(--focus-letter);
+    letter-spacing: .1em;
+    line-height: 0;
+    font-size: 2em;
+}
+.header-title h1 span {
+    font-family: 'DM Serif Display', serif;
+    position: relative;
+    z-index: 20;
+}
+.over-line {
+    position: absolute;
+    top: -120px;
+    left: 89px;
+    transform: rotate(37deg);
+    width: 70%;
+    z-index: 10;
+}
