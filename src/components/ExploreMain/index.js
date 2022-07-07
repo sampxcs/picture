@@ -1,13 +1,15 @@
 import React from "react";
 import { Route } from "wouter";
-import ListOfCards from "../ListOfCards";
-import "./Main.css";
+import ListOfCards from "./../ListOfCards";
 
 export default function Main() {
   return (
     <div className="main">
       <div className="list-of-cards">
-        <ListOfCards keyword={"nature"}/>
+        <Route 
+          path="/explore/:keyword" 
+          component={ListOfCards}
+        />
       </div>
     </div>
   );

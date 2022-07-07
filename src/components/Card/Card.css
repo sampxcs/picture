@@ -1,5 +1,4 @@
 .card {
-    background-color: var(--focus-letter);
     border-radius: 5px;
     box-shadow: 3px 3px 30px var(--shadow);
     overflow: hidden;
@@ -30,14 +29,11 @@
     transition: .3s;
     width: 100%;
 }
-.card-info a {
+.card-info h2 {
     color: var(--light-letter);
     font-size: 2em;
     text-decoration: none;
     font-weight: 600;
-}
-.card-info a:hover {
-    text-decoration: underline;
 }
 .card:hover .card-info {
     opacity: 1;

@@ -6,8 +6,14 @@ import Explore from './pages/Explore'
 function App() {
   return (
     <div className="App">
-      <Route path="/"><Home/></Route>
-      <Route path="/explore"><Explore/></Route>
+      <Route 
+        path="/"
+        component={Home}
+      />
+      <Route 
+        path="/explore/?"
+        component={Explore}
+      />
     </div>
   );
 }
