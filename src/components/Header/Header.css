@@ -15,6 +15,7 @@ header {
     font-size: 12em;
     line-height: 1.1;
     letter-spacing: .2em;
+    cursor: default;
 }
 .header-title h3 {
     position: relative;
@@ -25,6 +26,7 @@ header {
     letter-spacing: .1em;
     line-height: 0;
     font-size: 2em;
+    cursor: default;
 }
 .header-title h1 span {
     font-family: 'DM Serif Display', serif;

@@ -10,8 +10,8 @@ function App() {
         path="/"
         component={Home}
       />
-      <Route 
-        path="/explore/?"
+      <Route
+        path='/Explore/:keyword'
         component={Explore}
       />
     </div>

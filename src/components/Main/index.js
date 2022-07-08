@@ -7,7 +7,14 @@ export default function Main() {
   return (
     <div className="main">
       <div className="list-of-cards">
-        <ListOfCards keyword={"nature"}/>
+        <Route
+          path="/Explore/:keyword"
+          component={ListOfCards}
+        />
+        <Route
+          path="/"
+          component={ListOfCards}
+        />
       </div>
     </div>
   );

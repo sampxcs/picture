@@ -10,7 +10,6 @@ export default function getPexels({ query } = {}) {
         const { id, alt, photographer, photographer_url} = photo
         return { src, id, alt, photographer, photographer_url }
       });
-      console.log(photos);
       return photos
     });
 }

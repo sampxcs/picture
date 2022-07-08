@@ -7,15 +7,15 @@ const active = e => {
   e.target.classList.toggle("active")
 }
 
-export default function Card({ id, src, alt, photographer, photographer_url }) {
+export default function Card({ src, alt, photographer, photographer_url }) {
   return (
-    <a href={"#" + id} className="card">
-      <img src={src}></img>
+    <div className="card">
+      <img src={src} alt={alt}></img>
       <div className="card-info">
-        <h2 href={photographer_url} target='_blank'>{photographer}</h2>
+        <a href={photographer_url} target='_blank' rel="noopener noreferrer">{photographer}</a>
         <p>{alt}</p>
         <FontAwesomeIcon className="faBookmark" icon={faBookmark} onClick={active} />
       </div>
-    </a>
+    </div>
   );
 }

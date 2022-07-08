@@ -1,83 +1,84 @@
 import React from "react";
+import { Link } from "wouter";
 import "./NavList.css";
 
 export default function NavList() {
   return (
     <ul className="nav-ul">
       <li>
-        <a href="#">POSTS</a>
+        <Link to="#">POSTS</Link>
         <div className="nav-ul-list">
           <ul>
             <li>
-              <a href="">Discover Photos</a>
+              <Link to="#">Discover Photos</Link>
             </li>
             <li>
-              <a href="">Beautiful Videos</a>
+              <Link to="#">Beautiful Videos</Link>
             </li>
             <li>
-              <a href="">Challenges</a>
+              <Link to="#">Challenges</Link>
             </li>
             <li>
-              <a href="">Nature Blog</a>
+              <Link to="#">Nature Blog</Link>
             </li>
           </ul>
         </div>
       </li>
       <li>
-        <a href="/Explore">EXPLORE</a>
+        <Link to="/Explore">EXPLORE</Link>
         <div className="nav-ul-list">
           <ul>
             <li>
-              <a href="">Landscape</a>
+              <Link to="/Explore/Landscape">Landscape</Link>
             </li>
             <li>
-              <a href="">Forest</a>
+              <Link to="/Explore/Forest">Forest</Link>
             </li>
             <li>
-              <a href="">Animals</a>
+              <Link to="/Explore/Animals">Animals</Link>
             </li>
             <li>
-              <a href="">Dark</a>
+              <Link to="/Explore/Dark">Dark</Link>
             </li>
             <li>
-              <a href="">Sky</a>
+              <Link to="/Explore/Sky">Sky</Link>
             </li>
             <li>
-              <a href="">Flowers</a>
+              <Link to="/Explore/Flowers">Flowers</Link>
             </li>
             <li>
-              <a href="">Beach</a>
+              <Link to="/Explore/Beach">Beach</Link>
             </li>
           </ul>
         </div>
       </li>
       <li>
-        <a href="#">ACTIVITY</a>
+        <Link to="#">ACTIVITY</Link>
       </li>
       <li>
-        <a href="#">PROFILE</a>
+        <Link to="#">PROFILE</Link>
         <div className="nav-ul-list profile">
           <ul>
             <li>
-              <a href="">Your Collections</a>
+              <Link to="">Your Collections</Link>
             </li>
             <li>
-              <a href="">Change Lenguage</a>
+              <Link to="">Change Lenguage</Link>
             </li>
             <li>
-              <a href="">Settings</a>
+              <Link to="">Settings</Link>
             </li>
             <li>
-              <a href="">FAQ</a>
+              <Link to="">FAQ</Link>
             </li>
             <li>
-              <a href="">About Developer</a>
+              <Link to="">About Developer</Link>
             </li>
             <hr />
             <li>
-              <a href="https://www.pexels.com" target="_blank">
+              <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">
                 Photos provided by Pexels{" "}
-                <img src="https://images.pexels.com/lib/api/pexels.png" />
+                <img src="https://images.pexels.com/lib/api/pexels.png" alt="Pexels" />
               </a>
             </li>
           </ul>

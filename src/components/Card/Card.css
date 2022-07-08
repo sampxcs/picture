@@ -19,6 +19,7 @@
 }
 .card-info {
     background-color: var(--shadow);
+    text-align: left;
     color: var(--light-letter);
     height: 100%;
     left: 0;
@@ -29,11 +30,14 @@
     transition: .3s;
     width: 100%;
 }
-.card-info h2 {
+.card-info a {
     color: var(--light-letter);
     font-size: 2em;
     text-decoration: none;
     font-weight: 600;
+}
+.card-info a:hover {
+    text-decoration: underline;
 }
 .card:hover .card-info {
     opacity: 1;

@@ -2,11 +2,12 @@ import React from "react";
 import "./Nav.css";
 import SearchForm from "../SearchForm";
 import NavList from "../NavList";
+import { Link } from "wouter";
 
 export default function Nav() {
   return (
     <nav>
-      <a href="/" className="nav-logo">NATURE</a>
+      <Link to="/" className="nav-logo">NATURE</Link>
       <NavList/>
       <SearchForm/>
     </nav>
