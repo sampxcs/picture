@@ -1,8 +1,7 @@
-import { createClient } from "pexels";
-const client = createClient("563492ad6f91700001000001dc2729585f2b4a82b547d414ab918fbd");
+import { client } from "./settings";
 
-export default function getPexels({ query } = {}) {
-  return client.photos.search({ query, per_page: 24 })
+export default function getPexels({ query, page = 1 } = {}) {
+  return client.photos.search({ query, per_page: 24, page: page })
     .then((response) => {
       const data = response.photos;
       const photos = data.map(photo => {

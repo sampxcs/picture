@@ -12,7 +12,7 @@ header {
     font-family: 'DM Serif Display', serif;
     text-shadow: 4px 8px 30px var(--shadow);
     color: var(--light-letter);
-    font-size: 12em;
+    font-size: 140px;
     line-height: 1.1;
     letter-spacing: .2em;
     cursor: default;
@@ -33,10 +33,10 @@ header {
     position: relative;
     z-index: 20;
 }
-.over-line {
+.img-plant {
     position: absolute;
-    top: -155px;
-    left: 120px;
+    top: -115px;
+    left: 90px;
     transform: rotate(37deg);
     width: 70%;
     z-index: 10;

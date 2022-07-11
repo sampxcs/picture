@@ -1,0 +1,17 @@
+.list-of-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 20px;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 90px;
+  margin: 0 auto;
+  width: 95%;
+}
+.no-data {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}

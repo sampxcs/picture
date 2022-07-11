@@ -3,6 +3,7 @@
   --background: #f3f3f5;
   --light-letter: #fff;
   --letter: #636363;
+  --dark: #1b1b1b;
   --focus-letter: #4a6539;
   --light-shadow: #00000019;
   --shadow: #00000039;
@@ -19,4 +20,12 @@
 }
 body {
   background-color: var(--background);
+}
+button {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
 }

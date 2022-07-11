@@ -1,0 +1,8 @@
+footer {
+    height: 80vh;
+    background-color: var(--dark);
+    line-height: 80vh;
+    text-align: center;
+    margin-top: 80px;
+    color: var(--light-letter);
+}

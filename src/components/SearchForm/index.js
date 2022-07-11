@@ -1,19 +1,31 @@
-import React from "react";
-import './SearchForm.css'
+import React, { useState } from "react";
+import "./SearchForm.css";
 import { useLocation } from "wouter";
 
-
 export default function SearchForm() {
-  const [ location, setLocation ] = useLocation()
+  const [keyword, setKeyword] = useState("");
+  const [location, pushLocation] = useLocation();
 
-  const submitForm = e => {
-    e.preventDefault()
-    setLocation(`/Explore/${e.target[0].value}`)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    pushLocation(`/Explore/${keyword}`);
+    setKeyword("");
+  };
+
+  const handleChange = (e) => {
+    setKeyword(e.target.value);
+  };
 
   return (
-    <form className="search-form" onSubmit={submitForm}>
-      <input id="search" name="search" type="text" placeholder="Search" />
+    <form className="search-form" onSubmit={handleSubmit}>
+      <input
+        onChange={handleChange}
+        value={keyword}
+        id="search"
+        name="search"
+        type="text"
+        placeholder="Search"
+      />
       <label htmlFor="search">
         <div className="search-icon">
           <span className="search-icon-circle"></span>

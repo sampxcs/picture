@@ -1,21 +1,11 @@
 import React from "react";
-import { Route } from "wouter";
-import ListOfCards from "../ListOfCards";
-import "./Main.css";
+import PexelsResults from "../PexelsResults";
+import './Main.css'
 
-export default function Main() {
+export default function Main({ params }) {
   return (
     <div className="main">
-      <div className="list-of-cards">
-        <Route
-          path="/Explore/:keyword"
-          component={ListOfCards}
-        />
-        <Route
-          path="/"
-          component={ListOfCards}
-        />
-      </div>
+      <PexelsResults params={params} />
     </div>
   );
 }

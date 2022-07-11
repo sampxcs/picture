@@ -76,9 +76,16 @@ export default function NavList() {
             </li>
             <hr />
             <li>
-              <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.pexels.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Photos provided by Pexels{" "}
-                <img src="https://images.pexels.com/lib/api/pexels.png" alt="Pexels" />
+                <img
+                  src="https://images.pexels.com/lib/api/pexels.png"
+                  alt="Pexels"
+                />
               </a>
             </li>
           </ul>

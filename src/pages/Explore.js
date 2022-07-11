@@ -1,12 +1,12 @@
 import React from "react";
-import Nav from './../components/Nav';
+import Footer from "../components/Footer";
 import Main from "../components/Main";
 
-export default function Home() {
+export default function Home({ params }) {
   return (
     <>
-      <Nav />
-      <Main />
+      <Main params={params} />
+      <Footer />
     </>
   );
 }

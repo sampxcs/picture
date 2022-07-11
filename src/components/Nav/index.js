@@ -7,9 +7,11 @@ import { Link } from "wouter";
 export default function Nav() {
   return (
     <nav>
-      <Link to="/" className="nav-logo">NATURE</Link>
-      <NavList/>
-      <SearchForm/>
+      <Link to="/" className="nav-logo" title="Nature">
+        NATURE
+      </Link>
+      <NavList />
+      <SearchForm />
     </nav>
   );
 }
