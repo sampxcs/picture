@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faMaximize } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "wouter";
 
-export default function Card({ id, src, alt, photographer, photographer_url }) {
+export default function Card({ id, src, alt, photographer, photographer_url, avg_color }) {
+  console.log(avg_color);
   return (
-    <div className="card">
+    <div className="card" style={{backgroundColor: avg_color}}>
       <img src={src} alt={alt}></img>
       <div className="card-info" title={alt}>
         <a

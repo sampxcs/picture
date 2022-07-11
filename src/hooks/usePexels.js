@@ -19,11 +19,8 @@ export default function usePexels({ keyword }) {
 
   useEffect(() => {
     if (page === initialPage) return
-    setLoading(true)
     getPexels({ query: keyword, page: page }).then((nextGlobalPexels) => {
-      console.log(nextGlobalPexels);
       setGlobalPexels(prevGlobalPexels => prevGlobalPexels.concat(nextGlobalPexels));
-      setLoading(false)
     })
 
   }, [page])
