@@ -3,6 +3,7 @@ header {
     display: flex;
     height: 80vh;
     justify-content: center;
+    animation: show-down .6s ease-in-out forwards;
 }
 .header-title {
     position: relative;
@@ -12,7 +13,7 @@ header {
     font-family: 'DM Serif Display', serif;
     text-shadow: 4px 8px 30px var(--shadow);
     color: var(--light-letter);
-    font-size: 140px;
+    font-size: 70px;
     line-height: 1.1;
     letter-spacing: .2em;
     cursor: default;
@@ -25,7 +26,7 @@ header {
     color: var(--focus-letter);
     letter-spacing: .1em;
     line-height: 0;
-    font-size: 28px;
+    font-size: 18px;
     cursor: default;
 }
 .header-title h1 span {
@@ -35,9 +36,34 @@ header {
 }
 .img-plant {
     position: absolute;
-    top: -115px;
-    left: 90px;
+    top: -60px;
+    left: 45px;
     transform: rotate(37deg);
     width: 70%;
     z-index: 10;
+}
+
+@media (min-width: 660px) {
+    .header-title h1 {
+        font-size: 110px;
+    }
+    .header-title h3 {
+        font-size: 28px;
+    }
+    .img-plant {
+        top: -95px;
+        left: 68px;
+    }
+}
+@media (min-width: 1380px) {
+    .header-title h1 {
+        font-size: 180px;
+    }
+    .header-title h3 {
+        font-size: 28px;
+    }
+    .img-plant {
+        top: -145px;
+        left: 110px;
+    }
 }

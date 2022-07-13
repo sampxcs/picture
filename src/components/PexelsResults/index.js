@@ -14,14 +14,12 @@ export default function PexelsResults({ params }) {
   const handleNextPage = useCallback(
     debounce(() => {
       setPage((prevPage) => prevPage + 1);
-      console.log("ahhhhhhh");
     }, 200),
     []
   );
 
   useEffect(() => {
     if (isNearScreen) handleNextPage();
-    console.log(isNearScreen);
   }, [handleNextPage, isNearScreen]);
 
   if (loading && page === 1) {

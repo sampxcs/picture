@@ -72,7 +72,7 @@ export default function NavList() {
               <Link to="">FAQ</Link>
             </li>
             <li>
-              <Link to="">About Developer</Link>
+              <Link to="/AboutDeveloper">About Developer</Link>
             </li>
             <hr />
             <li>

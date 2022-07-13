@@ -1,6 +1,6 @@
 .nav-ul {
     align-items: center;
-    display: flex;
+    display: none;
     justify-content: center;
     list-style: none;
 }
@@ -55,4 +55,9 @@
 .nav-ul-list img {
     width: 4em;
     margin-left: 15px;
+}
+@media (min-width: 680px) {
+    .nav-ul {
+        display: flex;
+    }
 }

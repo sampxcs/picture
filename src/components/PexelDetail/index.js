@@ -11,7 +11,7 @@ export default function PexelDetail({ params }) {
 
   if (globalPexels.length) {
     const pexel = globalPexels.find((pexel) => pexel.id == id);
-    const { src, photographer, photographer_url, alt } = pexel;
+    const { src, photographer, photographer_url, alt, avg_color } = pexel;
     return (
       <div className="detail-container">
         <Card
@@ -21,16 +21,19 @@ export default function PexelDetail({ params }) {
           photographer={photographer}
           photographer_url={photographer_url}
           alt={alt}
+          avg_color={avg_color}
         />
       </div>
     );
   } else {
     const { loading, globalPexels } = useSinglePexel({ id: id });
 
+    console.log(globalPexels);
+
     if (loading) {
       return <Spinner/>;
     } else {
-      const { src, photographer, photographer_url, alt } = globalPexels;
+      const { src, photographer, photographer_url, alt, avg_color } = globalPexels;
       return (
         <div className="detail-container">
           <Card
@@ -40,6 +43,7 @@ export default function PexelDetail({ params }) {
             photographer={photographer}
             photographer_url={photographer_url}
             alt={alt}
+            avg_color={avg_color}
           />
         </div>
       );

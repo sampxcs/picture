@@ -1,12 +1,12 @@
 import React from "react";
+import Collections from "../components/Collections";
 import Footer from "../components/Footer";
-import Main from "../components/Main";
 
-export default function Home({ params }) {
-  return (
-    <>
-      <Main params={params} />
-      <Footer />
-    </>
-  );
+export default function Explore() {
+    return (
+        <>
+            <Collections />
+            <Footer />
+        </>
+    );
 }
