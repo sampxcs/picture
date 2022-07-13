@@ -5,7 +5,6 @@ import { faBookmark, faMaximize } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "wouter";
 
 export default function Card({ id, src, alt, photographer, photographer_url, avg_color }) {
-  console.log(avg_color);
   return (
     <div className="card" style={{backgroundColor: avg_color}}>
       <img src={src} alt={alt}></img>
