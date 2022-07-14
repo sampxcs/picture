@@ -10,32 +10,11 @@ export default function PexelDetail({ params }) {
   const globalPexels = useGlobalPexels();
 
   if (globalPexels.length) {
-    const pexel = globalPexels.find((pexel) => pexel.id == id);
+    const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id));
     const { src, photographer, photographer_url, alt, avg_color } = pexel;
     return (
       <div className="detail-container">
-        <Card
-          key={id}
-          id={id}
-          src={src}
-          photographer={photographer}
-          photographer_url={photographer_url}
-          alt={alt}
-          avg_color={avg_color}
-        />
-      </div>
-    );
-  } else {
-    const { loading, globalPexels } = useSinglePexel({ id: id });
-
-    console.log(globalPexels);
-
-    if (loading) {
-      return <Spinner/>;
-    } else {
-      const { src, photographer, photographer_url, alt, avg_color } = globalPexels;
-      return (
-        <div className="detail-container">
+        <div>
           <Card
             key={id}
             id={id}
@@ -45,6 +24,30 @@ export default function PexelDetail({ params }) {
             alt={alt}
             avg_color={avg_color}
           />
+        </div>
+      </div>
+    );
+  } else {
+    const { loading, globalPexels } = useSinglePexel({ id: id });
+
+    if (loading) {
+      return <Spinner />;
+    } else {
+      const { src, photographer, photographer_url, alt, avg_color } = globalPexels;
+      return (
+        <div className="detail-container">
+          <div>
+            <Card
+              className={"card-detail"}
+              key={id}
+              id={id}
+              src={src}
+              photographer={photographer}
+              photographer_url={photographer_url}
+              alt={alt}
+              avg_color={avg_color}
+            />
+          </div>
         </div>
       );
     }

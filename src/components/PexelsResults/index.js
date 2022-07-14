@@ -9,7 +9,7 @@ export default function PexelsResults({ params }) {
   let { keyword } = params;
   if (!keyword) keyword = "Nature";
   const { loading, globalPexels, page, setPage } = usePexels({ keyword });
-  const { isNearScreen, ref } = useNearScreen({ distance: '300px', once: false });
+  const { isNearScreen, ref } = useNearScreen({ distance: '350px', once: false });
 
   const handleNextPage = useCallback(
     debounce(() => {
@@ -19,7 +19,7 @@ export default function PexelsResults({ params }) {
   );
 
   useEffect(() => {
-    if (isNearScreen) handleNextPage();
+    isNearScreen && handleNextPage();
   }, [handleNextPage, isNearScreen]);
 
   if (loading && page === 1) {

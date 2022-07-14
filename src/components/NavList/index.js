@@ -81,7 +81,7 @@ export default function NavList() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Photos provided by Pexels{" "}
+                Photos provided by Pexels
                 <img
                   src="https://images.pexels.com/lib/api/pexels.png"
                   alt="Pexels"

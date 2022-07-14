@@ -9,6 +9,7 @@ export default function ListOfCards({ globalPexels }) {
         <div className="list-of-cards">
           {globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color }) => (
             <Card
+              className={"card-main"}
               key={id}
               id={id}
               src={src}

@@ -1,6 +1,8 @@
 .collections {
     padding: 120px 30px 30px;
     width: 100%;
+    max-width: 1490px;
+    margin: 0 auto;
     gap: 50px;
     min-height: 60vh;
     flex-wrap: wrap;
@@ -13,11 +15,8 @@
 .card-collection {
     width: 400px;
     height: 300px;
-    background-color: rgb(215, 248, 250);
     border-radius: 30px;
     box-shadow: 5px 15px 30px var(--light-shadow);
     cursor: pointer;
-}
-.card-collection:hover {
-    background-color: rgb(238, 250, 255);
+    overflow: hidden;
 }

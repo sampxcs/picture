@@ -1,8 +1,31 @@
 footer {
-    height: 80vh;
     background-color: var(--dark);
-    line-height: 80vh;
-    text-align: center;
+    padding: 0 10px 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
     margin-top: 80px;
     color: var(--light-letter);
+    animation: show .6s ease-in-out forwards;
+    flex-wrap: wrap;
+}
+footer div {
+    width: 300px;
+    margin: 30px 5px;
+}
+footer div ul {
+    margin-top: 10px;
+    line-height: 2;
+    list-style: none;
+}
+footer a {
+    color: var(--light-letter);
+}
+footer p a {
+    text-decoration: underline;
+    font-weight: 600;
+}
+footer p {
+    overflow-wrap: break-word;
+    line-height: 2;
 }

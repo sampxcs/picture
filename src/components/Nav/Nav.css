@@ -9,6 +9,8 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 100;
+    opacity: 0;
+    animation: show .6s ease-in-out .6s forwards;
 }
 .nav-logo {
     color: var(--focus-letter);

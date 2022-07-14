@@ -8,6 +8,15 @@
   --light-shadow: #00000019;
   --shadow: #00000039;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--letter);
+}
 * {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +26,7 @@
   sans-serif;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 body {
   background-color: var(--background);
@@ -38,4 +48,8 @@ button {
       opacity: 1;
       transform: translateY(0px); 
   }
+}
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
