@@ -29,16 +29,16 @@ export default function NavList() {
         <div className="nav-ul-list">
           <ul>
             <li>
+              <Link to="/Explore">Discover Photos</Link>
+            </li>
+            <li>
               <Link to="/Explore/Landscape">Landscape</Link>
             </li>
             <li>
               <Link to="/Explore/Forest">Forest</Link>
             </li>
             <li>
-              <Link to="/Explore/Animals">Animals</Link>
-            </li>
-            <li>
-              <Link to="/Explore/Dark%20Nature">Dark</Link>
+              <Link to="/Explore/Osean">Ocean Life</Link>
             </li>
             <li>
               <Link to="/Explore/Sky">Sky</Link>
@@ -47,7 +47,7 @@ export default function NavList() {
               <Link to="/Explore/Flowers">Flowers</Link>
             </li>
             <li>
-              <Link to="/Explore/Beach">Beach</Link>
+              <Link to="/Explore/Videos%20Nature">Videos</Link>
             </li>
           </ul>
         </div>

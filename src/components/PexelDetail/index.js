@@ -9,6 +9,8 @@ export default function PexelDetail({ params }) {
   const { id } = params;
   const globalPexels = useGlobalPexels();
 
+  console.log(globalPexels);
+
   if (globalPexels.length) {
     const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id));
     const { src, photographer, photographer_url, alt, avg_color } = pexel;

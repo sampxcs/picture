@@ -16,6 +16,6 @@
 
 @media (min-width: 500px) {
   .list-of-cards {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
