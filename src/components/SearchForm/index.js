@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SearchForm.css";
 import { useLocation } from "wouter";
 
-export default function SearchForm() {
+export default function SearchForm({ className }) {
   const [keyword, setKeyword] = useState("");
   const [location, pushLocation] = useLocation();
 
@@ -17,7 +17,7 @@ export default function SearchForm() {
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <form className={className} onSubmit={handleSubmit}>
       <input
         onChange={handleChange}
         value={keyword}

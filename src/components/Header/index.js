@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import plantImg from "./tree.png";
-// import SearchForm from "../SearchForm"
+import SearchForm from "../SearchForm"
 
 export default function Header() {
   return (
@@ -13,7 +13,7 @@ export default function Header() {
         <h3>The Beauty of Everything</h3>
         <img src={plantImg} alt="Nature" title="Nature" className="img-plant" />
       </div>
-      {/* <SearchForm /> */}
+      <SearchForm className={"header-form"} />
     </header>
   );
 }

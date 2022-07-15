@@ -4,10 +4,10 @@ import useNearScreen from "../../hooks/useNearScreen";
 const Footer = React.lazy(() => import("./Footer"));
 
 export default function lazyFooter() {
-  const { isNearScreen, ref } = useNearScreen({ distance: '0px' });
+  const { isNearScreen, ref } = useNearScreen();
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={"CARGANDO FOOTER"}>
       <div ref={ref}>{isNearScreen && <Footer />}</div>
     </Suspense>
   );

@@ -98,11 +98,11 @@ const collectionsEarthData = [
   {
     className: "card-explore",
     title: "ROCKY FORMATIONS",
-    alt: "Bald Eagle In Flight Near Rock Formation",
-    avg_color: "#212E3F",
-    id: 2166695,
+    alt: "Brown Rock Formation",
+    avg_color: "#71605A",
+    id: 1934895,
     src:
-      "https://images.pexels.com/photos/1699025/pexels-photo-1699025.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "https://images.pexels.com/photos/1934895/pexels-photo-1934895.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
     className: "card-explore",

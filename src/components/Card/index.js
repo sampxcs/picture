@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark, faMaximize } from "@fortawesome/free-solid-svg-icons";
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { Link } from "wouter";
 
 function Card({ id, title, src, alt, photographer, photographer_url, avg_color, className }) {
@@ -25,11 +25,11 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
               <div className="options">
                 <Link to={`/Detail/${id}`}>
                   <div className="icon" title="Maximize">
-                    <FontAwesomeIcon className="faMaximize" icon={faMaximize} />
+                    <FontAwesomeIcon className="faMaximize" icon={solid("maximize")} />
                   </div>
                 </Link>
                 <div className="icon" title="Save">
-                  <FontAwesomeIcon className="faBookmark" icon={faBookmark} />
+                  <FontAwesomeIcon className="faBookmark" icon={solid("bookmark")} />
                 </div>
               </div>
             </>

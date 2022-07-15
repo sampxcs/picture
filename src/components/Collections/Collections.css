@@ -19,20 +19,63 @@
     cursor: pointer;
     overflow: hidden;
 }
-.title-explore {
-    color: var(--dark);
-    font-size: 3em;
-    text-align: center;
-    width: 60%;
-    margin: 40px auto 80px;
+.header-explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
     animation: show .6s ease-in-out forwards;
+}
+.title-explore {
+    position: relative;
+    color: var(--dark);
+    font-size: 2em;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 20px;
+    text-shadow: 3px 3px 15px var(--light-shadow);
+}
+.watercolor-leaves-left {
+    position: absolute;
+    z-index: -1;
+    width: 260px;
+    top: -20px;
+    left: -40px;
+}
+.watercolor-leaves-right {
+    position: absolute;
+    width: 260px;
+    top: -20px;
+    right: -40px;
+    transform: rotateY(180deg);
 }
 .title-collections {
     animation: show .6s ease-in-out forwards;
     color: var(--dark);
     font-family: 'DM Serif Display', serif;
-    margin-top: 30px;
+    margin-top: 0;
     font-weight: 200;
     margin-left: 10px;
     font-size: 3em;
+}
+@media (min-width: 660px) {
+    .title-explore {
+        width: 60%;
+    }
+    .title-collections {
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+@media (min-width: 1180px) {
+    .title-explore {
+        font-size: 3em;
+    }
+    .title-collections {
+        text-align: left;
+    }
+    .header-explore {
+        height: 40vh;
+    }
 }

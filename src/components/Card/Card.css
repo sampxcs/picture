@@ -60,6 +60,7 @@
 .card-info-explore {
     color: var(--light-letter);
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     font-size: 3em;

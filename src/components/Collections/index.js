@@ -1,15 +1,22 @@
 import React from "react";
 import "./Collections.css";
+import watercolorLeaves from "./watercolorLeaves.png"
 import Card from "../Card";
 import { collectionsPhotosData, collectionsFireData, collectionsEarthData, collectionsAirData, collectionsWaterData } from "./CollectionsData";
+import SearchForm from "../SearchForm";
 
 export default function Collections() {
   return (
     <div className="main">
-      <h2 className="title-explore">
-        Discover the best royalty free images of nature & videos shared by
-        creators.
-      </h2>
+      <div className="header-explore">
+        <h2 className="title-explore">
+          Discover the best royalty free images of nature & videos shared by
+          creators.
+          <img className="watercolor-leaves-right" src={watercolorLeaves} />
+          <img className="watercolor-leaves-left" src={watercolorLeaves} />
+        </h2>
+        <SearchForm className={"header-form"} />
+      </div>
       <h2 className="title-collections">Popular Collections.</h2>
       <div className="collections">
         {collectionsPhotosData.map(
@@ -44,7 +51,7 @@ export default function Collections() {
           )
         )}
       </div> */}
-      <h2 className="title-collections">Water.</h2>
+      <h2 className="title-collections">In Water.</h2>
       <div className="collections">
         {collectionsWaterData.map(
           ({ className, title, id, src, alt, avg_color }) => (
@@ -61,7 +68,7 @@ export default function Collections() {
           )
         )}
       </div>
-      <h2 className="title-collections">Earth.</h2>
+      <h2 className="title-collections">The Best Of Earth.</h2>
       <div className="collections">
         {collectionsEarthData.map(
           ({ className, title, id, src, alt, avg_color }) => (
@@ -78,7 +85,7 @@ export default function Collections() {
           )
         )}
       </div>
-      <h2 className="title-collections">Air.</h2>
+      <h2 className="title-collections">Air Life.</h2>
       <div className="collections">
         {collectionsAirData.map(
           ({ className, title, id, src, alt, avg_color }) => (
@@ -95,7 +102,7 @@ export default function Collections() {
           )
         )}
       </div>
-      <h2 className="title-collections">Fire.</h2>
+      <h2 className="title-collections">Intense Fire.</h2>
       <div className="collections">
         {collectionsFireData.map(
           ({ className, title, id, src, alt, avg_color }) => (

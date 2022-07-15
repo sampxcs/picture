@@ -1,0 +1,114 @@
+.about-header {
+    display: flex;
+    height: 50vh;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    flex-direction: column;
+    color: var(--dark);
+}
+.header-card {
+    text-align: center;
+}
+.header-card h1 {
+    text-decoration: underline;
+    color: var(--light-focus-letter);
+    line-height: 1;
+}
+.header-card ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.header-card ul a{
+    color: var(--dark);
+}
+.header-card ul a:hover {
+    color: var(--focus-letter);
+}
+.green-leafts-up {
+    position: absolute;
+    top: 100px;
+    left: -60px;
+    transform: rotate(-15deg) rotateY(180deg);
+    width: 200px;
+}
+.green-leafts-down {
+    position: absolute;
+    bottom: -100px;
+    transform: rotate(25deg);
+    right: -30px;
+    width: 200px;
+}
+.header-img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 3px 3px 15px var(--light-shadow);
+}
+.header-img img {
+    width: 100%;
+}
+.about-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    background-color: var(--light-letter);
+    box-shadow: 3px 3px 15px var(--light-shadow);
+    padding: 30px 60px;
+    border-radius: 30px;
+    color: var(--dark);
+}
+.about-section a {
+    color: var(--dark);
+}
+.about-nature {
+    font-weight: 600;
+}
+.about-section p span {
+    color: var(--focus-letter);
+    font-weight: 600;
+}
+
+@media (min-width: 680px) {
+    .about-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .header-card {
+        text-align: left;
+    }
+    .header-card h1 {
+        font-size: 3em;
+    }
+    .header-card h2 {
+        font-size: 2em;
+    }
+    .header-img {
+        height: 260px;
+        width: 260px;
+    }
+    .green-leafts-up {
+        top: 30px;
+    }
+    .green-leafts-down {
+        right: -80px;
+        width: 300px;
+    }
+}
+@media (min-width: 1080px) {
+    .about-header {
+        height: 60vh;
+    }
+    .header-card h1 {
+        font-size: 4em;
+    }
+    .header-card h2 {
+        font-size: 3em;
+    }
+    .header-img {
+        height: 360px;
+        width: 360px;
+    }
+}

@@ -1,13 +1,16 @@
 header {
     align-items: center;
     display: flex;
-    height: 80vh;
+    flex-direction: column;
+    height: 30vh;
+    padding-top: 60px;
     justify-content: center;
     animation: show-down .6s ease-in-out forwards;
 }
 .header-title {
     position: relative;
     margin-top: 80px;
+    margin-bottom: 40px;
 }
 .header-title h1 {
     font-family: 'DM Serif Display', serif;
@@ -42,8 +45,11 @@ header {
     width: 70%;
     z-index: 10;
 }
-
 @media (min-width: 660px) {
+    header {
+        height: 80vh;
+        padding-top: 0;
+    }
     .header-title h1 {
         font-size: 110px;
     }

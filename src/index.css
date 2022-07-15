@@ -2,10 +2,11 @@
 :root {
   --background: #f3f3f5;
   --light-letter: #fff;
-  --letter: #232323;
-  --dark-letter: #6b6b6b;
+  --letter: #6b6b6b;
+  --dark-letter: #232323;
   --dark: #1b1b1b;
   --focus-letter: #4a6539;
+  --light-focus-letter: #86a766;
   --light-shadow: #00000019;
   --shadow: #00000039;
 }

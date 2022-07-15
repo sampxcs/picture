@@ -11,7 +11,7 @@ export default function Nav() {
         NATURE
       </Link>
       <NavList />
-      <SearchForm />
+      <SearchForm className={"nav-form"} />
     </nav>
   );
 }

@@ -38,7 +38,7 @@ export default function NavList() {
               <Link to="/Explore/Forest">Forest</Link>
             </li>
             <li>
-              <Link to="/Explore/Osean">Ocean Life</Link>
+              <Link to="/Explore/Ocean">Ocean Life</Link>
             </li>
             <li>
               <Link to="/Explore/Sky">Sky</Link>
