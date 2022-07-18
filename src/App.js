@@ -6,6 +6,7 @@ import Explore from "./pages/Explore"
 import SearchExplore from "./pages/SearchExplore";
 import Detail from "./pages/Detail";
 import AboutDeveloper from "./pages/AboutDeveloper"
+import Error from "./pages/Error";
 import { PexelsContextProvaider } from "./context/PexelsContext";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Explore/:keyword" component={SearchExplore} />
         <Route path="/AboutDeveloper" component={AboutDeveloper} />
         <Route path="/Detail/:id" component={Detail} />
+        <Route path="/404" component={Error} />
       </PexelsContextProvaider>
     </div>
   );

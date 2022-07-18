@@ -1,20 +1,28 @@
 import React from "react";
 import "./Collections.css";
-import watercolorLeaves from "./watercolorLeaves.png"
+import watercolorLeaves from "./watercolorLeaves.png";
 import Card from "../Card";
-import { collectionsPhotosData, collectionsFireData, collectionsEarthData, collectionsAirData, collectionsWaterData } from "./CollectionsData";
+import {
+  collectionsPhotosData,
+  collectionsFireData,
+  collectionsEarthData,
+  collectionsAirData,
+  collectionsWaterData,
+} from "./CollectionsData";
 import SearchForm from "../SearchForm";
 
 export default function Collections() {
   return (
     <div className="main">
       <div className="header-explore">
-        <h2 className="title-explore">
-          Discover the best royalty free images of nature & videos shared by
-          creators.
+        <div className="title-explore">
+          <h2>
+            Discover the best royalty <br/> free images of nature & videos <br /> shared by
+            creators.
+          </h2>
           <img className="watercolor-leaves-right" src={watercolorLeaves} />
           <img className="watercolor-leaves-left" src={watercolorLeaves} />
-        </h2>
+        </div>
         <SearchForm className={"header-form"} />
       </div>
       <h2 className="title-collections">Popular Collections.</h2>

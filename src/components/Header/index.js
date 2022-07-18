@@ -11,7 +11,10 @@ export default function Header() {
           <span>N</span>A<span>T</span>U<span>R</span>E
         </h1>
         <h3>The Beauty of Everything</h3>
-        <img src={plantImg} alt="Nature" title="Nature" className="img-plant" />
+        <img src={plantImg} alt="Nature" title="Nature" className="img-plant-01" />
+        <img src={plantImg} alt="Nature" title="Nature" className="img-plant-02" />
+        <img src={plantImg} alt="Nature" title="Nature" className="img-plant-03" />
+        <img src={plantImg} alt="Nature" title="Nature" className="img-plant-04" />
       </div>
       <SearchForm className={"header-form"} />
     </header>

@@ -5,7 +5,8 @@
   --letter: #6b6b6b;
   --dark-letter: #232323;
   --dark: #1b1b1b;
-  --focus-letter: #4a6539;
+  --focus-letter: #347551;
+  --dark-focus-letter: #798861;
   --light-focus-letter: #86a766;
   --light-shadow: #00000019;
   --shadow: #00000039;
@@ -32,6 +33,7 @@
 }
 body {
   background-color: var(--background);
+  overflow-x: hidden;
 }
 button {
   display: block;

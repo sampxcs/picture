@@ -10,7 +10,7 @@ export default function Footer() {
         <h3>The beauthy of everyting.</h3>
         <ul>
           <li><Link to="./">Settings</Link></li>
-          <li><Link to="./">About Developer</Link></li>
+          <li><Link to="./AboutDeveloper">About Developer</Link></li>
           <li><Link to="./">FAQ</Link></li>
           <li><a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" >
             Photos provided by Pexels

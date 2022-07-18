@@ -11,9 +11,13 @@
     text-align: center;
 }
 .header-card h1 {
+    cursor: default;
     text-decoration: underline;
     color: var(--light-focus-letter);
     line-height: 1;
+}
+.header-card h2 {
+    cursor: default;
 }
 .header-card ul {
     list-style: none;
@@ -53,6 +57,7 @@
 .about-section {
     position: relative;
     max-width: 1200px;
+    width: 95%;
     margin: 0 auto 40px;
     background-color: var(--light-letter);
     box-shadow: 3px 3px 15px var(--light-shadow);
@@ -108,7 +113,7 @@
         font-size: 3em;
     }
     .header-img {
-        height: 360px;
-        width: 360px;
+        height: 320px;
+        width: 320px;
     }
 }

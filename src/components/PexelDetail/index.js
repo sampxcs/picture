@@ -4,6 +4,7 @@ import Spinner from "../Spinner";
 import useSinglePexel from "../../hooks/useSinglePexel";
 import useGlobalPexels from "../../hooks/useGlobalPexels";
 import "./PexelDetail.css";
+import { Redirect } from "wouter";
 
 export default function PexelDetail({ params }) {
   const { id } = params;
@@ -30,7 +31,9 @@ export default function PexelDetail({ params }) {
       </div>
     );
   } else {
-    const { loading, globalPexels } = useSinglePexel({ id: id });
+    const { loading, error, globalPexels } = useSinglePexel({ id: id });
+
+    if (error) return <Redirect to="/404"/>
 
     if (loading) {
       return <Spinner />;

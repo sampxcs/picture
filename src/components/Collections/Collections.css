@@ -14,6 +14,7 @@
 .card-collection {
     width: 400px;
     height: 300px;
+    margin: 10px;
     border-radius: 30px;
     box-shadow: 5px 15px 30px var(--light-shadow);
     cursor: pointer;
@@ -24,30 +25,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 40vh;
     animation: show .6s ease-in-out forwards;
+    overflow: hidden;
 }
 .title-explore {
     position: relative;
+}
+.title-explore h2 {
+    text-align: center;
     color: var(--dark);
     font-size: 2em;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto 20px;
     text-shadow: 3px 3px 15px var(--light-shadow);
+    cursor: default;
 }
 .watercolor-leaves-left {
     position: absolute;
     z-index: -1;
-    width: 260px;
-    top: -20px;
-    left: -40px;
+    width: 35%;
+    top: 0%;
+    left: -17%;
 }
 .watercolor-leaves-right {
     position: absolute;
-    width: 260px;
-    top: -20px;
-    right: -40px;
+    width: 35%;
+    top: 0%;
+    right: -17%;
     transform: rotateY(180deg);
 }
 .title-collections {
@@ -60,8 +63,11 @@
     font-size: 3em;
 }
 @media (min-width: 660px) {
-    .title-explore {
-        width: 60%;
+    .card-collection {
+        margin: 0;
+    }
+    .title-explore h2 {
+        font-size: 3em;
     }
     .title-collections {
         margin-top: 30px;
@@ -69,13 +75,15 @@
     }
 }
 @media (min-width: 1180px) {
-    .title-explore {
-        font-size: 3em;
-    }
-    .title-collections {
-        text-align: left;
+    .title-explore h2 {
+        font-size: 3.5em;
     }
     .header-explore {
-        height: 40vh;
+        height: 50vh;
+    }
+}
+@media (min-width: 1260px) {
+    .title-collections {
+        text-align: left;
     }
 }

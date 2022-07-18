@@ -8,15 +8,22 @@ export default function usePexels({ keyword }) {
   const { globalPexels, setGlobalPexels } = useContext(PexelsContext);
   const [page, setPage] = useState(initialPage);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [isNextPage, setIsNextPage] = useState(true);
 
   useEffect(() => {
-    setIsNextPage(true)
+    setIsNextPage(true);
     setLoading(true);
     getPexels({ query: keyword }).then((data) => {
       const globalPexels = data.photos;
-      setGlobalPexels(globalPexels);
-      setLoading(false);
+      if (globalPexels.length) {
+        setGlobalPexels(globalPexels);
+        setLoading(false);
+        setError(false);
+      } else {
+        setLoading(false)
+        setError(true)
+      }
     });
   }, [keyword]);
 
@@ -26,7 +33,7 @@ export default function usePexels({ keyword }) {
       if (page === initialPage) return;
       getPexels({ query: keyword, page: page }).then((data) => {
         const nextGlobalPexels = data.photos;
-        if (!data.next_page) setIsNextPage(false)
+        if (!data.next_page) setIsNextPage(false);
         setGlobalPexels((prevGlobalPexels) =>
           prevGlobalPexels.concat(nextGlobalPexels)
         );
@@ -35,5 +42,5 @@ export default function usePexels({ keyword }) {
     }
   }, [page]);
 
-  return { loading, globalPexels, page, setPage };
+  return { loading, error, globalPexels, page, setPage };
 }

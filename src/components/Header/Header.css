@@ -37,13 +37,33 @@ header {
     position: relative;
     z-index: 20;
 }
-.img-plant {
+.header-title img {
     position: absolute;
-    top: -60px;
-    left: 45px;
-    transform: rotate(37deg);
-    width: 70%;
     z-index: 10;
+}
+.img-plant-01 {
+    top: 0%;
+    left: 6%;
+    transform: rotate(269deg);
+    width: 13%;
+}
+.img-plant-02 {
+    top: 13%;
+    left: 29%;
+    transform: rotate(200deg) rotateX(180deg) rotateY(180deg);
+    width: 10%;
+}
+.img-plant-03 {
+    top: -14%;
+    left: 52%;
+    transform: rotate(99deg);
+    width: 15%;
+}
+.img-plant-04 {
+    top: 25%;
+    right: 11%;
+    transform: rotate(213deg);
+    width: 10%;
 }
 @media (min-width: 660px) {
     header {
@@ -54,14 +74,14 @@ header {
         font-size: 110px;
     }
     .header-title h3 {
-        font-size: 28px;
+        font-size: 22px;
     }
     .img-plant {
         top: -95px;
         left: 68px;
     }
 }
-@media (min-width: 1380px) {
+@media (min-width: 1180px) {
     .header-title h1 {
         font-size: 180px;
     }

@@ -4,12 +4,18 @@ import usePexels from "../../hooks/usePexels";
 import GridLoader from "../GridLoader";
 import useNearScreen from "../../hooks/useNearScreen";
 import debounce from "just-debounce-it";
+import { Redirect } from "wouter";
 
 export default function PexelsResults({ params }) {
   let { keyword } = params;
   if (!keyword) keyword = "Nature";
-  const { loading, globalPexels, page, setPage } = usePexels({ keyword });
-  const { isNearScreen, ref } = useNearScreen({ distance: '350px', once: false });
+  const { loading, error, globalPexels, page, setPage } = usePexels({
+    keyword,
+  });
+  const { isNearScreen, ref } = useNearScreen({
+    distance: "400px",
+    once: false,
+  });
 
   const handleNextPage = useCallback(
     debounce(() => {
@@ -22,9 +28,10 @@ export default function PexelsResults({ params }) {
     isNearScreen && handleNextPage();
   }, [handleNextPage, isNearScreen]);
 
-  if (loading && page === 1) {
-    return <GridLoader />;
-  } else if (loading && page > 1) {
+  if (error) return <Redirect to="/404" />;
+
+  if (loading && page === 1) return <GridLoader />;
+  else if (loading && page > 1) {
     return (
       <>
         <ListOfCards globalPexels={globalPexels} />
