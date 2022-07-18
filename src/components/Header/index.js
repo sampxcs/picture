@@ -8,7 +8,7 @@ export default function Header() {
     <header>
       <div className="header-title">
         <h1>
-          <span>N</span>A<span>T</span>U<span>R</span>E
+          <span>N</span>O<span>T</span>U<span>R</span>E
         </h1>
         <h3>The Beauty of Everything</h3>
         <img src={plantImg} alt="Nature" title="Nature" className="img-plant" />
