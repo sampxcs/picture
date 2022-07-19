@@ -1,0 +1,29 @@
+nav {
+  align-items: center;
+  animation: show 0.6s ease-in-out 0.6s forwards;
+  background-color: var(--background);
+  border-bottom: 1px solid #00000010;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  opacity: 0;
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.nav-logo {
+  color: var(--focus-letter);
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+@media (min-width: 660px) {
+  .nav-logo {
+    position: absolute;
+    left: 30px;
+  }
+}

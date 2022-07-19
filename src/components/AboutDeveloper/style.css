@@ -1,0 +1,119 @@
+.about-header {
+  align-items: center;
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.header-card {
+  text-align: center;
+}
+.header-card h1 {
+  color: var(--light-focus-letter);
+  cursor: default;
+  line-height: 1;
+  text-decoration: underline;
+}
+.header-card h2 {
+  cursor: default;
+}
+.header-card ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.header-card ul a {
+  color: var(--dark);
+}
+.header-card ul a:hover {
+  color: var(--focus-letter);
+}
+.green-leafts-up {
+  left: -60px;
+  position: absolute;
+  top: 100px;
+  transform: rotate(-15deg) rotateY(180deg);
+  width: 200px;
+}
+.green-leafts-down {
+  bottom: -100px;
+  position: absolute;
+  right: -30px;
+  transform: rotate(25deg);
+  width: 200px;
+}
+.header-img {
+  border-radius: 50%;
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  height: 180px;
+  overflow: hidden;
+  width: 180px;
+}
+.header-img img {
+  width: 100%;
+}
+.about-section {
+  background-color: var(--light-letter);
+  border-radius: 30px;
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  color: var(--dark);
+  margin: 0 auto 40px;
+  max-width: 1200px;
+  padding: 30px 60px;
+  position: relative;
+  width: 95%;
+}
+.about-section a {
+  color: var(--dark);
+}
+.about-nature {
+  font-weight: 600;
+}
+.about-section p span {
+  color: var(--focus-letter);
+  font-weight: 600;
+}
+
+@media (min-width: 680px) {
+  .about-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header-card {
+    text-align: left;
+  }
+  .header-card h1 {
+    font-size: 3em;
+  }
+  .header-card h2 {
+    font-size: 2em;
+  }
+  .header-img {
+    height: 260px;
+    width: 260px;
+  }
+  .green-leafts-up {
+    top: 30px;
+  }
+  .green-leafts-down {
+    right: -80px;
+    width: 300px;
+  }
+}
+@media (min-width: 1080px) {
+  .about-header {
+    height: 60vh;
+  }
+  .header-card h1 {
+    font-size: 4em;
+  }
+  .header-card h2 {
+    font-size: 3em;
+  }
+  .header-img {
+    height: 320px;
+    width: 320px;
+  }
+}

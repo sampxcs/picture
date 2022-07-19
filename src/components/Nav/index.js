@@ -1,17 +1,22 @@
-import React from "react";
-import "./Nav.css";
-import SearchForm from "../SearchForm";
-import NavList from "../NavList";
-import { Link } from "wouter";
+import React, { useContext, useState } from 'react'
+import './style.css'
+import SearchForm from '../SearchForm'
+import NavList from '../NavList'
+import { Link } from 'wouter'
+import HamburgerMenuBar from '../HamburguerMenuBar'
+import ActiveContext, { ActiveContextProvaider } from '../../context/ActiveContext'
 
 export default function Nav() {
+  const { isActive, setIsActive } = useContext(ActiveContext)
+  console.log(isActive)
   return (
     <nav>
-      <Link to="/" className="nav-logo" title="Nature">
+      <HamburgerMenuBar isActive={isActive} setIsActive={setIsActive} />
+      <Link to='/' className='nav-logo' title='Nature'>
         NATURE
       </Link>
-      <NavList />
-      <SearchForm className={"nav-form"} />
+      <NavList isActive={isActive} />
+      <SearchForm className={'nav-form'} />
     </nav>
-  );
+  )
 }
