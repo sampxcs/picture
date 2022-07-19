@@ -25,7 +25,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 25vh;
+  min-height: 150px;
   animation: show 0.6s ease-in-out forwards;
   overflow: hidden;
 }
@@ -35,7 +36,7 @@
 .title-explore h2 {
   text-align: center;
   color: var(--dark);
-  font-size: 2em;
+  font-size: 1.5em;
   text-shadow: 3px 3px 15px var(--light-shadow);
   cursor: default;
 }
@@ -66,8 +67,11 @@
   .card-collection {
     margin: 0;
   }
+  .header-explore {
+    height: 40vh;
+  }
   .title-explore h2 {
-    font-size: 3em;
+    font-size: 2em;
   }
   .title-collections {
     margin-top: 30px;

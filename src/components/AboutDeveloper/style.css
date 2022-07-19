@@ -75,6 +75,11 @@
   color: var(--focus-letter);
   font-weight: 600;
 }
+.about-section p a {
+  color: var(--focus-letter);
+  font-weight: 600;
+  text-decoration: underline;
+}
 
 @media (min-width: 680px) {
   .about-header {

@@ -24,18 +24,6 @@
   list-style: none;
 }
 .hamburguer-menu-active {
-  align-items: center;
-  background-color: var(--background);
-  border-radius: 50%;
-  display: flex;
-  height: 45px;
-  justify-content: center;
-  left: 15px;
-  padding: 10px;
-  position: fixed;
-  top: 10px;
-  width: 45px;
-  z-index: 300;
   transition: 0.2s ease-in-out;
   transform: rotate(45deg);
 }

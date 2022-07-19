@@ -10,15 +10,14 @@ export default function PexelDetail({ params }) {
   const { id } = params
   const globalPexels = useGlobalPexels()
 
-  console.log(globalPexels)
-
   if (globalPexels.length) {
     const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id))
     const { src, photographer, photographer_url, alt, avg_color } = pexel
     return (
-      <div className='detail-container'>
+      <div className="detail-container">
         <div>
           <Card
+            className={'card-detail'}
             key={id}
             id={id}
             src={src}
@@ -33,14 +32,14 @@ export default function PexelDetail({ params }) {
   } else {
     const { loading, error, globalPexels } = useSinglePexel({ id: id })
 
-    if (error) return <Redirect to='/404' />
+    if (error) return <Redirect to="/404" />
 
     if (loading) {
       return <Spinner />
     } else {
       const { src, photographer, photographer_url, alt, avg_color } = globalPexels
       return (
-        <div className='detail-container'>
+        <div className="detail-container">
           <div>
             <Card
               className={'card-detail'}
