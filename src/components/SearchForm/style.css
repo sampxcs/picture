@@ -1,13 +1,9 @@
-form {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
 .nav-form {
   position: absolute;
   right: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-form input {
@@ -73,6 +69,9 @@ form {
   min-height: 30px;
   overflow-y: hidden;
   box-shadow: 3px 3px 15px var(--light-shadow);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .header-form input {
