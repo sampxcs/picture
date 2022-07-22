@@ -5,6 +5,7 @@ import useSinglePexel from '../../hooks/useSinglePexel'
 import useGlobalPexels from '../../hooks/useGlobalPexels'
 import './style.css'
 import { Redirect } from 'wouter'
+import { Helmet } from 'react-helmet'
 
 export default function PexelDetail({ params }) {
   const { id } = params
@@ -14,31 +15,10 @@ export default function PexelDetail({ params }) {
     const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id))
     const { src, photographer, photographer_url, alt, avg_color } = pexel
     return (
-      <div className="detail-container">
-        <div>
-          <Card
-            className={'card-detail'}
-            key={id}
-            id={id}
-            src={src}
-            photographer={photographer}
-            photographer_url={photographer_url}
-            alt={alt}
-            avg_color={avg_color}
-          />
-        </div>
-      </div>
-    )
-  } else {
-    const { loading, error, globalPexels } = useSinglePexel({ id: id })
-
-    if (error) return <Redirect to="/404" />
-
-    if (loading) {
-      return <Spinner />
-    } else {
-      const { src, photographer, photographer_url, alt, avg_color } = globalPexels
-      return (
+      <>
+        <Helmet>
+          <title>{`Nature | ${alt}`}</title>
+        </Helmet>
         <div className="detail-container">
           <div>
             <Card
@@ -53,6 +33,44 @@ export default function PexelDetail({ params }) {
             />
           </div>
         </div>
+      </>
+    )
+  } else {
+    const { loading, error, globalPexels } = useSinglePexel({ id: id })
+
+    if (error) return <Redirect to="/404" />
+
+    if (loading) {
+      return (
+        <>
+          <Helmet>
+            <title>Loading...</title>
+          </Helmet>
+          <Spinner />
+        </>
+      )
+    } else {
+      const { src, photographer, photographer_url, alt, avg_color } = globalPexels
+      return (
+        <>
+          <Helmet>
+            <title>{`Nature | ${alt}`}</title>
+          </Helmet>
+          <div className="detail-container">
+            <div>
+              <Card
+                className={'card-detail'}
+                key={id}
+                id={id}
+                src={src}
+                photographer={photographer}
+                photographer_url={photographer_url}
+                alt={alt}
+                avg_color={avg_color}
+              />
+            </div>
+          </div>
+        </>
       )
     }
   }

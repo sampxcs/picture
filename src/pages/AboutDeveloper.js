@@ -1,12 +1,16 @@
-import React from "react";
-import AboutDeveloper from "../components/AboutDeveloper";
-import Footer from "../components/Footer/Footer";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import AboutDeveloper from '../components/AboutDeveloper'
+import Footer from '../components/Footer/Footer'
 
 export default function Detail() {
-    return (
-        <>
-            <AboutDeveloper />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Helmet>
+        <title>Nature | About Developer</title>
+      </Helmet>
+      <AboutDeveloper />
+      <Footer />
+    </>
+  )
 }
