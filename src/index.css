@@ -34,14 +34,6 @@ body {
   background-color: var(--background);
   overflow-x: hidden;
 }
-/* button {
-  display: block;
-  width: 80%;
-  margin: 10px auto;
-  padding: 20px;
-  text-align: center;
-  font-size: 2em;
-} */
 @keyframes show-down {
   0% {
     transform: translateY(-10px);

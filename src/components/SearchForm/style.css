@@ -17,8 +17,9 @@
   width: 100px;
 }
 
-.nav-form label {
+.nav-form button {
   align-items: center;
+  border: none;
   border-radius: 50%;
   box-shadow: 3px 3px 15px var(--light-shadow);
   cursor: pointer;
@@ -29,7 +30,7 @@
   width: 30px;
 }
 
-.nav-form label:hover {
+.nav-form button:hover {
   box-shadow: 3px 3px 30px var(--light-shadow);
 }
 
@@ -81,7 +82,7 @@
   padding: 8px 16px;
 }
 
-.header-form label {
+.header-form button {
   background-color: var(--light-letter);
   border-left: 1px solid var(--shadow);
   width: 40px;
@@ -90,6 +91,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
 }
 
 .header-form .search-icon {
@@ -118,7 +120,7 @@
     width: 300px;
     padding: 10px 20px;
   }
-  .header-form label {
+  .header-form button {
     width: 60px;
   }
   .header-form .search-icon {

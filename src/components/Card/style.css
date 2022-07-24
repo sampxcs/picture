@@ -1,6 +1,7 @@
 .card {
   height: 100%;
   position: relative;
+  min-height: 200px;
   animation: show-down 0.6s ease-in-out forwards;
 }
 .card img {
@@ -11,7 +12,7 @@
 .card-info {
   text-align: left;
   color: var(--dark);
-  height: 80px;
+  height: 70px;
   left: 0;
   opacity: 1;
   padding: 15px;
@@ -20,14 +21,14 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #00000010;
-  align-items: center;
+  align-items: flex-start;
   transition: opacity 0.3s;
   width: 100%;
 }
 .card-link {
   color: var(--dark);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 .card-link:hover {
   text-decoration: underline;
@@ -49,12 +50,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: 1.8em;
   border-radius: 5px;
   width: 30px;
   height: 30px;
-  margin-left: 10px;
-  color: var(--shadow);
+  color: var(--dark);
 }
 .card-explore {
   background-color: var(--shadow);

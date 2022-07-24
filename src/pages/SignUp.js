@@ -1,15 +1,15 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import LoginForm from '../components/SignInForm'
+import SignUpForm from '../components/SignUpForm'
 
-export default function Login() {
+export default function SignUp() {
   return (
     <>
       <Helmet>
-        <title>Nature | Log in</title>
+        <title>Nature | Join</title>
       </Helmet>
       <header>
-        <LoginForm />
+        <SignUpForm />
       </header>
     </>
   )

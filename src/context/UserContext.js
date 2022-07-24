@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const UserContext = React.createContext({})
 
 export function UserContextProvaider({ children }) {
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogged, setIsLogged] = useState(() => localStorage.getItem('logged'))
 
-  return <UserContext.Provider value={{ isLogin, setIsLogin }}>{children}</UserContext.Provider>
+  return <UserContext.Provider value={{ isLogged, setIsLogged }}>{children}</UserContext.Provider>
 }
 export default UserContext
