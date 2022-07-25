@@ -11,12 +11,13 @@ export default function Nav() {
 
   useEffect(() => {
     window.scroll({ top: 0 })
+    setIsActive(false)
   }, [location])
 
   return (
     <nav>
       <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
-      <Link to='/' className='nav-logo' title='Nature'>
+      <Link to="/" className="nav-logo" title="Nature">
         NATURE
       </Link>
       <NavList isActive={isActive} />

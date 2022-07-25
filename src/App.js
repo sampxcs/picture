@@ -6,30 +6,36 @@ import { PexelsContextProvaider } from './context/PexelsContext'
 import Nav from './components/Nav'
 
 import Home from './pages/Home'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import ResetPassword from './pages/ResetPassword'
+import ProfilePage from './pages/Profile'
+import SettingsPage from './pages/Settings'
 import Explore from './pages/Explore'
 import SearchExplore from './pages/SearchExplore'
 import Detail from './pages/Detail'
 import AboutDeveloper from './pages/AboutDeveloper'
+import FAQ from './pages/FAQ'
 import Error from './pages/Error'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
-import ResetPassword from './pages/ResetPassword'
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <UserContextProvaider>
         <Nav />
         <PexelsContextProvaider>
-          <Route path='/' component={Home} />
-          <Route path='/log-in' component={Login} />
-          <Route path='/sign-up' component={SignUp} />
-          <Route path='/reset-password' component={ResetPassword} />
-          <Route path='/Explore' component={Explore} />
-          <Route path='/Explore/:keyword' component={SearchExplore} />
-          <Route path='/AboutDeveloper' component={AboutDeveloper} />
-          <Route path='/Detail/:id' component={Detail} />
-          <Route path='/404' component={Error} />
+          <Route path="/" component={Home} />
+          <Route path="/log-in" component={Login} />
+          <Route path="/sign-up" component={SignUp} />
+          <Route path="/reset-password" component={ResetPassword} />
+          <Route path="/profile" component={ProfilePage} />
+          <Route path="/settings" component={SettingsPage} />
+          <Route path="/Explore" component={Explore} />
+          <Route path="/Explore/:keyword" component={SearchExplore} />
+          <Route path="/Detail/:id" component={Detail} />
+          <Route path="/AboutDeveloper" component={AboutDeveloper} />
+          <Route path="/FAQ" component={FAQ} />
+          <Route path="/404" component={Error} />
         </PexelsContextProvaider>
       </UserContextProvaider>
     </div>

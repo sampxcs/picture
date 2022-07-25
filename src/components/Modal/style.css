@@ -15,7 +15,6 @@
 }
 .modal-content {
   position: relative;
-  margin-top: -90px;
   background-color: var(--light-letter);
   border-radius: 30px;
 }
@@ -32,10 +31,6 @@
 @media (min-width: 660px) {
   .modal-content {
     position: relative;
-    margin-top: -90px;
     background: none;
-  }
-  .modal-content .btn-close-modal {
-    top: 110px;
   }
 }

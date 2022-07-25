@@ -1,0 +1,35 @@
+.change-lenguage-form {
+  background-color: var(--light-letter);
+  padding: 30px 20px;
+  min-width: 320px;
+  border-radius: 30px;
+}
+
+.change-lenguage-form h2 {
+  font-family: 'DM Serif Display', serif;
+  color: var(--focus-letter);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.change-lenguage-form ul {
+  list-style: none;
+}
+.change-lenguage-form a {
+  text-align: center;
+  padding: 8px;
+  color: var(--dark);
+  display: block;
+}
+.change-lenguage-form a .icon {
+  color: var(--letter);
+  font-size: 0.8em;
+  display: none;
+  margin-left: 5px;
+  animation: show-left 0.2s ease-in-out forwards;
+}
+.change-lenguage-form a:hover {
+  background-color: #00000008;
+}
+.change-lenguage-form a:hover .icon {
+  display: inline-block;
+}

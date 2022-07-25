@@ -34,6 +34,14 @@ body {
   background-color: var(--background);
   overflow-x: hidden;
 }
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes show-down {
   0% {
     transform: translateY(-10px);
@@ -44,11 +52,13 @@ body {
     transform: translateY(0px);
   }
 }
-@keyframes show {
+@keyframes show-left {
   0% {
+    transform: translateX(10px);
     opacity: 0;
   }
   100% {
     opacity: 1;
+    transform: translateY(0px);
   }
 }
