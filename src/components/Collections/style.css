@@ -20,6 +20,14 @@
   cursor: pointer;
   overflow: hidden;
 }
+.main-explore {
+  min-height: 150vh;
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 90px;
+  overflow: hidden;
+}
 .header-explore {
   display: flex;
   flex-direction: column;

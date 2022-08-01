@@ -13,7 +13,7 @@ import SearchForm from '../SearchForm'
 
 export default function Collections() {
   return (
-    <div className="main">
+    <div className="main-explore">
       <div className="header-explore">
         <div className="title-explore">
           <h2>

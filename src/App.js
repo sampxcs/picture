@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'wouter'
+import { Route, Switch } from 'wouter'
 import { UserContextProvaider } from './context/UserContext'
 import { PexelsContextProvaider } from './context/PexelsContext'
 
@@ -24,18 +24,20 @@ function App() {
       <UserContextProvaider>
         <Nav />
         <PexelsContextProvaider>
-          <Route path="/" component={Home} />
-          <Route path="/log-in" component={Login} />
-          <Route path="/sign-up" component={SignUp} />
-          <Route path="/reset-password" component={ResetPassword} />
-          <Route path="/profile" component={ProfilePage} />
-          <Route path="/settings" component={SettingsPage} />
-          <Route path="/Explore" component={Explore} />
-          <Route path="/Explore/:keyword" component={SearchExplore} />
-          <Route path="/Detail/:id" component={Detail} />
-          <Route path="/AboutDeveloper" component={AboutDeveloper} />
-          <Route path="/FAQ" component={FAQ} />
-          <Route path="/404" component={Error} />
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/log-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
+            <Route path="/reset-password" component={ResetPassword} />
+            <Route path="/profile" component={ProfilePage} />
+            <Route path="/settings" component={SettingsPage} />
+            <Route path="/Explore" component={Explore} />
+            <Route path="/Explore/:keyword" component={SearchExplore} />
+            <Route path="/Detail/:id" component={Detail} />
+            <Route path="/AboutDeveloper" component={AboutDeveloper} />
+            <Route path="/FAQ" component={FAQ} />
+            <Route path="/:rest*" component={Error} />
+          </Switch>
         </PexelsContextProvaider>
       </UserContextProvaider>
     </div>

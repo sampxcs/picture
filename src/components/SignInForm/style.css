@@ -57,6 +57,7 @@
 @media (min-width: 660px) {
   .login-form {
     width: max-content;
+    margin-top: 0;
     background-color: var(--light-letter);
     display: flex;
     justify-content: center;

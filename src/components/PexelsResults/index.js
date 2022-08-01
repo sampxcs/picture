@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet'
 
 function PexelsResults({ params }) {
   let { keyword } = params
-  if (!keyword) keyword = 'landscape'
+  if (!keyword) keyword = 'Nature'
   const { loading, error, globalPexels, page, setPage } = usePexels({ keyword })
 
   const { isNearScreen, ref } = useNearScreen({
