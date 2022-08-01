@@ -10,10 +10,10 @@ import Modal from '../Modal'
 function Card({ id, title, src, alt, photographer, photographer_url, avg_color, className }) {
   const [saved, setSaved] = useState(false)
   const [showModal, setShowModal] = useState(false)
-  const { isLogged } = useUser()
+  const { user } = useUser()
 
   const handelSave = () => {
-    if (isLogged) {
+    if (user) {
       saved ? setSaved(false) : setSaved(true)
     } else {
       setShowModal(true)
