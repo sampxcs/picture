@@ -1,49 +1,61 @@
-import { useCallback, useContext } from 'react'
+import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
+import { initializeApp } from 'firebase/app'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { firebaseConfig } from '../firebase/client'
+
+initializeApp(firebaseConfig)
 
 export default function useUser() {
-  const { isLogged, setIsLogged } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
+  const auth = getAuth()
 
-  const signup = useCallback(
-    ({ firstname, lastname, email, username, password }) => {
-      console.log(firstname, lastname, email, username, password)
-      const user = {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        username: username,
-        password: password,
-      }
-      if (!localStorage.getItem('user')) {
-        localStorage.setItem('user', JSON.stringify(user))
-        localStorage.setItem('logged', true)
-        setIsLogged(true)
-      } else {
-        alert('ya existe un usuario')
-      }
-    },
-    [setIsLogged]
-  )
+  const onStateChanged = useCallback((onChange) => {
+    return auth.onAuthStateChanged((user) => {
+      console.log(user)
+      onChange(user)
+    })
+  })
 
-  const login = useCallback(
-    ({ username, password }) => {
-      const user = JSON.parse(localStorage.getItem('user'))
-      if (user.username === username) {
-        if (user.password === password) {
-          localStorage.setItem('logged', true)
-          setIsLogged(true)
-          window.location.reload()
-        } else alert('password error')
-      } else alert('username error')
-    },
-    [setIsLogged]
-  )
+  useEffect(() => {
+    onStateChanged((user) => setUser(user))
+  }, [])
+
+  const createUserWithEmail = useCallback(({ email, password }) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user
+        setUser(user)
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.log(errorMessage)
+        // ..
+      })
+  })
+
+  const signInWithEmail = useCallback(({ email, password }) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user
+        setUser(user)
+        console.log(user)
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.log(errorMessage)
+      })
+  })
 
   const logout = useCallback(() => {
-    setIsLogged(false)
-    localStorage.removeItem('logged')
+    setUser(null)
     window.location.reload()
-  }, [setIsLogged])
+  }, [setUser])
 
-  return { isLogged, signup, login, logout }
+  return { user, createUserWithEmail, signInWithEmail, onStateChanged, logout }
 }

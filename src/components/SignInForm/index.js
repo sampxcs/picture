@@ -6,25 +6,25 @@ import './style.css'
 import useUser from '../../hooks/useUser'
 
 export default function LoginForm() {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [, pushLocation] = useLocation()
-  const { isLogged, login } = useUser()
+  const { user, signInWithEmail } = useUser()
 
   useEffect(() => {
-    isLogged && pushLocation('./')
-  }, [isLogged])
+    user && pushLocation('./')
+  }, [user])
 
   const handelSubmit = (e) => {
     e.preventDefault()
-    login({ username, password })
+    signInWithEmail({ email: email, password: password })
   }
 
   return (
     <form className='login-form' onSubmit={handelSubmit}>
       <h2>Welcome Back</h2>
       <h3>Log in to Nature to access your collections.</h3>
-      <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
       <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
       <Link to='/reset-password'>Forgot your password?</Link>
       <button>

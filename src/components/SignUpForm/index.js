@@ -6,22 +6,21 @@ import './style.css'
 import useUser from '../../hooks/useUser'
 
 export default function SignUpForm() {
-  const [username, setUsername] = useState('')
   const [firstname, setFirstname] = useState('')
   const [lastname, setLastname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [, pushLocation] = useLocation()
-  const { isLogged, signup } = useUser()
+  const { user, createUserWithEmail } = useUser()
 
   const handelSubmit = (e) => {
     e.preventDefault()
-    signup({ firstname, lastname, email, username, password })
+    createUserWithEmail({ email: email, password: password })
   }
 
   useEffect(() => {
-    isLogged && pushLocation('./')
-  }, [isLogged])
+    user && pushLocation('./')
+  }, [user])
 
   return (
     <form className='sign-up-form' onSubmit={handelSubmit}>
@@ -31,8 +30,7 @@ export default function SignUpForm() {
         <input type='text' placeholder='First name' value={firstname} required onChange={(e) => setFirstname(e.target.value)} />
         <input type='text' placeholder='Last name (optional)' value={lastname} onChange={(e) => setLastname(e.target.value)} />
       </div>
-      <input type='text' placeholder='Email' value={email} required onChange={(e) => setEmail(e.target.value)} />
-      <input type='text' placeholder='Username' value={username} required onChange={(e) => setUsername(e.target.value)} />
+      <input type='email' placeholder='Email' value={email} required onChange={(e) => setEmail(e.target.value)} />
       <input type='password' placeholder='Password' value={password} required onChange={(e) => setPassword(e.target.value)} />
       <button>
         Create New Account
