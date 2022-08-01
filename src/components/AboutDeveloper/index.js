@@ -1,7 +1,5 @@
 import React from 'react'
 import './style.css'
-import greenLeafts from './Green-Leafs01.png'
-import imgPerfil from './IMG_20200905_211704_821.jpg'
 
 export default function AboutDeveloper() {
   return (
@@ -35,7 +33,7 @@ export default function AboutDeveloper() {
           </ul>
         </div>
         <div className="header-img">
-          <img src={imgPerfil} alt="Sampxcs" title="Sampxcs" />
+          <img src="/IMG_20200905_211704_821.jpg" alt="Sampxcs" title="Sampxcs" />
         </div>
       </div>
       <div className="about-section">
@@ -44,7 +42,7 @@ export default function AboutDeveloper() {
           videos, this web page is not developed for commercial purposes, it is simply a demonstration of ui design and rest api
           implementation using react, in a nice web page to see and interact
         </p>
-        <img src={greenLeafts} className="green-leafts-up" alt="green leafts" />
+        <img src="/Green-Leafs01.png" className="green-leafts-up" alt="green leafts" />
       </div>
       <div className="about-section">
         <h2>About me.</h2> <br />
@@ -61,7 +59,7 @@ export default function AboutDeveloper() {
         <p>
           Outside the office you will find me dreaming about music, playing the guitar and petting my <span>cats.</span>
         </p>
-        <img src={greenLeafts} className="green-leafts-down" alt="green leafts" />
+        <img src="/Green-Leafs01.png" className="green-leafts-down" alt="green leafts" />
       </div>
       <div className="about-section">
         <h2>Last Projects.</h2> <br />

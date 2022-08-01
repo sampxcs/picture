@@ -1,6 +1,5 @@
 import React from 'react'
 import './style.css'
-import watercolorLeaves from './watercolorLeaves.png'
 import Card from '../Card'
 import {
   collectionsPhotosData,
@@ -19,8 +18,8 @@ export default function Collections() {
           <h2>
             Discover the best royalty <br /> free images of nature & videos <br /> shared by creators.
           </h2>
-          <img className="watercolor-leaves-right" src={watercolorLeaves} alt="watercolor leave" />
-          <img className="watercolor-leaves-left" src={watercolorLeaves} alt="watercolor leave" />
+          <img className="watercolor-leaves-right" src="/watercolorLeaves.png" alt="watercolor leave" />
+          <img className="watercolor-leaves-left" src="/watercolorLeaves.png" alt="watercolor leave" />
         </div>
         <SearchForm className={'header-form'} />
       </div>

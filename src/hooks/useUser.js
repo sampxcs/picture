@@ -1,7 +1,18 @@
 import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
 import { initializeApp } from 'firebase/app'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+  sendEmailVerification,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  sendPasswordResetEmail,
+} from 'firebase/auth'
 import { firebaseConfig } from '../firebase/client'
 
 initializeApp(firebaseConfig)
@@ -10,23 +21,29 @@ export default function useUser() {
   const { user, setUser } = useContext(UserContext)
   const auth = getAuth()
 
-  const onStateChanged = useCallback((onChange) => {
-    return auth.onAuthStateChanged((user) => {
-      console.log(user)
-      onChange(user)
-    })
-  })
-
   useEffect(() => {
     onStateChanged((user) => setUser(user))
   }, [])
 
-  const createUserWithEmail = useCallback(({ email, password }) => {
+  const onStateChanged = useCallback((onChange) => {
+    return auth.onAuthStateChanged((user) => {
+      onChange(user)
+    })
+  }, [])
+
+  const createUserWithEmail = useCallback(({ firstname, lastname, email, password }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user
-        setUser(user)
-        console.log(user)
+        updateProfile(user, {
+          displayName: `${firstname} ${lastname ? lastname : ''}`,
+        }).then(() => {
+          sendEmailVerification(user).then(() => {
+            console.log('email verification')
+            setUser(user)
+            console.log(user)
+          })
+        })
       })
       .catch((error) => {
         const errorCode = error.code
@@ -34,7 +51,7 @@ export default function useUser() {
         console.log(errorMessage)
         // ..
       })
-  })
+  }, [])
 
   const signInWithEmail = useCallback(({ email, password }) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -42,7 +59,7 @@ export default function useUser() {
         // Signed in
         const user = userCredential.user
         setUser(user)
-        console.log(user)
+        window.location.reload()
         // ...
       })
       .catch((error) => {
@@ -50,12 +67,88 @@ export default function useUser() {
         const errorMessage = error.message
         console.log(errorMessage)
       })
-  })
+  }, [])
+
+  const signInWithGoogle = useCallback(() => {
+    const provider = new GoogleAuthProvider()
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential.accessToken
+        // The signed-in user info.
+        const user = result.user
+        console.log(user)
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.customData.email
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error)
+        // ...
+      })
+  }, [])
+  const signInWithGitHub = useCallback(() => {
+    const provider = new GithubAuthProvider()
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GithubAuthProvider.credentialFromResult(result)
+        const token = credential.accessToken
+        // The signed-in user info.
+        const user = result.user
+        console.log(user)
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        console.log(errorMessage)
+        const email = error.customData.email
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error)
+        // ...
+      })
+  }, [])
+
+  const resetPassword = useCallback(({ email }) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.log(errorMessage)
+        // ..
+      })
+  }, [])
 
   const logout = useCallback(() => {
-    setUser(null)
-    window.location.reload()
-  }, [setUser])
+    signOut(auth)
+      .then(() => {
+        window.location.reload()
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        console.log(error)
+        // An error happened.
+      })
+  }, [])
 
-  return { user, createUserWithEmail, signInWithEmail, onStateChanged, logout }
+  const updateProfileInfo = useCallback(({ displayName, photoURL }) => {
+    updateProfile(auth, {
+      displayName: displayName,
+      photoURL: photoURL,
+    })
+  }, [])
+
+  return { user, createUserWithEmail, signInWithEmail, updateProfileInfo, signInWithGitHub, signInWithGoogle, logout, resetPassword }
 }

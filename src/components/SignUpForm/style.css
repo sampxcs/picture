@@ -43,26 +43,10 @@
   color: var(--focus-letter);
   font-weight: 600;
 }
-.sign-up-form button {
-  max-width: 300px;
-  cursor: pointer;
-  border: 1px solid var(--focus-letter);
-  background: none;
-  font-weight: 700;
-  margin: 15px;
-  border-radius: 5px;
-  padding: 10px 20px;
-  width: 90%;
-  color: var(--focus-letter);
-  transition: color 0.2s, background-color 0.2s;
-}
-.sign-up-form button:hover {
-  background-color: var(--focus-letter);
-  color: var(--light-letter);
-}
 @media (min-width: 660px) {
   .sign-up-form {
     width: max-content;
+    margin-top: 20px;
     background-color: var(--light-letter);
     display: flex;
     justify-content: center;

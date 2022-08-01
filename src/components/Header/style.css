@@ -3,7 +3,7 @@ header {
   display: flex;
   flex-direction: column;
   height: 25vh;
-  min-height: 430px;
+  min-height: 560px;
   padding-top: 60px;
   justify-content: center;
   animation: show-down 0.6s ease-in-out forwards;

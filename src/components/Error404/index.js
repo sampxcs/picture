@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'wouter'
 import './style.css'
-import leave from './leave.png'
 import { Helmet } from 'react-helmet'
 
 export default function Error404() {
@@ -21,8 +20,8 @@ export default function Error404() {
           It seems that we did not find what you are looking for, the page you were <br /> looking for doesn't exist, isn't available or was
           loading incorrectly.
         </p>
-        <img src={leave} alt="leave" />
-        <img src={leave} alt="leave" />
+        <img src="/leave.png" alt="leave" />
+        <img src="/leave.png" alt="leave" />
         <Link to="/">Back to home :)</Link>
       </div>
     </>

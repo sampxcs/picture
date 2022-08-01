@@ -79,6 +79,7 @@
 .nav-ul-list .btn-nav {
   display: flex;
   align-items: center;
+  gap: 10px;
   height: 100%;
   font-size: 1em;
   border: none;
@@ -100,9 +101,6 @@
 .nav-ul-list img {
   width: 4em;
   margin-left: 15px;
-}
-.faArrow {
-  margin-left: 10px;
 }
 @media (min-width: 660px) {
   .nav-ul {
