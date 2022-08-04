@@ -22,3 +22,7 @@
   pointer-events: none;
   opacity: 0.3;
 }
+.btn-primary[aria-selected] {
+  background-color: var(--focus-letter) !important;
+  color: var(--light-letter);
+}

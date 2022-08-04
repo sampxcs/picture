@@ -1,5 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
+import { useLocation } from 'wouter'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, addDoc, deleteDoc, collection } from 'firebase/firestore'
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
@@ -23,6 +24,7 @@ const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
+  const [location, pushLocation] = useLocation()
   const auth = getAuth()
 
   useEffect(() => {
@@ -138,7 +140,7 @@ export default function useUser() {
   const logout = useCallback(() => {
     signOut(auth)
       .then(() => {
-        window.location.reload()
+        pushLocation('./')
         // Sign-out successful.
       })
       .catch((error) => {

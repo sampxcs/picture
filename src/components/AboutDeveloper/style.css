@@ -6,6 +6,8 @@
   height: 50vh;
   justify-content: space-evenly;
   padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .header-card {
   text-align: center;

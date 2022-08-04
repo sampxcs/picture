@@ -12,6 +12,16 @@ nav {
   width: 100%;
   z-index: 100;
 }
+.nav-container {
+  max-width: 1630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
 .nav-logo {
   color: var(--focus-letter);
   font-family: 'DM Serif Display', serif;

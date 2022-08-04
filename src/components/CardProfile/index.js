@@ -13,17 +13,17 @@ export default function CardProfile() {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className='card-profile-container'>
-      <div className='card-profile'>
-        <div className='photo-profile'>
-          {user.photoURL ? <img src={user.photoURL} /> : <img src='/placeholder-profile.jpg' />}
+    <div className="card-profile-container">
+      <div className="card-profile">
+        <div className="photo-profile">
+          {user.photoURL ? <img src={user.photoURL} /> : <img src="/placeholder-profile.jpg" />}
           <button onClick={() => setShowModal(true)}>
             <FontAwesomeIcon icon={regular('pen-to-square')} />
           </button>
         </div>
         <h1>{user.displayName}</h1>
         <h2>{user.email}</h2>
-        <Link to='/edit-profile'>
+        <Link to="/edit-profile">
           <ButtonPrimary>Edit Profile</ButtonPrimary>
         </Link>
         <p>
@@ -31,7 +31,19 @@ export default function CardProfile() {
         </p>
         <h3>
           <FontAwesomeIcon icon={solid('location-dot')} />
-          Argentina.
+          Argentina
+        </h3>
+        <h3>
+          <FontAwesomeIcon icon={solid('paperclip')} />
+          Web
+        </h3>
+        <h3>
+          <FontAwesomeIcon icon={solid('i')} />
+          Instagram
+        </h3>
+        <h3>
+          <FontAwesomeIcon icon={solid('t')} />
+          Twitter
         </h3>
       </div>
       {showModal ? (

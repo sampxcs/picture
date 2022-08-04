@@ -14,12 +14,13 @@ export default function PexelDetail({ params }) {
   if (globalPexels.length) {
     const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id))
     const { src, photographer, photographer_url, alt, avg_color } = pexel
+    console.log(pexel)
     return (
       <>
         <Helmet>
           <title>{`Nature | ${alt}`}</title>
         </Helmet>
-        <div className='detail-container'>
+        <div className="detail-container">
           <div>
             <Card
               className={'card-detail'}
@@ -38,7 +39,7 @@ export default function PexelDetail({ params }) {
   } else {
     const { loading, error, globalPexels } = useSinglePexel({ id })
 
-    if (error) return <Redirect to='/404' />
+    if (error) return <Redirect to="/404" />
 
     if (loading) {
       return (
@@ -58,7 +59,7 @@ export default function PexelDetail({ params }) {
           <Helmet>
             <title>{`Nature | ${id}`}</title>
           </Helmet>
-          <div className='detail-container'>
+          <div className="detail-container">
             <div>
               <Card
                 className={'card-detail'}

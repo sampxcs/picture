@@ -1,3 +1,28 @@
 .profile {
   padding: 30px;
+  display: flex;
+  gap: 20px;
+}
+.main-profile {
+  padding: 30px;
+  border: 1px solid var(--light-shadow);
+  border-radius: 10px;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light-letter);
+}
+.main-profile h1 {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-profile div {
+  color: var(--letter);
+  padding: 10px;
+  height: 200px;
+  width: 100%;
+  background-color: var(--light-shadow);
+  margin: 15px 0;
+  border-radius: 10px;
 }

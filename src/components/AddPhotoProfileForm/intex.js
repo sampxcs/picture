@@ -29,16 +29,16 @@ export default function AddPhotoProfileForm({ setShowModal }) {
   }
 
   return (
-    <form className='add-photo-profile-form' onSubmit={handelSubmit}>
+    <form className="add-photo-profile-form" onSubmit={handelSubmit}>
       <h2>Select your profile photo</h2>
-      <div className='drag-zone'>
-        {photoProfile ? <img src={photoProfilePreview} /> : <label htmlFor='file'>Drag your files or click here</label>}
+      <div className="drag-zone">
+        {photoProfile ? <img src={photoProfilePreview} /> : <label htmlFor="file">Drag your files or click here</label>}
       </div>
-      <input type='file' id='file' name='file' onChange={handelChange} />
-      <ButtonPrimary target='submit' disabled={!photoProfile}>
+      <input type="file" id="file" name="file" onChange={handelChange} />
+      <ButtonPrimary target="submit" disabled={!photoProfile}>
         Set New Profile Picture
       </ButtonPrimary>
-      <ButtonPrimary type='button' disabled={!photoProfile} onClick={() => setPhotoProfile(undefined)}>
+      <ButtonPrimary type="button" disabled={!photoProfile} onClick={() => setPhotoProfile(undefined)}>
         Change
       </ButtonPrimary>
     </form>

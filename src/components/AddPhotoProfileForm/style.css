@@ -1,6 +1,6 @@
 .add-photo-profile-form {
   background-color: var(--light-letter);
-  padding: 30px;
+  padding: 30px 60px;
   min-width: 360px;
   border-radius: 30px;
   display: flex;

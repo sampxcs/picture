@@ -5,4 +5,15 @@
   margin: 0 auto;
   padding-top: 90px;
   overflow: hidden;
+  animation: show-down 0.6s ease-in-out forwards;
+}
+.main-title {
+  margin: 0px 40px 30px;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--dark);
+  width: 100%;
+  opacity: 0;
+  display: block;
+  animation: show-down 0.6s ease-in-out 0.3s forwards;
 }

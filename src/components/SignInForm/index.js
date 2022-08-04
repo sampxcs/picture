@@ -22,27 +22,27 @@ export default function LoginForm() {
   }
 
   return (
-    <form className='login-form' onSubmit={handelSubmit}>
+    <form className="login-form" onSubmit={handelSubmit}>
       <h2>Welcome Back</h2>
       <h3>Log in to Nature to access your collections.</h3>
-      <input type='email' placeholder='Email' value={email} required onChange={(e) => setEmail(e.target.value)} />
-      <input type='password' placeholder='Password' value={password} required onChange={(e) => setPassword(e.target.value)} />
-      <Link to='/reset-password'>Forgot your password?</Link>
-      <ButtonPrimary type='submit' disabled={!email || !password}>
+      <input type="email" placeholder="Email" value={email} required onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+      <Link to="/reset-password">Forgot your password?</Link>
+      <ButtonPrimary type="submit" disabled={!email || !password}>
         Sing In
-        <FontAwesomeIcon className='faArrow' icon={solid('arrow-right-to-bracket')} />
+        <FontAwesomeIcon className="faArrow" icon={solid('arrow-right-to-bracket')} />
       </ButtonPrimary>
       <p>Or continue with</p>
-      <ButtonPrimary type='button' onClick={signInWithGoogle}>
-        <FontAwesomeIcon className='faUser' icon={regular('user')} />
+      <ButtonPrimary type="button" onClick={signInWithGoogle}>
+        <FontAwesomeIcon className="faUser" icon={regular('user')} />
         Google
       </ButtonPrimary>
-      <ButtonPrimary type='button' onClick={signInWithGitHub}>
-        <FontAwesomeIcon className='faUser' icon={regular('user')} />
+      <ButtonPrimary type="button" onClick={signInWithGitHub}>
+        <FontAwesomeIcon className="faUser" icon={regular('user')} />
         GitHub
       </ButtonPrimary>
       <p>
-        Don't have an account?, <Link to='/sign-up'>Sign up and get started!</Link>
+        Don't have an account?, <Link to="/sign-up">Sign up and get started!</Link>
       </p>
     </form>
   )

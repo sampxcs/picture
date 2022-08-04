@@ -7,7 +7,7 @@ export default function Home({ params }) {
   return (
     <>
       <Header />
-      <Main params={params} />
+      <Main params={params} title="Free Stock Photos of Nature" />
       <Footer />
     </>
   )

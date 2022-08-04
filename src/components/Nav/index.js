@@ -16,12 +16,14 @@ export default function Nav() {
 
   return (
     <nav>
-      <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
-      <Link to="/" className="nav-logo" title="Nature">
-        NATURE
-      </Link>
-      <NavList isActive={isActive} />
-      <SearchForm className={'nav-form'} />
+      <div className="nav-container">
+        <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
+        <Link to="/" className="nav-logo" title="Nature">
+          NATURE
+        </Link>
+        <NavList isActive={isActive} />
+        <SearchForm className={'nav-form'} />
+      </div>
     </nav>
   )
 }
