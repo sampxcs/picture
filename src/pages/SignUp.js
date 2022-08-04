@@ -8,9 +8,9 @@ export default function SignUp() {
       <Helmet>
         <title>Nature | Join</title>
       </Helmet>
-      <header>
+      <div className='main'>
         <SignUpForm />
-      </header>
+      </div>
     </>
   )
 }

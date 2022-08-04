@@ -20,12 +20,12 @@
 }
 .modal-content .btn-close-modal {
   position: absolute;
-  top: 20px;
+  top: 30px;
+  z-index: 100;
   right: 25px;
   background: none;
   border: none;
   font-size: 1em;
-  color: var(--black);
   cursor: pointer;
 }
 @media (min-width: 660px) {

@@ -90,8 +90,8 @@
   padding: 0 60px 0 20px;
   width: 100%;
 }
-.profile a,
-.profile .btn-nav {
+.nav-ul-profile a,
+.nav-ul-profile .btn-nav {
   padding: 0 20px;
 }
 .nav-ul-list a:hover,

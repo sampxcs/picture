@@ -18,3 +18,7 @@
   background-color: var(--focus-letter);
   color: var(--light-letter);
 }
+.btn-primary[disabled] {
+  pointer-events: none;
+  opacity: 0.3;
+}

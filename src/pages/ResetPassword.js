@@ -8,9 +8,9 @@ export default function ResetPassword() {
       <Helmet>
         <title>Nature | Reset Password</title>
       </Helmet>
-      <header>
+      <div className='main'>
         <ResetPasswordForm />
-      </header>
+      </div>
     </>
   )
 }

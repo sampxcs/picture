@@ -1,0 +1,63 @@
+.card-profile-container {
+  display: flex;
+  padding: 30px;
+  border: 1px solid var(--light-shadow);
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+  max-width: 300px;
+}
+.photo-profile {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 200px;
+  height: 200px;
+}
+.photo-profile img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--light-shadow);
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+.photo-profile button {
+  position: absolute;
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  background-color: var(--light-letter);
+  border: 1px solid var(--light-shadow);
+  bottom: 25px;
+  height: 35px;
+  width: 35px;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.card-profile h1 {
+  font-size: 2.5em;
+}
+.card-profile h2 {
+  font-size: 1.5em;
+  color: var(--letter);
+  font-weight: 400;
+}
+.card-profile > button {
+  margin: 15px auto;
+  width: 100%;
+}
+.card-profile p span {
+  font-weight: 600;
+}
+.card-profile h3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  gap: 8px;
+  margin: 8px 0;
+}

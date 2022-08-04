@@ -66,7 +66,7 @@ export default function NavList({ isActive }) {
       </li>
       <li>
         <Link to='#'>PROFILE</Link>
-        <div className='nav-ul-list profile'>
+        <div className='nav-ul-list nav-ul-profile'>
           <ul>
             {user ? (
               <>

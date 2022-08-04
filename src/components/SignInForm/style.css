@@ -1,12 +1,13 @@
 .login-form {
+  margin: 0 auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  margin-top: 180px;
   padding: 40px;
+  animation: show-down 0.6s ease-in-out forwards;
 }
 .login-form h2 {
   color: var(--focus-letter);
@@ -40,14 +41,8 @@
 @media (min-width: 660px) {
   .login-form {
     width: max-content;
-    margin-top: 0;
+    margin-top: 15px;
     background-color: var(--light-letter);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 40px;
     border-radius: 30px;
     box-shadow: 5px 15px 30px var(--light-shadow);
   }

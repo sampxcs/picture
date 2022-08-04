@@ -1,6 +1,8 @@
 import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
 import { initializeApp } from 'firebase/app'
+import { getFirestore, doc, addDoc, deleteDoc, collection } from 'firebase/firestore'
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -15,7 +17,9 @@ import {
 } from 'firebase/auth'
 import { firebaseConfig } from '../firebase/client'
 
-initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
@@ -143,12 +147,39 @@ export default function useUser() {
       })
   }, [])
 
-  const updateProfileInfo = useCallback(({ displayName, photoURL }) => {
-    updateProfile(auth, {
-      displayName: displayName,
-      photoURL: photoURL,
+  const savePexel = useCallback(async ({ userId, pexelId }) => {
+    try {
+      const docRef = await addDoc(collection(db, 'saved'), {
+        userId: userId,
+        pexelId: pexelId,
+      })
+      console.log('Document written with ID: ', docRef.id)
+    } catch (e) {
+      console.log('Error adding document: ', e)
+    }
+  }, [])
+
+  const deleteSavedPexel = useCallback(async () => {
+    await deleteDoc(doc(db, 'saved', 'DC'))
+  }, [])
+
+  const uploadImage = useCallback(({ img }) => {
+    const storageRef = ref(storage, img.name)
+    return uploadBytes(storageRef, img).then((snapshot) => {
+      return getDownloadURL(snapshot.ref).then((downloadURL) => downloadURL)
     })
   }, [])
 
-  return { user, createUserWithEmail, signInWithEmail, updateProfileInfo, signInWithGitHub, signInWithGoogle, logout, resetPassword }
+  return {
+    user,
+    createUserWithEmail,
+    signInWithEmail,
+    updateProfile,
+    signInWithGitHub,
+    signInWithGoogle,
+    logout,
+    resetPassword,
+    savePexel,
+    uploadImage,
+  }
 }
