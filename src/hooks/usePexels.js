@@ -23,7 +23,7 @@ export default function usePexels({ keyword }) {
     })
   }, [keyword])
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (isNextPage) {
       setLoading(true)
       if (page === 1) return
@@ -34,7 +34,7 @@ export default function usePexels({ keyword }) {
         setLoading(false)
       })
     }
-  }, [page])
+  }, [page]) */
 
   return { loading, error, globalPexels, page, setPage }
 }

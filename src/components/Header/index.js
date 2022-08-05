@@ -22,7 +22,7 @@ export default function Header() {
       </header>
       <div className="header-nav">
         <Link to="/">
-          <ButtonPrimary active={true}>Home</ButtonPrimary>
+          <ButtonPrimary name="active">Home</ButtonPrimary>
         </Link>
         <Link to="/explore">
           <ButtonPrimary>Explore</ButtonPrimary>

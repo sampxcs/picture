@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
 import { useLocation } from 'wouter'
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, addDoc, deleteDoc, collection } from 'firebase/firestore'
+import { getFirestore, doc, addDoc, getDocs, deleteDoc, collection } from 'firebase/firestore'
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import {
   getAuth,
@@ -24,7 +24,7 @@ const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
-  const [location, pushLocation] = useLocation()
+  const [, pushLocation] = useLocation()
   const auth = getAuth()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function useUser() {
         })
       })
       .catch((error) => {
-        const errorCode = error.code
+        // const errorCode = error.code
         const errorMessage = error.message
         console.log(errorMessage)
         // ..
@@ -69,7 +69,7 @@ export default function useUser() {
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code
+        // const errorCode = error.code
         const errorMessage = error.message
         console.log(errorMessage)
       })
@@ -80,8 +80,8 @@ export default function useUser() {
     signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result)
-        const token = credential.accessToken
+        // const credential = GoogleAuthProvider.credentialFromResult(result)
+        // const token = credential.accessToken
         // The signed-in user info.
         const user = result.user
         console.log(user)
@@ -89,12 +89,12 @@ export default function useUser() {
       })
       .catch((error) => {
         // Handle Errors here.
-        const errorCode = error.code
-        const errorMessage = error.message
+        // const errorCode = error.code
+        // const errorMessage = error.message
         // The email of the user's account used.
-        const email = error.customData.email
+        // const email = error.customData.email
         // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error)
+        // const credential = GoogleAuthProvider.credentialFromError(error)
         // ...
       })
   }, [])
@@ -103,8 +103,8 @@ export default function useUser() {
     signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GithubAuthProvider.credentialFromResult(result)
-        const token = credential.accessToken
+        // const credential = GithubAuthProvider.credentialFromResult(result)
+        // const token = credential.accessToken
         // The signed-in user info.
         const user = result.user
         console.log(user)
@@ -112,13 +112,13 @@ export default function useUser() {
       })
       .catch((error) => {
         // Handle Errors here.
-        const errorCode = error.code
+        // const errorCode = error.code
         const errorMessage = error.message
         // The email of the user's account used.
         console.log(errorMessage)
-        const email = error.customData.email
+        /// const email = error.customData.email
         // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error)
+        /// const credential = GoogleAuthProvider.credentialFromError(error)
         // ...
       })
   }, [])
@@ -130,7 +130,7 @@ export default function useUser() {
         // ..
       })
       .catch((error) => {
-        const errorCode = error.code
+        // const errorCode = error.code
         const errorMessage = error.message
         console.log(errorMessage)
         // ..
@@ -156,13 +156,23 @@ export default function useUser() {
         pexelId: pexelId,
       })
       console.log('Document written with ID: ', docRef.id)
+      return docRef
     } catch (e) {
       console.log('Error adding document: ', e)
     }
   }, [])
 
-  const deleteSavedPexel = useCallback(async () => {
-    await deleteDoc(doc(db, 'saved', 'DC'))
+  const getSavedPexels = useCallback(async () => {
+    const savedPelexs = []
+    const querySnapshot = await getDocs(collection(db, 'saved'))
+    querySnapshot.forEach((doc) => {
+      savedPelexs.push({ id: doc.id, data: doc.data() })
+    })
+    return savedPelexs
+  })
+
+  const deleteSavedPexel = useCallback(async (id) => {
+    await deleteDoc(doc(db, 'saved', id))
   }, [])
 
   const uploadImage = useCallback(({ img }) => {
@@ -182,6 +192,8 @@ export default function useUser() {
     logout,
     resetPassword,
     savePexel,
+    getSavedPexels,
+    deleteSavedPexel,
     uploadImage,
   }
 }

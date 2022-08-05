@@ -22,7 +22,7 @@
   pointer-events: none;
   opacity: 0.3;
 }
-.btn-primary[aria-selected] {
+.btn-primary[name='active'] {
   background-color: var(--focus-letter) !important;
   color: var(--light-letter);
 }

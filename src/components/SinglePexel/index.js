@@ -7,7 +7,7 @@ import './style.css'
 import { Redirect } from 'wouter'
 import { Helmet } from 'react-helmet'
 
-export default function PexelDetail({ params }) {
+export default function SinglePexel({ params }) {
   const { id } = params
   const globalPexels = useGlobalPexels()
 
@@ -23,7 +23,7 @@ export default function PexelDetail({ params }) {
         <div className="detail-container">
           <div>
             <Card
-              className={'card-detail'}
+              className={'card-main'}
               key={id}
               id={id}
               src={src}

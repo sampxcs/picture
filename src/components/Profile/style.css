@@ -30,8 +30,9 @@
   justify-content: center;
   color: var(--letter);
   padding: 10px;
-  height: 200px;
+  min-height: 200px;
   border: 1px solid var(--light-shadow);
+  gap: 15px;
   margin: 10px 0 30px;
   border-radius: 10px;
 }

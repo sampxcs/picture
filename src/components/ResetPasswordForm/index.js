@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'wouter'
+import { Link } from 'wouter'
 import './style.css'
 import useUser from '../../hooks/useUser'
 import Modal from '../Modal'
@@ -18,12 +18,12 @@ export default function SignUpForm() {
   }
 
   return (
-    <form className='reset-pasword-form' onSubmit={handelSubmit}>
+    <form className="reset-pasword-form" onSubmit={handelSubmit}>
       <h2>Reset Password</h2>
-      <input type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <ButtonPrimary disabled={!email}>Send Reset Password Instructions</ButtonPrimary>
       <p>
-        Already using Nature?, <Link to='/log-in'>Sign in!</Link>
+        Already using Nature?, <Link to="/log-in">Sign in!</Link>
       </p>
       {showModal ? (
         <Modal close={() => setShowModal(false)}>

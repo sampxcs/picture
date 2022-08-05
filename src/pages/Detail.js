@@ -1,6 +1,6 @@
-import React from "react";
-import PexelDetail from "../components/PexelDetail";
+import React from 'react'
+import SinglePexel from '../components/SinglePexel'
 
 export default function Detail({ params }) {
-  return <PexelDetail params={params}/>
+  return <SinglePexel params={params} />
 }

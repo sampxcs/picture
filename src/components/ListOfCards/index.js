@@ -1,22 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useUser from '../../hooks/useUser'
 import Card from '../Card'
 import './style.css'
 
 export default function ListOfCards({ globalPexels }) {
+  const { getSavedPexels } = useUser()
+  const [savedPexels, setSavedPexels] = useState(null)
+
+  useEffect(() => {
+    getSavedPexels().then((savedPexels) => {
+      setSavedPexels(savedPexels)
+    })
+  }, [])
+
+  savedPexels &&
+    globalPexels.forEach((pexel) => {
+      savedPexels.forEach((doc) => {
+        if (doc.data.pexelId === pexel.id) pexel.isSaved = doc.id
+      })
+    })
+
   return (
-    <div className='list-of-cards'>
-      {globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color }) => (
-        <Card
-          className={'card-main'}
-          key={id}
-          id={id}
-          src={src}
-          photographer={photographer}
-          photographer_url={photographer_url}
-          alt={alt}
-          avg_color={avg_color}
-        />
-      ))}
+    <div className="list-of-cards">
+      {savedPexels &&
+        globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color, isSaved }) => (
+          <>
+            <Card
+              className={'card-main'}
+              key={id}
+              id={id}
+              src={src}
+              photographer={photographer}
+              photographer_url={photographer_url}
+              alt={alt}
+              avg_color={avg_color}
+              isSaved={isSaved}
+            />
+          </>
+        ))}
     </div>
   )
 }
