@@ -2,10 +2,9 @@ import React from 'react'
 import PexelsResults from '../PexelsResults'
 import './style.css'
 
-export default function Main({ params, title }) {
+export default function Main({ params, id }) {
   return (
-    <div className="main">
-      {title ? <h1 className="main-title">{title}</h1> : null}
+    <div className='main' id={id}>
       <PexelsResults params={params} />
     </div>
   )

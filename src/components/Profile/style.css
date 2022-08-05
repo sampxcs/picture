@@ -1,5 +1,5 @@
 .profile {
-  padding: 30px;
+  padding: 0 30px;
   display: flex;
   gap: 20px;
 }
@@ -8,21 +8,48 @@
   border: 1px solid var(--light-shadow);
   border-radius: 10px;
   width: 100%;
-  height: 100vh;
   background-color: var(--light-letter);
 }
-.main-profile h1 {
-  display: flex;
+.main-profile h2 {
   font-weight: 500;
+}
+.profile-description-container {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
 }
-.main-profile div {
+.profile-description,
+.profile-statistics {
+  width: 50%;
+}
+.profile-collections-content,
+.profile-description-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--letter);
   padding: 10px;
   height: 200px;
-  width: 100%;
-  background-color: var(--light-shadow);
-  margin: 15px 0;
+  border: 1px solid var(--light-shadow);
+  margin: 10px 0 30px;
   border-radius: 10px;
+}
+.profile-collections-content {
+  width: 100%;
+}
+.profile-description-content {
+  width: 100%;
+}
+.add-btn {
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  background-color: var(--light-letter);
+  border: none;
+  color: var(--letter);
+  height: 35px;
+  width: 35px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50%;
 }

@@ -1,50 +1,52 @@
 import React from 'react'
 import './style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 export default function AboutDeveloper() {
   return (
-    <div className="main">
-      <div className="about-header">
-        <div className="header-card">
+    <div className='main'>
+      <div className='about-header'>
+        <div className='header-card'>
           <h2>Hi there!</h2>
           <h1>I'm Ian Rosales</h1>
           <h2>Front End Developer</h2>
           <ul>
             <li>
-              <a href="https://twitter.com/Sampxcs" target="_blank" rel="noopener noreferrer">
-                <i title="Twitter">Twitter</i>
+              <a href='https://twitter.com/Sampxcs' target='_blank' rel='noopener noreferrer'>
+                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/iansrlx" target="_blank" rel="noopener noreferrer">
-                <i title="Instagram">Instagram</i>
+              <a href='https://www.instagram.com/iansrlx' target='_blank' rel='noopener noreferrer'>
+                <FontAwesomeIcon icon={faInstagram} />
               </a>
             </li>
             <li>
-              <a href="linkedin.com/in/ian-samuel-rosales-leon-38a5b3230" target="_blank" rel="noopener noreferrer">
-                <i title="Linkedin">Linkedin</i>
+              <a href='linkedin.com/in/ian-samuel-rosales-leon-38a5b3230' target='_blank' rel='noopener noreferrer'>
+                <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </li>
             <li>
-              <a href="https://github.com/Sampxcs" target="_blank" rel="noopener noreferrer">
-                <i title="GitHub">GitHub</i>
+              <a href='https://github.com/Sampxcs' target='_blank' rel='noopener noreferrer'>
+                <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
           </ul>
         </div>
-        <div className="header-img">
-          <img src="/IMG_20200905_211704_821.jpg" alt="Sampxcs" title="Sampxcs" />
+        <div className='header-img'>
+          <img src='/IMG_20200905_211704_821.jpg' alt='Sampxcs' title='Sampxcs' />
         </div>
       </div>
-      <div className="about-section">
-        <p className="about-nature">
+      <div className='about-section'>
+        <p className='about-nature'>
           Nature is an application created with React and based on the pexels api, in order to offer an almost infinite number of photos and
           videos, this web page is not developed for commercial purposes, it is simply a demonstration of ui design and rest api
           implementation using react, in a nice web page to see and interact
         </p>
-        <img src="/Green-Leafs01.png" className="green-leafts-up" alt="green leafts" />
+        <img src='/Green-Leafs01.png' className='green-leafts-up' alt='green leafts' />
       </div>
-      <div className="about-section">
+      <div className='about-section'>
         <h2>About me.</h2> <br />
         <p>
           A UI designer and <span>Front-End</span> developer working remotely to create beautiful user interfaces that bring your product to
@@ -59,9 +61,9 @@ export default function AboutDeveloper() {
         <p>
           Outside the office you will find me dreaming about music, playing the guitar and petting my <span>cats.</span>
         </p>
-        <img src="/Green-Leafs01.png" className="green-leafts-down" alt="green leafts" />
+        <img src='/Green-Leafs01.png' className='green-leafts-down' alt='green leafts' />
       </div>
-      <div className="about-section">
+      <div className='about-section'>
         <h2>Last Projects.</h2> <br />
         <p>
           I've spent the past 5+ years working across different areas of digital design and <span>audiovisual production</span>; Front-End
@@ -73,7 +75,7 @@ export default function AboutDeveloper() {
         <br />
         <p>
           You can see more in my{' '}
-          <a href="https://sampxcs-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
+          <a href='https://sampxcs-portfolio.vercel.app' target='_blank' rel='noopener noreferrer'>
             Web Portfolio
           </a>
         </p>

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import './style.css'
 
 function Modal({ close, children }) {
@@ -9,7 +9,7 @@ function Modal({ close, children }) {
     <div className='modal'>
       <div className='modal-content'>
         <button onClick={close} className={'btn-close-modal'}>
-          <FontAwesomeIcon className='faXmark' icon={solid('xMark')} />
+          <FontAwesomeIcon className='faXmark' icon={faXmark} />
         </button>
         {children}
       </div>

@@ -3,7 +3,6 @@
   color: var(--dark);
   display: flex;
   flex-direction: column;
-  height: 50vh;
   justify-content: space-evenly;
   padding: 30px;
   max-width: 1200px;
@@ -23,11 +22,15 @@
 }
 .header-card ul {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 10px;
+  margin: 5px 0 20px;
   list-style: none;
 }
 .header-card ul a {
   color: var(--dark);
+  font-size: 1.2em;
 }
 .header-card ul a:hover {
   color: var(--focus-letter);
@@ -87,9 +90,13 @@
   .about-header {
     flex-direction: row;
     justify-content: space-between;
+    height: 50vh;
   }
   .header-card {
     text-align: left;
+  }
+  .header-card ul a {
+    font-size: 2em;
   }
   .header-card h1 {
     font-size: 3em;

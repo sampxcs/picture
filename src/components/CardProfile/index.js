@@ -4,7 +4,9 @@ import ButtonPrimary from '../ButtonPrimary'
 import Modal from '../Modal'
 import AddPhotoProfileForm from '../AddPhotoProfileForm/intex'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { faUsers, faLocationDot, faPaperclip } from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './style.css'
 import { Link } from 'wouter'
 
@@ -13,37 +15,37 @@ export default function CardProfile() {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className="card-profile-container">
-      <div className="card-profile">
-        <div className="photo-profile">
-          {user.photoURL ? <img src={user.photoURL} /> : <img src="/placeholder-profile.jpg" />}
+    <div className='card-profile-container'>
+      <div className='card-profile'>
+        <div className='photo-profile'>
+          {user.photoURL ? <img src={user.photoURL} /> : <img src='/placeholder-profile.jpg' />}
           <button onClick={() => setShowModal(true)}>
-            <FontAwesomeIcon icon={regular('pen-to-square')} />
+            <FontAwesomeIcon icon={faPenToSquare} />
           </button>
         </div>
         <h1>{user.displayName}</h1>
         <h2>{user.email}</h2>
-        <Link to="/edit-profile">
+        <Link to='/edit-profile'>
           <ButtonPrimary>Edit Profile</ButtonPrimary>
         </Link>
         <p>
-          <FontAwesomeIcon icon={solid('users')} /> <span>5</span> Followers | <span>152</span> Following
+          <FontAwesomeIcon icon={faUsers} /> <span>5</span> Followers | <span>152</span> Following
         </p>
         <h3>
-          <FontAwesomeIcon icon={solid('location-dot')} />
+          <FontAwesomeIcon icon={faLocationDot} />
           Argentina
         </h3>
         <h3>
-          <FontAwesomeIcon icon={solid('paperclip')} />
-          Web
+          <FontAwesomeIcon icon={faPaperclip} />
+          https://sampxcs-portfolio.vercel.app/
         </h3>
         <h3>
-          <FontAwesomeIcon icon={solid('i')} />
-          Instagram
+          <FontAwesomeIcon icon={faInstagram} />
+          Iansrlx
         </h3>
         <h3>
-          <FontAwesomeIcon icon={solid('t')} />
-          Twitter
+          <FontAwesomeIcon icon={faTwitter} />
+          @Sampxcs
         </h3>
       </div>
       {showModal ? (

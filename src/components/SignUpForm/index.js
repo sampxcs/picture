@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
 import './style.css'
 import useUser from '../../hooks/useUser'
 import Modal from '../Modal'
@@ -32,16 +33,16 @@ export default function SignUpForm() {
       <input type='password' placeholder='Password' value={password} required onChange={(e) => setPassword(e.target.value)} />
       <ButtonPrimary type='submit' disabled={!firstname || !email || !password}>
         Create New Account
-        <FontAwesomeIcon className='faArrow' icon={solid('arrow-right-to-bracket')} />
+        <FontAwesomeIcon className='faArrow' icon={faArrowRightToBracket} />
       </ButtonPrimary>
-      <p>or</p>
+      <p>Or continue with</p>
       <ButtonPrimary type='button' onClick={signInWithGoogle}>
-        <FontAwesomeIcon className='faUser' icon={regular('user')} />
-        Continue with Google
+        <FontAwesomeIcon className='faUser' icon={faGoogle} />
+        Google
       </ButtonPrimary>
       <ButtonPrimary type='button' onClick={signInWithGitHub}>
-        <FontAwesomeIcon className='faUser' icon={regular('user')} />
-        Continue with GitHub
+        <FontAwesomeIcon className='faUser' icon={faGithub} />
+        GitHub
       </ButtonPrimary>
       <p>
         Have an account?, <Link to='/log-in'>Sign in!</Link>

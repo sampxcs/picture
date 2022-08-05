@@ -1,35 +1,40 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useUser from '../../hooks/useUser'
 import CardProfile from '../CardProfile'
 import './style.css'
 
 export default function Settings() {
-  const { user } = useUser()
-
   return (
-    <>
-      {user ? (
-        <div className="main">
-          <div className="profile">
-            <CardProfile />
-            <div className="main-profile">
-              <h1>
-                <span>Your Collections</span>
-                <span>filters</span>
-              </h1>
-              <div>
-                <h2>Collection 01</h2>
+    <div className='main'>
+      <div className='profile'>
+        <CardProfile />
+        <div className='main-profile'>
+          <div className='profile-description-container'>
+            <div className='profile-description'>
+              <h2>About me</h2>
+              <div className='profile-description-content'>
+                <button title='Add Description' className='add-btn'>
+                  +
+                </button>
               </div>
-              <div>
-                <h2>Collection 02</h2>
-              </div>
-              <div>
-                <h2>Collection 03</h2>
-              </div>
+            </div>
+            <div className='profile-statistics'>
+              <h2>Statistics</h2>
+              <div className='profile-description-content'></div>
+            </div>
+          </div>
+          <div className='profile-collections'>
+            <h2>
+              <span>Your Collections</span>
+            </h2>
+            <div className='profile-collections-content'>
+              <button title='Add Collection' className='add-btn'>
+                +
+              </button>
             </div>
           </div>
         </div>
-      ) : null}
-    </>
+      </div>
+    </div>
   )
 }
