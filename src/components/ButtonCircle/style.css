@@ -1,0 +1,36 @@
+.btn-circle {
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  background-color: var(--light-letter);
+  color: var(--letter);
+  height: 35px;
+  width: 35px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  border-radius: 50%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+.btn-circle:hover {
+  box-shadow: 3px 3px 30px var(--light-shadow);
+}
+.btn-circle .blur {
+  box-shadow: 3px 3px 15px var(--light-shadow);
+  background-color: none;
+  color: var(--light-letter);
+  backdrop-filter: blur(6px);
+  height: 35px;
+  width: 35px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  border-radius: 50%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}

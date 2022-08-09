@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './style.css'
 import { useLocation } from 'wouter'
+import ButtonCircle from '../ButtonCircle'
 
 export default function SearchForm({ className }) {
   const [keyword, setKeyword] = useState('')
@@ -18,13 +19,13 @@ export default function SearchForm({ className }) {
 
   return (
     <form className={className} onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={keyword} name="search" type="text" placeholder="Search" />
-      <button htmlFor="search">
-        <div className="search-icon">
-          <span className="search-icon-circle"></span>
-          <span className="search-icon-line"></span>
+      <input onChange={handleChange} value={keyword} name='search' type='search' placeholder='Search' />
+      <ButtonCircle>
+        <div className='search-icon'>
+          <span className='search-icon-circle'></span>
+          <span className='search-icon-line'></span>
         </div>
-      </button>
+      </ButtonCircle>
     </form>
   )
 }

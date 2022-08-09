@@ -7,7 +7,12 @@ import HamburgerMenu from '../HamburguerMenu'
 
 export default function Nav() {
   const [isActive, setIsActive] = useState(false)
+  const [backgroundNav, setBackgroundNav] = useState('transparent')
   const [location] = useLocation()
+
+  window.addEventListener('scroll', () => {
+    window.scrollY > 0 ? setBackgroundNav('var(--light-letter)') : setBackgroundNav('transparent')
+  })
 
   useEffect(() => {
     window.scroll({ top: 0 })
@@ -15,10 +20,10 @@ export default function Nav() {
   }, [location])
 
   return (
-    <nav>
-      <div className="nav-container">
+    <nav style={{ backgroundColor: backgroundNav }}>
+      <div className='nav-container'>
         <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
-        <Link to="/" className="nav-logo" title="Nature">
+        <Link to='/' className='nav-logo' title='Nature'>
           NATURE
         </Link>
         <NavList isActive={isActive} />

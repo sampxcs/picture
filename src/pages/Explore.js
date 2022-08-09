@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Collections from '../components/Collections'
+import MainExplore from '../components/MainExplore'
 import Footer from '../components/Footer'
 
 export default function Explore() {
@@ -9,7 +9,7 @@ export default function Explore() {
       <Helmet>
         <title>Nature | Explore</title>
       </Helmet>
-      <Collections />
+      <MainExplore />
       <Footer />
     </>
   )

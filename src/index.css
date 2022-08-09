@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 :root {
-  --background: #f3f3f5;
+  --background: #fafafa;
   --light-letter: #fff;
   --letter: #6b6b6b;
   --dark-letter: #232323;
@@ -11,14 +11,11 @@
   --light-shadow: #00000019;
   --shadow: #00000039;
 }
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 10px;
 }
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-color: var(--dark);
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--letter);
 }
 * {
   -moz-osx-font-smoothing: grayscale;

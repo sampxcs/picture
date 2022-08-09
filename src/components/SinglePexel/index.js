@@ -20,7 +20,7 @@ export default function SinglePexel({ params }) {
         <Helmet>
           <title>{`Nature | ${alt}`}</title>
         </Helmet>
-        <div className="detail-container">
+        <div className='single-pexel-container'>
           <div>
             <Card
               className={'card-main'}
@@ -39,7 +39,7 @@ export default function SinglePexel({ params }) {
   } else {
     const { loading, error, globalPexels } = useSinglePexel({ id })
 
-    if (error) return <Redirect to="/404" />
+    if (error) return <Redirect to='/404' />
 
     if (loading) {
       return (
@@ -59,7 +59,7 @@ export default function SinglePexel({ params }) {
           <Helmet>
             <title>{`Nature | ${id}`}</title>
           </Helmet>
-          <div className="detail-container">
+          <div className='single-pexel-container'>
             <div>
               <Card
                 className={'card-detail'}

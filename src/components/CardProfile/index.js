@@ -9,27 +9,28 @@ import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import './style.css'
 import { Link } from 'wouter'
+import ButtonCircle from '../ButtonCircle'
 
 export default function CardProfile() {
   const { user } = useUser()
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className="card-profile-container">
-      <div className="card-profile">
-        <div className="photo-profile">
+    <div className='card-profile-container'>
+      <div className='card-profile'>
+        <div className='photo-profile'>
           {user.photoURL ? (
             <img src={user.photoURL} alt={user.name} title={user.name} />
           ) : (
-            <img src="/placeholder-profile.jpg" alt="placeholder-profile" />
+            <img src='/placeholder-profile.jpg' alt='placeholder-profile' />
           )}
-          <button onClick={() => setShowModal(true)}>
+          <ButtonCircle onClick={() => setShowModal(true)}>
             <FontAwesomeIcon icon={faPenToSquare} />
-          </button>
+          </ButtonCircle>
         </div>
         <h1>{user.displayName}</h1>
         <h2>{user.email}</h2>
-        <Link to="/edit-profile">
+        <Link to='/edit-profile'>
           <ButtonPrimary>Edit Profile</ButtonPrimary>
         </Link>
         <p>

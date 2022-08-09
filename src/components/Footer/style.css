@@ -15,11 +15,23 @@ footer .footer-container {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.footer-container div {
-  width: 200px;
-  margin: 30px 5px;
+.footer-container .footer-item {
+  width: 100%;
+  text-align: center;
+  margin: 10px 5px;
+  border: 1px solid var(--letter);
+  border-radius: 3px;
+  padding: 15px;
+  height: 50px;
+  overflow: hidden;
 }
-.footer-container div ul {
+.footer-item:nth-of-type(1) {
+  height: 75px;
+}
+.footer-item:hover {
+  height: max-content;
+}
+.footer-container .footer-item ul {
   margin-top: 10px;
   line-height: 2;
   list-style: none;
@@ -34,4 +46,29 @@ footer p a {
 footer p {
   overflow-wrap: break-word;
   line-height: 2;
+}
+@media (min-width: 870px) {
+  .footer-container .footer-item {
+    width: 200px;
+    margin: 30px 5px;
+    text-align: start;
+    border: none;
+    height: max-content;
+  }
+  .footer-container .footer-item ul {
+    margin-top: 10px;
+    line-height: 2;
+    list-style: none;
+  }
+  footer a {
+    color: var(--light-letter);
+  }
+  footer p a {
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  footer p {
+    overflow-wrap: break-word;
+    line-height: 2;
+  }
 }

@@ -29,18 +29,12 @@
   width: 200px;
   height: 200px;
 }
-.photo-profile button {
+.photo-profile .btn-circle {
   position: absolute;
-  box-shadow: 3px 3px 15px var(--light-shadow);
-  background-color: var(--light-letter);
-  border: 1px solid var(--light-shadow);
   bottom: 25px;
-  height: 35px;
-  width: 35px;
-  font-size: 15px;
+  border: 1px solid var(--light-shadow);
   font-weight: 900;
-  cursor: pointer;
-  border-radius: 50%;
+  color: var(--dark);
 }
 .card-profile h1 {
   font-size: 2em;

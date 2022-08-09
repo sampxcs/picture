@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <div className='footer-container'>
-        <div>
+        <div className='footer-item'>
           <h2>NATURE</h2>
           <h3>The beauthy of everyting.</h3>
           <ul>
@@ -27,13 +27,15 @@ export default function Footer() {
             <li>&copy; NATURE 2022</li>
           </ul>
         </div>
-        <div>
+        <div className='footer-item'>
+          <h3>About</h3>
+          <br />
           <p>
             React Pexels App, is an application created only for study purposes and web development practices by Ian Rosales, to know more
             visit <Link to='/AboutDeveloper'>About Developer</Link>. Thank you very much for visiting and I hope you liked it.
           </p>
         </div>
-        <div>
+        <div className='footer-item'>
           <h3>POPULARS</h3>
           <ul>
             <li>
@@ -59,7 +61,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className='footer-item'>
           <h3>BY LOCATION</h3>
           <ul>
             <li>

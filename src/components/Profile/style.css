@@ -24,9 +24,10 @@
   width: 50%;
 }
 .profile-collections-content,
+.profile-add-content,
 .profile-description-content {
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-content: center;
   justify-content: center;
   color: var(--letter);
   padding: 10px;
@@ -38,19 +39,8 @@
 }
 .profile-collections-content {
   width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .profile-description-content {
   width: 100%;
-}
-.add-btn {
-  box-shadow: 3px 3px 15px var(--light-shadow);
-  background-color: var(--light-letter);
-  border: none;
-  color: var(--letter);
-  height: 35px;
-  width: 35px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 50%;
 }
