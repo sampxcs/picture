@@ -149,11 +149,16 @@ export default function useUser() {
       })
   }, [])
 
-  const savePexel = useCallback(async ({ userId, pexelId }) => {
+  const savePexel = useCallback(async ({ userId, pexelId, src, alt, photographer, photographer_url, avg_color }) => {
     try {
       const docRef = await addDoc(collection(db, 'saved'), {
         userId: userId,
         pexelId: pexelId,
+        src: src,
+        alt: alt,
+        photographer: photographer,
+        photographer_url: photographer_url,
+        avg_color: avg_color,
       })
       console.log('Document written with ID: ', docRef.id)
       return docRef

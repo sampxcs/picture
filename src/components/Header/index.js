@@ -18,7 +18,7 @@ export default function Header() {
           <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-03" />
           <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-04" />
         </div>
-        <SearchForm className={'header-form'} />
+        <SearchForm formHeader={true} />
       </header>
       <div className="header-nav">
         <Link to="/">

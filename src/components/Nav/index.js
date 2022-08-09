@@ -21,13 +21,13 @@ export default function Nav() {
 
   return (
     <nav style={{ backgroundColor: backgroundNav }}>
-      <div className='nav-container'>
+      <div className="nav-container">
         <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
-        <Link to='/' className='nav-logo' title='Nature'>
+        <Link to="/" className="nav-logo" title="Nature">
           NATURE
         </Link>
         <NavList isActive={isActive} />
-        <SearchForm className={'nav-form'} />
+        <SearchForm formNav={true} />
       </div>
     </nav>
   )

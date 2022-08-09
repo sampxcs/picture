@@ -11,16 +11,18 @@
   font-family: 'DM Serif Display', serif;
   margin-top: 0;
   font-weight: 200;
-  margin-left: 10px;
-  font-size: 3em;
+  margin-left: 15px;
+  font-size: 2em;
 }
 .collection-content {
   align-items: center;
   animation: show-down 0.6s ease-in-out forwards;
   display: flex;
   flex-wrap: nowrap;
-  gap: 30px;
+  gap: 15px;
+  scroll-padding: 30px;
   justify-content: flex-start;
+  padding: 0 15px;
   max-width: 1490px;
   opacity: 0;
   overflow-x: scroll;
@@ -32,18 +34,18 @@
   display: none;
 }
 .collection-card {
-  height: 300px;
+  height: 250px;
   border-radius: 30px;
-  box-shadow: 5px 15px 30px var(--light-shadow);
   cursor: pointer;
   overflow: hidden;
-  flex: 0 0 100%;
+  flex: 0 0 90%;
   scroll-snap-align: start;
 }
 .scroll-btns-container {
   position: absolute;
   width: 100%;
-  padding: 0 15px;
+  opacity: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;

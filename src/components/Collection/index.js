@@ -8,16 +8,16 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 export default function Collection({ title, data }) {
   return (
     <>
-      <h2 className='collection-title'>In Water.</h2>
-      <div className='collection-container'>
-        <div className='collection-content'>
+      <h2 className="collection-title">{title}</h2>
+      <div className="collection-container">
+        <div className="collection-content">
           {data.map(({ className, title, id, src, alt, avg_color }) => (
-            <div className='collection-card' key={id}>
+            <div className="collection-card" key={id}>
               <Card className={className} title={title} id={id} src={src} alt={alt} avg_color={avg_color} />
             </div>
           ))}
         </div>
-        <div className='scroll-btns-container'>
+        <div className="scroll-btns-container">
           <ButtonCircle>
             <FontAwesomeIcon icon={faAngleLeft} />
           </ButtonCircle>

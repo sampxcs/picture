@@ -67,9 +67,9 @@ header {
 }
 .header-nav {
   margin-top: 25px;
+  display: none;
   height: 60px;
   width: 100%;
-  display: flex;
   align-items: center;
   opacity: 0;
   justify-content: center;
@@ -87,6 +87,9 @@ header {
   header {
     height: 40vh;
     min-height: 430px;
+  }
+  .header-nav {
+    display: flex;
   }
   .header-title h1 {
     font-size: 110px;
