@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CardProfile from '../CardProfile'
 import CollectionProfile from '../CollectionProfile'
 import './style.css'
 import ButtonCircle from '../ButtonCircle'
 
 export default function Profile({ savedPexels }) {
-  const pexels = savedPexels.map((pexel) => pexel.data)
   return (
     <div className="main">
       <div className="profile">
@@ -23,7 +22,7 @@ export default function Profile({ savedPexels }) {
               <div className="profile-description-content"></div>
             </div>
           </div>
-          <CollectionProfile pexels={pexels} />
+          <CollectionProfile savedPexels={savedPexels} />
         </div>
       </div>
     </div>

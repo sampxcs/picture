@@ -9,14 +9,17 @@ export default function ProfilePage() {
   const [savedPexels, setSavedPexels] = useState(null)
 
   useEffect(() => {
-    getSavedPexels().then((savedPexels) => {
-      setSavedPexels(savedPexels)
-    })
-  }, [])
+    user &&
+      getSavedPexels(user.uid).then((savedPexelsData) => {
+        const savedPexels = savedPexelsData.map((pexel) => pexel.data)
+        console.log(savedPexels)
+        setSavedPexels(savedPexels)
+      })
+  }, [user])
 
   return (
     <>
-      {user && savedPexels ? (
+      {user ? (
         <>
           <Helmet>
             <title>Nature | Profile</title>

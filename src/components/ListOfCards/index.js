@@ -4,14 +4,15 @@ import Card from '../Card'
 import './style.css'
 
 export default function ListOfCards({ globalPexels }) {
-  const { getSavedPexels } = useUser()
+  const { user, getSavedPexels } = useUser()
   const [savedPexels, setSavedPexels] = useState(null)
 
   useEffect(() => {
-    getSavedPexels().then((savedPexels) => {
-      setSavedPexels(savedPexels)
-    })
-  }, [])
+    user &&
+      getSavedPexels(user.uid).then((savedPexels) => {
+        setSavedPexels(savedPexels)
+      })
+  }, [user])
 
   savedPexels &&
     globalPexels.forEach((pexel) => {

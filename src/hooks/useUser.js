@@ -160,21 +160,20 @@ export default function useUser() {
         photographer_url: photographer_url,
         avg_color: avg_color,
       })
-      console.log('Document written with ID: ', docRef.id)
       return docRef
     } catch (e) {
-      console.log('Error adding document: ', e)
+      console.error('Error adding document: ', e)
     }
   }, [])
 
-  const getSavedPexels = useCallback(async () => {
-    const savedPelexs = []
+  const getSavedPexels = useCallback(async (uid) => {
     const querySnapshot = await getDocs(collection(db, 'saved'))
+    const savedPelexs = []
     querySnapshot.forEach((doc) => {
-      savedPelexs.push({ id: doc.id, data: doc.data() })
+      if (doc.data().userId === uid) savedPelexs.push({ id: doc.id, data: doc.data(), key: doc.id })
     })
     return savedPelexs
-  })
+  }, [])
 
   const deleteSavedPexel = useCallback(async (id) => {
     await deleteDoc(doc(db, 'saved', id))
