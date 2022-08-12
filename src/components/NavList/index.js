@@ -4,6 +4,7 @@ import './style.css'
 import { Link } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import { faCompass } from '@fortawesome/free-regular-svg-icons'
 import { useLocation } from 'wouter'
 
 import Modal from '../Modal'
@@ -58,7 +59,9 @@ export default function NavList({ isActive }) {
         </div>
       </li>
       <li>
-        <Link to="#">ACTIVITY</Link>
+        <Link to="#">
+          <FontAwesomeIcon icon={faCompass} /> ACTIVITY
+        </Link>
       </li>
       <li>
         {user ? <Link to="/profile">PROFILE</Link> : <Link to="/log-in">PROFILE</Link>}

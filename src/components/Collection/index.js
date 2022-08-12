@@ -5,12 +5,12 @@ import Card from '../Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-export default function Collection({ title, data }) {
+export default function Collection({ title, data, className }) {
   return (
     <>
-      <div className='collection-title'>
+      <div className="collection-title">
         {title}
-        <div className='scroll-btns-container'>
+        <div className="scroll-btns-container">
           <ButtonCircle>
             <FontAwesomeIcon icon={faAngleLeft} />
           </ButtonCircle>
@@ -19,11 +19,20 @@ export default function Collection({ title, data }) {
           </ButtonCircle>
         </div>
       </div>
-      <div className='collection-container'>
-        <div className='collection-content'>
-          {data.map(({ className, title, id, src, alt, avg_color }) => (
-            <div className='collection-card' key={id}>
-              <Card className={className} title={title} id={id} src={src} alt={alt} avg_color={avg_color} />
+      <div className="collection-container">
+        <div className="collection-content">
+          {data.map(({ title, id, src, alt, avg_color, photographer, photographer_url }) => (
+            <div className="collection-card" key={id}>
+              <Card
+                className={className}
+                title={title}
+                id={id}
+                src={src}
+                alt={alt}
+                avg_color={avg_color}
+                photographer={photographer}
+                photographer_url={photographer_url}
+              />
             </div>
           ))}
         </div>

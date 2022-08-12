@@ -34,3 +34,8 @@
   display: inline-flex;
   justify-content: center;
 }
+@media (min-width: 660px) {
+  .btn-circle {
+    box-shadow: none;
+  }
+}

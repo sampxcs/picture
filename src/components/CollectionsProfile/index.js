@@ -10,12 +10,14 @@ import { faImages } from '@fortawesome/free-solid-svg-icons'
 import CollectionsPlaceholderMobile from '../Placeholders/CollectionsPlaceholderMobile'
 
 export default function CollectionsProfile({ savedPexels }) {
+  console.log(savedPexels, '<============')
   return (
-    <div className='profile-collections'>
+    <div className="profile-collections">
       <hr />
       <h2>Your Collections</h2>
-      <div className='profile-collections-content'>
-        {savedPexels ? (
+
+      {savedPexels && !savedPexels.length ? null : savedPexels ? (
+        <div className="profile-collections-content">
           <Collection
             title={
               <h3>
@@ -26,15 +28,21 @@ export default function CollectionsProfile({ savedPexels }) {
               </h3>
             }
             data={savedPexels}
+            className={'card-collection-profile'}
           />
-        ) : window.innerWidth > 660 ? (
+        </div>
+      ) : window.innerWidth > 660 ? (
+        <div className="profile-collections-content">
           <CollectionsPlaceholder />
-        ) : (
+        </div>
+      ) : (
+        <div className="profile-collections-content">
           <CollectionsPlaceholderMobile />
-        )}
-      </div>
-      <div className='profile-add-content'>
-        <ButtonCircle title='Add Description'>+</ButtonCircle>
+        </div>
+      )}
+
+      <div className="profile-add-content">
+        <ButtonCircle title="Add Collection">+</ButtonCircle>
       </div>
     </div>
   )

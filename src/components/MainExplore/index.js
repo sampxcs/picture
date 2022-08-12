@@ -25,11 +25,11 @@ export default function MainExplore() {
         </div>
         <SearchForm formHeader={true} />
       </div>
-      <Collection title={'Popular Collections.'} data={collectionsPhotosData} />
-      <Collection title={'In Water.'} data={collectionsWaterData} />
-      <Collection title={'The Best Of Earth.'} data={collectionsEarthData} />
-      <Collection title={'Air Life.'} data={collectionsAirData} />
-      <Collection title={'Intense Fire.'} data={collectionsFireData} />
+      <Collection title={'Popular Collections.'} className={'card-collection-explore'} data={collectionsPhotosData} />
+      <Collection title={'In Water.'} className={'card-collection-explore'} data={collectionsWaterData} />
+      <Collection title={'The Best Of Earth.'} className={'card-collection-explore'} data={collectionsEarthData} />
+      <Collection title={'Air Life.'} className={'card-collection-explore'} data={collectionsAirData} />
+      <Collection title={'Intense Fire.'} className={'card-collection-explore'} data={collectionsFireData} />
     </div>
   )
 }

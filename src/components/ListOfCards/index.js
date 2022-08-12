@@ -14,31 +14,32 @@ export default function ListOfCards({ globalPexels }) {
       })
   }, [user])
 
-  savedPexels &&
+  if (savedPexels && globalPexels.length)
     globalPexels.forEach((pexel) => {
       savedPexels.forEach((doc) => {
-        if (doc.data.pexelId === pexel.id) pexel.isSaved = doc.id
+        if (doc.data.id === pexel.id) pexel.isSaved = doc.id
       })
     })
 
   return (
     <div className="list-of-cards">
-      {savedPexels &&
-        globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color, isSaved }) => (
-          <>
-            <Card
-              className={'card-main'}
-              key={id}
-              id={id}
-              src={src}
-              photographer={photographer}
-              photographer_url={photographer_url}
-              alt={alt}
-              avg_color={avg_color}
-              isSaved={isSaved}
-            />
-          </>
-        ))}
+      {savedPexels && globalPexels.length
+        ? globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color, isSaved }) => (
+            <>
+              <Card
+                className={'card-main'}
+                key={id}
+                id={id}
+                src={src}
+                photographer={photographer}
+                photographer_url={photographer_url}
+                alt={alt}
+                avg_color={avg_color}
+                isSaved={isSaved}
+              />
+            </>
+          ))
+        : null}
     </div>
   )
 }

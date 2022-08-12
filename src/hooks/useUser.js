@@ -17,6 +17,7 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth'
 import { firebaseConfig } from '../firebase/client'
+import useStates from './useStates'
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
@@ -24,6 +25,7 @@ const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
+  const { loading, error, setLoading, setError } = useStates()
   const [, pushLocation] = useLocation()
   const auth = getAuth()
 
@@ -153,7 +155,7 @@ export default function useUser() {
     try {
       const docRef = await addDoc(collection(db, 'saved'), {
         userId: userId,
-        pexelId: pexelId,
+        id: pexelId,
         src: src,
         alt: alt,
         photographer: photographer,
@@ -167,12 +169,20 @@ export default function useUser() {
   }, [])
 
   const getSavedPexels = useCallback(async (uid) => {
-    const querySnapshot = await getDocs(collection(db, 'saved'))
-    const savedPelexs = []
-    querySnapshot.forEach((doc) => {
-      if (doc.data().userId === uid) savedPelexs.push({ id: doc.id, data: doc.data(), key: doc.id })
-    })
-    return savedPelexs
+    try {
+      setLoading(true)
+      console.log(loading)
+      const querySnapshot = await getDocs(collection(db, 'saved'))
+      const savedPelexs = []
+      querySnapshot.forEach((doc) => {
+        if (doc.data().userId === uid) savedPelexs.push({ id: doc.id, data: doc.data(), key: doc.id })
+      })
+      setLoading(true)
+      console.log(loading)
+      return savedPelexs
+    } catch (e) {
+      console.error(e)
+    }
   }, [])
 
   const deleteSavedPexel = useCallback(async (id) => {

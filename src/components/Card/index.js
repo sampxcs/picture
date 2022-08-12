@@ -28,7 +28,6 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
           photographer_url: photographer_url,
           avg_color: avg_color,
         }).then((docRef) => {
-          console.log('ahhhhhhhh', docRef.id)
           setSaved(docRef.id)
         })
       }
@@ -78,18 +77,44 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
         )}
         {className === 'card-detail' && (
           <div className="card-detail" title={alt}>
-            <h1>CARD DETAIL IN CONSTRUCTION!!!</h1>
+            <div className="card-info" title={alt}>
+              <div className="card-info-text">
+                <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
+                  {photographer}
+                </a>
+                <Link to={`/Detail/${id}`}>
+                  <p>
+                    {alt}
+                    <span></span>
+                  </p>
+                </Link>
+              </div>
+              <div className="options">
+                <Link to={`/Detail/${id}`}>
+                  <div className="icon" title="Maximize">
+                    <FontAwesomeIcon className="faMaximize" icon={faEye} />
+                  </div>
+                </Link>
+                <div className="icon" title="Save" onClick={handelSave}>
+                  {saved ? (
+                    <FontAwesomeIcon className="faBookmark" icon={fasBookmark} />
+                  ) : (
+                    <FontAwesomeIcon className="faBookmark" icon={faBookmark} />
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         )}
-        {className === 'card-explore' && (
-          <div className="card-explore" title={alt}>
-            <Link to={`/Explore/${title}`} className="card-info-explore">
+        {className === 'card-collection-explore' && (
+          <div className="card-collection-explore" title={alt}>
+            <Link to={`/Explore/${title.toLowerCase()}`} className="card-info-explore">
               {title}
             </Link>
           </div>
         )}
-        {className === 'card-saved' && (
-          <div className="card-saved" title={alt}>
+        {className === 'card-collection-profile' && (
+          <div className="card-collection-profile" title={alt}>
             <div className="card-info-text">
               <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
                 {photographer}
