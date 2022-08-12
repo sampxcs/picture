@@ -11,7 +11,10 @@
   font-family: 'DM Serif Display', serif;
   margin-top: 0;
   font-weight: 200;
-  margin-left: 15px;
+  padding: 0 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   font-size: 2em;
 }
 .collection-content {
@@ -34,21 +37,19 @@
   display: none;
 }
 .collection-card {
-  height: 250px;
-  border-radius: 30px;
+  height: 150px;
+  border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
-  flex: 0 0 90%;
+  flex: 0 0 60%;
   scroll-snap-align: start;
 }
 .scroll-btns-container {
-  position: absolute;
-  width: 100%;
-  opacity: 0;
-  z-index: 100;
-  display: flex;
+  width: max-content;
+  display: none;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+  justify-content: flex-end;
   transition: opacity 0.3s;
 }
 
@@ -56,20 +57,12 @@
   .collection-card {
     margin: 0;
     flex: 0 0 380px;
-  }
-  .collection-title {
-    margin-top: 30px;
-    text-align: center;
+    height: 250px;
   }
   .scroll-btns-container {
-    opacity: 0;
+    display: inline-flex;
   }
-  .collection-container:hover .scroll-btns-container {
-    opacity: 1;
-  }
-}
-@media (min-width: 1260px) {
   .collection-title {
-    text-align: left;
+    padding: 0 15px 0 30px;
   }
 }

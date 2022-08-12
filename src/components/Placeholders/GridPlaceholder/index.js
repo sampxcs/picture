@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-const GridLoader = (props) => {
+const GridPlaceholder = (props) => {
   return (
     <ContentLoader viewBox='0 0 820 450' width={'100%'} backgroundColor={'#dddddd'} {...props}>
       <rect x='10' y='10' rx='5' ry='5' width='260' height='140' />
@@ -14,11 +14,11 @@ const GridLoader = (props) => {
   )
 }
 
-GridLoader.metadata = {
+GridPlaceholder.metadata = {
   name: 'baptiste fkt',
   github: 'baptistefkt',
   description: 'Three column grid layout',
   filename: 'Grid',
 }
 
-export default GridLoader
+export default GridPlaceholder

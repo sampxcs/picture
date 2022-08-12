@@ -1,0 +1,70 @@
+.profile-collections-content {
+  width: 100%;
+  min-width: 300px;
+  max-height: 600px;
+  color: var(--letter);
+  padding: 0 0 15px;
+  min-height: 200px;
+  gap: 15px;
+  border-radius: 10px;
+}
+.profile-collections .collection-container {
+  margin: 0;
+  padding: 0;
+}
+.profile-collections hr {
+  width: 95%;
+  margin: 0 auto;
+  background-color: var(--light-shadow);
+  margin-bottom: 15px;
+  height: 1px;
+  border: none;
+}
+.profile-collections h2 {
+  margin-bottom: 15px;
+}
+.profile-collections-content .collection-title {
+  margin-bottom: 10px;
+}
+.profile-collections .collection-title h3 {
+  font-weight: 500;
+  color: var(--letter);
+  font-size: 0.8em;
+}
+.profile-collections .collection-title h3 span {
+  margin-left: 10px;
+  font-size: 0.6em;
+  color: var(--shadow);
+}
+@media (min-width: 660px) {
+  .profile-collections-content {
+    padding: 15px 0;
+    border: 1px solid var(--light-shadow);
+  }
+  .profile-collections-content .collection-title {
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+  .profile-collections-content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .profile-collections-content::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+  }
+  .profile-collections-content:hover::-webkit-scrollbar-thumb {
+    background-color: var(--dark);
+    border-radius: 10px;
+  }
+  .profile-collections-content:hover::-webkit-scrollbar {
+    opacity: 1;
+    width: 10px;
+    background-color: var(--background);
+  }
+  .profile-collections hr {
+    display: none;
+  }
+  .profile-collections .collection-title h3 {
+    font-size: 1em;
+  }
+}

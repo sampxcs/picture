@@ -40,18 +40,18 @@ export default function CardProfile() {
           <FontAwesomeIcon icon={faLocationDot} />
           Argentina
         </h3>
-        <h3>
+        <a href='https://sampxcs-portfolio.vercel.app/' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faPaperclip} />
           https://sampxcs-portfolio.vercel.app/
-        </h3>
-        <h3>
+        </a>
+        <a href='https://instagram/Iansrlx' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faInstagram} />
           Iansrlx
-        </h3>
-        <h3>
+        </a>
+        <a href='https://twitter/Sampxcs' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faTwitter} />
           @Sampxcs
-        </h3>
+        </a>
       </div>
       {showModal ? (
         <Modal close={() => setShowModal(false)}>

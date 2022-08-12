@@ -1,16 +1,14 @@
 .card-profile-container {
   display: flex;
   padding: 30px;
-  border: 1px solid var(--light-shadow);
+
   border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--dark);
   height: max-content;
-  width: max-content;
-  max-width: 390px;
-  background-color: var(--light-letter);
+  width: 100%;
 }
 .photo-profile {
   position: relative;
@@ -38,28 +36,56 @@
 }
 .card-profile h1 {
   font-size: 2em;
+  text-align: center;
 }
 .card-profile h2 {
   font-size: 1.5em;
   color: var(--letter);
   font-weight: 400;
+  text-align: center;
 }
 .card-profile > button {
   margin: 15px auto;
   width: 100%;
 }
+.card-profile p {
+  text-align: center;
+}
 .card-profile p span {
   font-weight: 600;
 }
-.card-profile h3 {
+.card-profile h3,
+.card-profile a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   white-space: nowrap;
   max-width: 250px;
   overflow: hidden;
   font-weight: 500;
   font-size: 1em;
+  color: var(--dark);
   gap: 8px;
   margin: 8px 0;
+}
+@media (min-width: 660px) {
+  .card-profile-container {
+    width: max-content;
+    max-width: 390px;
+    background-color: var(--light-letter);
+    border: 1px solid var(--light-shadow);
+  }
+  .card-profile h1 {
+    text-align: start;
+  }
+  .card-profile h2 {
+    text-align: start;
+  }
+  .card-profile p {
+    text-align: start;
+  }
+  .card-profile h3,
+  .card-profile a {
+    justify-content: flex-start;
+  }
 }

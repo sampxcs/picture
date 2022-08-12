@@ -1,7 +1,6 @@
 .card {
   height: 100%;
   position: relative;
-  min-height: 200px;
   animation: show-down 0.6s ease-in-out forwards;
 }
 .card img {
@@ -120,6 +119,7 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    min-height: 200px;
     animation: show-down 0.6s ease-in-out forwards;
   }
   .card-explore {
