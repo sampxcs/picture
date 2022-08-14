@@ -20,23 +20,24 @@ import Error from './pages/Error'
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <UserContextProvaider>
         <Nav />
         <PexelsContextProvaider>
           <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/log-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
-            <Route path="/reset-password" component={ResetPassword} />
-            <Route path="/profile" component={ProfilePage} />
-            <Route path="/settings" component={SettingsPage} />
-            <Route path="/Explore" component={Explore} />
-            <Route path="/Explore/:keyword" component={SearchExplore} />
-            <Route path="/Detail/:id" component={Detail} />
-            <Route path="/AboutDeveloper" component={AboutDeveloper} />
-            <Route path="/FAQ" component={FAQ} />
-            <Route path="/:rest*" component={Error} />
+            <Route path='/' component={Home} />
+            <Route path='/log-in' component={Login} />
+            <Route path='/sign-up' component={SignUp} />
+            <Route path='/reset-password' component={ResetPassword} />
+            <Route path='/profile' component={ProfilePage} />
+            <Route path='/settings/profile' component={SettingsPage} />
+            <Route path='/settings' component={SettingsPage} />
+            <Route path='/Explore' component={Explore} />
+            <Route path='/Explore/:keyword' component={SearchExplore} />
+            <Route path='/Detail/:id' component={Detail} />
+            <Route path='/AboutDeveloper' component={AboutDeveloper} />
+            <Route path='/FAQ' component={FAQ} />
+            <Route path='/:rest*' component={Error} />
           </Switch>
         </PexelsContextProvaider>
       </UserContextProvaider>

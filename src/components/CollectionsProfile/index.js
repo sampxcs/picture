@@ -1,23 +1,19 @@
 import React from 'react'
-import Card from '../Card'
 import ButtonCircle from '../ButtonCircle'
 import './style.css'
 import CollectionsPlaceholder from '../Placeholders/CollectionsPlaceholder'
 import Collection from '../Collection'
-import GridPlaceholderMobile from '../Placeholders/GridPlaceholderMobile'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages } from '@fortawesome/free-solid-svg-icons'
-import CollectionsPlaceholderMobile from '../Placeholders/CollectionsPlaceholderMobile'
 
 export default function CollectionsProfile({ savedPexels }) {
-  console.log(savedPexels, '<============')
   return (
-    <div className="profile-collections">
+    <div className='profile-collections'>
       <hr />
       <h2>Your Collections</h2>
 
       {savedPexels && !savedPexels.length ? null : savedPexels ? (
-        <div className="profile-collections-content">
+        <div className='profile-collections-content'>
           <Collection
             title={
               <h3>
@@ -31,18 +27,13 @@ export default function CollectionsProfile({ savedPexels }) {
             className={'card-collection-profile'}
           />
         </div>
-      ) : window.innerWidth > 660 ? (
-        <div className="profile-collections-content">
+      ) : (
+        <div className='profile-collections-content'>
           <CollectionsPlaceholder />
         </div>
-      ) : (
-        <div className="profile-collections-content">
-          <CollectionsPlaceholderMobile />
-        </div>
       )}
-
-      <div className="profile-add-content">
-        <ButtonCircle title="Add Collection">+</ButtonCircle>
+      <div className='profile-add-content'>
+        <ButtonCircle title='Add Collection'>+</ButtonCircle>
       </div>
     </div>
   )

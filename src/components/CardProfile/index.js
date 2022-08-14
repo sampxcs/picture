@@ -16,13 +16,13 @@ export default function CardProfile() {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className="card-profile-container">
-      <div className="card-profile">
-        <div className="photo-profile">
+    <div className='card-profile-container'>
+      <div className='card-profile'>
+        <div className='photo-profile'>
           {user.photoURL ? (
             <img src={user.photoURL} alt={user.name} title={user.name} />
           ) : (
-            <img src="/placeholder-profile.jpg" alt="placeholder-profile" />
+            <img src='/placeholder-profile.jpg' alt='placeholder-profile' />
           )}
           <ButtonCircle onClick={() => setShowModal(true)} title={'Edit Photo'}>
             <FontAwesomeIcon icon={faPenToSquare} />
@@ -30,7 +30,7 @@ export default function CardProfile() {
         </div>
         <h1>{user.displayName}</h1>
         <h2>{user.email}</h2>
-        <Link to="/edit-profile">
+        <Link to='/settings/profile'>
           <ButtonPrimary>Edit Profile</ButtonPrimary>
         </Link>
         <p>
@@ -40,15 +40,15 @@ export default function CardProfile() {
           <FontAwesomeIcon icon={faLocationDot} />
           Argentina
         </h3>
-        <a href="https://sampxcs-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <a href='https://sampxcs-portfolio.vercel.app/' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faPaperclip} />
           https://sampxcs-portfolio.vercel.app/
         </a>
-        <a href="https://instagram/Iansrlx" target="_blank" rel="noopener noreferrer">
+        <a href='https://instagram/Iansrlx' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faInstagram} />
-          Iansrlx
+          @Iansrlx
         </a>
-        <a href="https://twitter/Sampxcs" target="_blank" rel="noopener noreferrer">
+        <a href='https://twitter/Sampxcs' target='_blank' rel='noopener noreferrer'>
           <FontAwesomeIcon icon={faTwitter} />
           @Sampxcs
         </a>

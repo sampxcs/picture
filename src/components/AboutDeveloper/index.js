@@ -80,6 +80,7 @@ export default function AboutDeveloper() {
           </a>
         </p>
       </div>
+      <img src='/mountain-watercolor.jpg' className='mountain-watercolor' alt='mountains' />
     </div>
   )
 }
