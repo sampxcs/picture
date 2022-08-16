@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages } from '@fortawesome/free-solid-svg-icons'
 
 export default function CollectionsProfile({ savedPexels }) {
+  console.log(savedPexels)
   return (
     <div className='profile-collections'>
       <hr />

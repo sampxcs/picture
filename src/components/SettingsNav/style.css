@@ -1,0 +1,76 @@
+.settings-nav {
+  width: 290px;
+  padding: 15px 30px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-letter);
+  border-radius: 10px;
+}
+.settings-nav-header {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.settings-nav-photo-profile {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 65px;
+  height: 65px;
+}
+.settings-nav-photo-profile img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--light-shadow);
+  overflow: hidden;
+  width: 65px;
+  height: 65px;
+}
+.settings-nav-title h2 {
+  line-height: 1;
+}
+.settings-nav-title p {
+  font-size: 1.1em;
+}
+
+.settings-nav ul li .active {
+  position: relative;
+}
+.settings-nav ul li .active::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 4px;
+  border-radius: 10px;
+  background-color: var(--letter);
+  left: -7px;
+  top: calc(50% - 10px);
+}
+.settings-nav ul {
+  list-style: none;
+  line-height: 1.5;
+}
+.settings-nav ul li a {
+  color: var(--dark);
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+.settings-nav ul li a:hover {
+  background-color: var(--light-background);
+}
+.settings-nav ul hr {
+  margin-top: 15px;
+}
+.settings-nav ul small {
+  padding: 0 10px;
+}

@@ -11,26 +11,19 @@ import { Helmet } from 'react-helmet'
 export default function SinglePexel({ params }) {
   const { id } = params
   const globalPexels = useGlobalPexels()
-  const { user, getSavedPexels } = useUser()
-  const [savedPexels, setSavedPexels] = useState(null)
+  const { user } = useUser()
+  const [savedPexels] = useState(null)
 
-  useEffect(() => {
-    user &&
-      getSavedPexels(user.uid).then((savedPexels) => {
-        setSavedPexels(savedPexels)
-      })
-  }, [user])
-
-  if (savedPexels && globalPexels.length) {
+  if (user && user.savedPexels && globalPexels.length) {
     globalPexels.forEach((pexel) => {
-      savedPexels.forEach((doc) => {
-        if (doc.data.id === pexel.id) pexel.isSaved = doc.id
+      user.savedPexels.forEach((doc) => {
+        if (doc.id === pexel.id) pexel.isSaved = doc.id
       })
     })
   }
-  if (savedPexels) {
-    savedPexels.forEach((doc) => {
-      if (doc.data.id === globalPexels.id) globalPexels.isSaved = doc.id
+  if (user && user.savedPexels) {
+    user.savedPexels.forEach((doc) => {
+      if (doc.id === globalPexels.id) globalPexels.isSaved = doc.id
     })
   }
 
@@ -43,7 +36,7 @@ export default function SinglePexel({ params }) {
         <Helmet>
           <title>{`Nature | ${alt}`}</title>
         </Helmet>
-        <div className="single-pexel-container">
+        <div className='single-pexel-container'>
           <div>
             <Card
               className={'card-detail'}
@@ -63,7 +56,7 @@ export default function SinglePexel({ params }) {
   } else {
     const { loading, error, globalPexels } = useSinglePexel({ id })
 
-    if (error) return <Redirect to="/404" />
+    if (error) return <Redirect to='/404' />
 
     if (loading) {
       return (
@@ -74,7 +67,7 @@ export default function SinglePexel({ params }) {
           <Spinner />
         </>
       )
-    } else if (savedPexels) {
+    } else if (user && user.savedPexels) {
       console.log(loading, error, globalPexels)
       const { src, photographer, photographer_url, alt, avg_color, isSaved } = globalPexels
 
@@ -83,7 +76,7 @@ export default function SinglePexel({ params }) {
           <Helmet>
             <title>{`Nature | ${id}`}</title>
           </Helmet>
-          <div className="single-pexel-container">
+          <div className='single-pexel-container'>
             <div>
               <Card
                 className={'card-detail'}

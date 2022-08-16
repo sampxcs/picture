@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
 import { useLocation } from 'wouter'
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, addDoc, getDocs, deleteDoc, collection } from 'firebase/firestore'
+import { getFirestore, doc, addDoc, getDocs, deleteDoc, collection, setDoc } from 'firebase/firestore'
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import {
   getAuth,
@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
+  updateEmail,
   sendEmailVerification,
   signInWithPopup,
   GoogleAuthProvider,
@@ -25,12 +26,20 @@ const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
-  const { loading, error, setLoading, setError } = useStates()
+  // const { loading, error, setLoading, setError } = useStates()
   const [, pushLocation] = useLocation()
   const auth = getAuth()
 
   useEffect(() => {
-    onStateChanged((user) => setUser(user))
+    onStateChanged((userDoc) => {
+      getSavedPexels(userDoc.uid).then((savedPexels) => {
+        getProfileInfo(userDoc.uid).then((profileInfo) => {
+          const user = { userImpL: userDoc, savedPexels: savedPexels, profileInfo: profileInfo }
+          setUser(user)
+          console.log(user)
+        })
+      })
+    })
   }, [])
 
   const onStateChanged = useCallback((onChange) => {
@@ -153,7 +162,7 @@ export default function useUser() {
 
   const savePexel = useCallback(async ({ userId, pexelId, src, alt, photographer, photographer_url, avg_color }) => {
     try {
-      const docRef = await addDoc(collection(db, 'saved'), {
+      const docRef = await setDoc(doc(db, 'saved', pexelId.toString()), {
         userId: userId,
         id: pexelId,
         src: src,
@@ -164,21 +173,17 @@ export default function useUser() {
       })
       return docRef
     } catch (e) {
-      console.error('Error adding document: ', e)
+      console.log('Error adding document: ', e)
     }
   }, [])
 
   const getSavedPexels = useCallback(async (uid) => {
     try {
-      setLoading(true)
-      console.log(loading)
       const querySnapshot = await getDocs(collection(db, 'saved'))
       const savedPelexs = []
       querySnapshot.forEach((doc) => {
-        if (doc.data().userId === uid) savedPelexs.push({ id: doc.id, data: doc.data(), key: doc.id })
+        if (doc.data().userId === uid) savedPelexs.push(doc.data())
       })
-      setLoading(true)
-      console.log(loading)
       return savedPelexs
     } catch (e) {
       console.error(e)
@@ -187,6 +192,58 @@ export default function useUser() {
 
   const deleteSavedPexel = useCallback(async (id) => {
     await deleteDoc(doc(db, 'saved', id))
+  }, [])
+
+  const updateProfileInfo = useCallback(
+    async ({ user, displayName, email, bio, phoneNumber, location, website, linkedin, twitter, instagram, facebook }) => {
+      try {
+        updateProfile(user, {
+          displayName: displayName,
+        })
+          .then(() => {
+            console.log('name si')
+          })
+          .catch((e) => {
+            console.log(e)
+          })
+        updateEmail(user, email)
+          .then(() => console.log('email si'))
+          .catch((e) => {
+            console.log(e)
+          })
+        const docRef = await setDoc(doc(db, 'profileInfo', user.uid), {
+          uid: user.uid,
+          displayName: displayName,
+          email: email,
+          bio: bio,
+          location: location,
+          phoneNumber: phoneNumber,
+          website: website,
+          linkedin: linkedin,
+          twitter: twitter,
+          instagram: instagram,
+          facebook: facebook,
+        })
+        return docRef
+      } catch (e) {
+        console.error('Error adding document: ', e)
+      }
+    },
+    []
+  )
+  const getProfileInfo = useCallback(async (uid) => {
+    try {
+      const querySnapshot = await getDocs(collection(db, 'profileInfo'))
+      let profileInfo
+      querySnapshot.forEach((doc) => {
+        if (doc.data().uid === uid) {
+          profileInfo = doc.data()
+        }
+      })
+      return profileInfo
+    } catch (e) {
+      console.log(e)
+    }
   }, [])
 
   const uploadImage = useCallback(({ img }) => {
@@ -201,12 +258,12 @@ export default function useUser() {
     createUserWithEmail,
     signInWithEmail,
     updateProfile,
+    updateProfileInfo,
     signInWithGitHub,
     signInWithGoogle,
     logout,
     resetPassword,
     savePexel,
-    getSavedPexels,
     deleteSavedPexel,
     uploadImage,
   }

@@ -4,6 +4,7 @@ import usePexels from '../../hooks/usePexels'
 import GridPlaceholder from '../Placeholders/GridPlaceholder'
 import useNearScreen from '../../hooks/useNearScreen'
 import debounce from 'just-debounce-it'
+import Spinner from '../Spinner'
 import { Redirect } from 'wouter'
 import { Helmet } from 'react-helmet'
 
@@ -59,7 +60,7 @@ function PexelsResults({ params }) {
           </Helmet>
         )}
         <ListOfCards globalPexels={globalPexels} />
-        <GridPlaceholder />
+        <Spinner />
       </>
     )
   }

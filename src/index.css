@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 :root {
   --background: #fafafa;
+  --light-background: #adadad19;
   --light-letter: #fff;
   --letter: #6b6b6b;
   --dark-letter: #232323;
@@ -30,6 +31,11 @@ body::-webkit-scrollbar-thumb {
 body {
   background-color: var(--background);
   overflow-x: hidden;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--light-shadow);
 }
 @keyframes show {
   0% {

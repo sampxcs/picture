@@ -1,0 +1,24 @@
+.photo-profile {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+.photo-profile img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--light-shadow);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.photo-profile .btn-circle {
+  position: absolute;
+  bottom: 25px;
+  border: 1px solid var(--light-shadow);
+  font-weight: 900;
+  color: var(--dark);
+}

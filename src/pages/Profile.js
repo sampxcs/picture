@@ -6,24 +6,17 @@ import Profile from '../components/Profile'
 import useUser from '../hooks/useUser'
 
 export default function ProfilePage() {
-  const { user, getSavedPexels } = useUser()
-  const [savedPexels, setSavedPexels] = useState(null)
-
-  useEffect(() => {
-    user &&
-      getSavedPexels(user.uid).then((savedPexelsData) => {
-        const savedPexels = savedPexelsData.map((pexel) => pexel.data)
-        console.log(savedPexels)
-        setSavedPexels(savedPexels)
-      })
-  }, [user])
-
+  const { user } = useUser()
   return (
     <>
       {user ? (
-        <div className='main'>
-          <ProfilePlaceholder />
-        </div>
+        <>
+          <Helmet>
+            <title>Nature | Profile</title>
+          </Helmet>
+          <Profile user={user} />
+          <Footer />
+        </>
       ) : (
         <div className='main'>
           <ProfilePlaceholder />

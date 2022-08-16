@@ -16,7 +16,7 @@
 }
 .profile-description-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
   gap: 15px;
@@ -27,17 +27,32 @@
 }
 .profile-add-content,
 .profile-description-content {
-  display: grid;
-  align-content: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   color: var(--letter);
-  padding: 10px;
   gap: 15px;
   margin: 10px 0 30px;
   border-radius: 10px;
+  overflow: hidden;
 }
 .profile-description-content {
   width: 100%;
+}
+.profile-description-content .description-text {
+  width: 100%;
+  align-self: flex-start;
+  flex-direction: column;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  resize: none;
+  padding: 0 30px;
+  color: var(--letter);
+  font-weight: 500;
+  font-size: 1em;
+  background: none;
+  border: none;
 }
 @media (min-width: 660px) {
   .profile {
@@ -51,6 +66,9 @@
   .profile-description-content {
     border: 1px solid var(--light-shadow);
     min-height: 200px;
+  }
+  .profile-description-content .description-text {
+    padding: 15px;
   }
   .main-profile h2 {
     padding-left: 0;
