@@ -29,13 +29,18 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
 }
 body {
-  background-color: var(--background);
+  background-color: var(--light-letter);
   overflow-x: hidden;
 }
 hr {
   border: none;
   height: 1px;
   background-color: var(--light-shadow);
+}
+@media (min-width: 660px) {
+  body {
+    background-color: var(--background);
+  }
 }
 @keyframes show {
   0% {

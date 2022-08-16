@@ -1,8 +1,7 @@
 import { useCallback, useContext, useEffect } from 'react'
 import UserContext from '../context/UserContext'
-import { useLocation } from 'wouter'
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, addDoc, getDocs, deleteDoc, collection, setDoc } from 'firebase/firestore'
+import { getFirestore, doc, getDocs, deleteDoc, collection, setDoc } from 'firebase/firestore'
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import {
   getAuth,
@@ -27,18 +26,18 @@ const storage = getStorage()
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
   // const { loading, error, setLoading, setError } = useStates()
-  const [, pushLocation] = useLocation()
   const auth = getAuth()
 
   useEffect(() => {
     onStateChanged((userDoc) => {
-      getSavedPexels(userDoc.uid).then((savedPexels) => {
-        getProfileInfo(userDoc.uid).then((profileInfo) => {
-          const user = { userImpL: userDoc, savedPexels: savedPexels, profileInfo: profileInfo }
-          setUser(user)
-          console.log(user)
+      if (userDoc) {
+        getSavedPexels(userDoc.uid).then((savedPexels) => {
+          getProfileInfo(userDoc.uid).then((profileInfo) => {
+            const user = { userImpL: userDoc, savedPexels: savedPexels, profileInfo: profileInfo || {} }
+            setUser(user)
+          })
         })
-      })
+      }
     })
   }, [])
 
@@ -151,7 +150,7 @@ export default function useUser() {
   const logout = useCallback(() => {
     signOut(auth)
       .then(() => {
-        pushLocation('./')
+        window.location.reload()
         // Sign-out successful.
       })
       .catch((error) => {
@@ -162,7 +161,7 @@ export default function useUser() {
 
   const savePexel = useCallback(async ({ userId, pexelId, src, alt, photographer, photographer_url, avg_color }) => {
     try {
-      const docRef = await setDoc(doc(db, 'saved', pexelId.toString()), {
+      const docRef = await setDoc(doc(db, 'savedPexels', pexelId.toString()), {
         userId: userId,
         id: pexelId,
         src: src,
@@ -179,7 +178,7 @@ export default function useUser() {
 
   const getSavedPexels = useCallback(async (uid) => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'saved'))
+      const querySnapshot = await getDocs(collection(db, 'savedPexels'))
       const savedPelexs = []
       querySnapshot.forEach((doc) => {
         if (doc.data().userId === uid) savedPelexs.push(doc.data())
@@ -195,39 +194,34 @@ export default function useUser() {
   }, [])
 
   const updateProfileInfo = useCallback(
-    async ({ user, displayName, email, bio, phoneNumber, location, website, linkedin, twitter, instagram, facebook }) => {
-      try {
-        updateProfile(user, {
-          displayName: displayName,
+    ({ user, displayName, email, bio, phoneNumber, location, website, linkedin, twitter, instagram, facebook }) => {
+      return updateProfile(user, {
+        displayName: displayName,
+      })
+        .then(() => {
+          console.log('name si')
+          return updateEmail(user, email)
         })
-          .then(() => {
-            console.log('name si')
+        .then(async () => {
+          console.log('email si')
+          const docRef = await setDoc(doc(db, 'profileInfo', user.uid), {
+            uid: user.uid,
+            displayName: displayName,
+            email: email,
+            bio: bio,
+            location: location,
+            phoneNumber: phoneNumber,
+            website: website,
+            linkedin: linkedin,
+            twitter: twitter,
+            instagram: instagram,
+            facebook: facebook,
           })
-          .catch((e) => {
-            console.log(e)
-          })
-        updateEmail(user, email)
-          .then(() => console.log('email si'))
-          .catch((e) => {
-            console.log(e)
-          })
-        const docRef = await setDoc(doc(db, 'profileInfo', user.uid), {
-          uid: user.uid,
-          displayName: displayName,
-          email: email,
-          bio: bio,
-          location: location,
-          phoneNumber: phoneNumber,
-          website: website,
-          linkedin: linkedin,
-          twitter: twitter,
-          instagram: instagram,
-          facebook: facebook,
+          return docRef
         })
-        return docRef
-      } catch (e) {
-        console.error('Error adding document: ', e)
-      }
+        .catch((e) => {
+          throw new Error(e)
+        })
     },
     []
   )

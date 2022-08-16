@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer/Footer'
 import ProfilePlaceholder from '../components/Placeholders/ProfilePlaceholder'
@@ -7,6 +7,7 @@ import useUser from '../hooks/useUser'
 
 export default function ProfilePage() {
   const { user } = useUser()
+
   return (
     <>
       {user ? (
@@ -18,7 +19,7 @@ export default function ProfilePage() {
           <Footer />
         </>
       ) : (
-        <div className='main'>
+        <div className="main">
           <ProfilePlaceholder />
         </div>
       )}

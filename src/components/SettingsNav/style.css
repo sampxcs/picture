@@ -1,11 +1,9 @@
 .settings-nav {
-  width: 290px;
-  padding: 15px 30px;
-  margin: 0 20px;
+  width: 100%;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   background-color: var(--light-letter);
-  border-radius: 10px;
 }
 .settings-nav-header {
   margin-bottom: 20px;
@@ -73,4 +71,13 @@
 }
 .settings-nav ul small {
   padding: 0 10px;
+}
+@media (min-width: 660px) {
+  .settings-nav {
+    width: 25%;
+    min-width: 320px;
+    padding: 15px 30px;
+    margin: 0 20px;
+    border-radius: 10px;
+  }
 }
