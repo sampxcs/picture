@@ -13,7 +13,7 @@
 }
 .add-photo-profile-form .drag-zone {
   background-color: var(--light-letter);
-  border: 2px dotted var(--light-shadow);
+  overflow: hidden;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -22,20 +22,24 @@
   width: 260px;
   cursor: pointer;
 }
-.add-photo-profile-form .drag-zone:hover {
-  border: 2px dotted var(--shadow);
-}
 .add-photo-profile-form label {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  border: 2px dotted var(--light-shadow);
+  border-radius: 10px;
   justify-content: center;
   color: var(--letter);
   cursor: pointer;
   opacity: 0.8;
   font-weight: 600;
 }
+.add-photo-profile-form label:hover,
+.add-photo-profile-form label[class='drag-hover'] {
+  border: 2px dotted var(--shadow);
+}
+
 .drag-zone img {
   width: 100%;
   height: 100%;
