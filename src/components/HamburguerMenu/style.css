@@ -1,26 +1,12 @@
-.hamburguer-menu {
-  align-items: center;
-  background-color: transparent;
-  border-radius: 50%;
-  display: flex;
-  height: 45px;
-  justify-content: center;
-  left: 15px;
-  padding: 10px;
-  position: fixed;
-  top: 10px;
-  width: 45px;
-  z-index: 300;
-}
 .hamburguer-menu-bars {
   align-items: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 20px;
+  height: 15px;
   justify-content: space-around;
   transition: 0.2s ease-in-out;
-  width: 30px;
+  width: 25px;
   list-style: none;
 }
 .hamburguer-menu-active {
@@ -31,19 +17,15 @@
   background-color: var(--focus-letter);
 }
 .hamburguer-menu-active .bar:nth-child(1) {
-  transform: rotate(90deg) translate(5px);
+  transform: rotate(90deg) translate(4px);
 }
 .hamburguer-menu-active .bar:nth-child(2) {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 .bar {
-  background-color: var(--letter);
+  background-color: var(--dark);
   height: 2px;
+  border: none;
   transition: 0.2s ease-in-out;
-  width: 90%;
-}
-@media (min-width: 660px) {
-  .hamburguer-menu {
-    display: none;
-  }
+  width: 60%;
 }

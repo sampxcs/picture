@@ -11,13 +11,14 @@
   flex-direction: column-reverse;
   justify-content: start;
   align-items: flex-start;
-  background-color: var(--background);
+  background-color: var(--light-letter);
+  animation: show-left-slide 0.2s ease forwards;
   min-height: 40vh;
   width: 100%;
   top: 100%;
   padding: 10px 15px;
   position: fixed;
-  inset: 70px 0px 0px;
+  inset: 50px 0px 0px;
   overflow-y: auto;
 }
 .nav-ul-active > li {
@@ -34,7 +35,7 @@
   position: relative;
 }
 .nav-ul-active .nav-ul-list ul {
-  background-color: var(--background);
+  background-color: var(--light-letter);
   width: 100%;
   box-shadow: none;
 }
@@ -45,10 +46,10 @@
   justify-content: flex-start;
   padding: 0 15px;
 }
-.nav-ul-active .explore-link-nav {
+.nav-ul-active .mobile-link-nav {
   display: flex;
 }
-.explore-link-nav {
+.mobile-link-nav {
   display: none;
 }
 .nav-ul a,
@@ -60,9 +61,7 @@
 .nav-ul > li {
   position: relative;
 }
-.nav-ul > li:hover .nav-ul-list {
-  display: block;
-}
+
 .nav-ul-list {
   display: none;
   position: absolute;
@@ -73,9 +72,7 @@
 .nav-ul-list hr {
   border: 1px solid #00000008;
 }
-.nav-ul-list:hover {
-  display: block;
-}
+
 .nav-ul-list ul {
   position: relative;
   z-index: 100;
@@ -118,6 +115,12 @@
   .nav-ul {
     position: static;
     border-bottom: none;
+  }
+  .nav-ul > li:hover .nav-ul-list {
+    display: block;
+  }
+  .nav-ul-list:hover {
+    display: block;
   }
   .nav-ul-list {
     display: none;

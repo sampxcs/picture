@@ -9,6 +9,9 @@
   height: max-content;
   width: 100%;
 }
+.card-profile .photo-profile {
+  margin: 0 auto;
+}
 .card-profile h1 {
   font-size: 2em;
   text-align: center;

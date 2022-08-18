@@ -2,9 +2,10 @@ import React from 'react'
 import classNames from 'classnames'
 import './style.css'
 
-export default function ButtonCircle({ children, type, onClick, disabled, name, title, blur }) {
+export default function ButtonCircle({ children, type, onClick, disabled, name, title, blur, hamburguerMenu }) {
   const CLASSNAMES = classNames({
     'btn-circle': true,
+    'hamburguer-menu': hamburguerMenu,
     blur: blur,
   })
   return (

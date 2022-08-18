@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: 60px;
   overflow: hidden;
   animation: show-down 0.6s ease-in-out forwards;
 }
@@ -19,4 +19,9 @@
 }
 #main-home {
   padding-top: 25px;
+}
+@media (min-width: 660px) {
+  .main {
+    padding-top: 90px;
+  }
 }

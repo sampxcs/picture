@@ -3,7 +3,7 @@
   max-width: 1260px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: 60px;
   overflow: hidden;
 }
 .header-explore {
@@ -43,6 +43,7 @@
 @media (min-width: 660px) {
   .header-explore {
     height: 40vh;
+    padding-top: 90px;
   }
   .title-explore h2 {
     font-size: 2em;
