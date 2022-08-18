@@ -42,6 +42,7 @@ hr {
     background-color: var(--background);
   }
 }
+
 @keyframes show {
   0% {
     opacity: 0;
@@ -67,6 +68,14 @@ hr {
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes show-left-slide {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }

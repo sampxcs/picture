@@ -1,26 +1,55 @@
 nav {
-  align-items: center;
-  animation: show 0.6s ease-in-out 0.6s forwards;
-  border-bottom: 1px solid #00000010;
-  transition: background-color 0.2s;
   display: flex;
-  height: 70px;
   justify-content: center;
   opacity: 0;
-  padding: 0 20px;
   position: fixed;
   width: 100%;
+  align-items: center;
+  animation: show 0.6s ease-in-out 0.6s forwards;
   z-index: 100;
+  transition: background-color 0.2s;
+}
+.nav-top {
+  padding: 0 20px;
+  height: 50px;
+  top: 0;
+  border-bottom: 1px solid #00000010;
+}
+.nav-bottom {
+  padding: 5px 20px;
+  bottom: 0;
+  height: 55px;
+  border-top: 1px solid #00000010;
+  font-size: 1.4em;
+  background-color: var(--light-letter);
+}
+.nav-bottom-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+}
+.nav-bottom-link small {
+  font-size: 0.5em;
+}
+.nav-bottom .photo-profile {
+  width: 30px;
+  height: 30px;
+}
+.nav-bottom .nav-container {
+  justify-content: space-around;
 }
 .nav-container {
   max-width: 1630px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   position: relative;
-  z-index: -1;
+  z-index: 100;
+  background-color: var(--light-letter);
 }
 .nav-logo {
   color: var(--focus-letter);
@@ -30,10 +59,44 @@ nav {
   letter-spacing: 1px;
   text-decoration: none;
 }
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 300;
+}
+.nav-container .btn-circle {
+  box-shadow: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px var(--light-shadow);
+}
 
 @media (min-width: 660px) {
+  .nav-top {
+    height: 70px;
+  }
+  .nav-bottom {
+    display: none;
+  }
+  .nav-container {
+    justify-content: center;
+  }
   .nav-logo {
     position: absolute;
     left: 30px;
+  }
+  .nav-buttons {
+    position: absolute;
+    right: 0;
+  }
+  .nav-buttons > :last-child {
+    display: none;
   }
 }

@@ -15,7 +15,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .collection-content {
   align-items: center;
@@ -64,6 +64,7 @@
   }
   .collection-title {
     padding: 0 15px 0 30px;
+    font-size: 2em;
   }
   .collection-content {
     padding: 0 15px;
