@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'wouter'
-import { UserContextProvaider } from './context/UserContext'
+
 import { PexelsContextProvaider } from './context/PexelsContext'
 
 import Nav from './components/Nav'
@@ -17,30 +17,30 @@ import Detail from './pages/Detail'
 import AboutDeveloper from './pages/AboutDeveloper'
 import FAQ from './pages/FAQ'
 import Error from './pages/Error'
+import useUser from './hooks/useUser'
 
 function App() {
+  const { user } = useUser()
   return (
-    <div className='App'>
-      <UserContextProvaider>
-        <Nav />
-        <PexelsContextProvaider>
-          <Switch>
-            <Route path='/' component={Home} />
-            <Route path='/log-in' component={Login} />
-            <Route path='/sign-up' component={SignUp} />
-            <Route path='/reset-password' component={ResetPassword} />
-            <Route path='/profile' component={ProfilePage} />
-            <Route path='/settings/profile' component={SettingsPage} />
-            <Route path='/settings' component={SettingsPage} />
-            <Route path='/Explore' component={Explore} />
-            <Route path='/Explore/:keyword' component={SearchExplore} />
-            <Route path='/Detail/:id' component={Detail} />
-            <Route path='/AboutDeveloper' component={AboutDeveloper} />
-            <Route path='/FAQ' component={FAQ} />
-            <Route path='/:rest*' component={Error} />
-          </Switch>
-        </PexelsContextProvaider>
-      </UserContextProvaider>
+    <div className="App">
+      <Nav user={user} />
+      <PexelsContextProvaider>
+        <Switch>
+          <Route path="/">{(params) => <Home params={params} user={user} />}</Route>
+          <Route path="/log-in" component={Login} />
+          <Route path="/sign-up" component={SignUp} />
+          <Route path="/reset-password" component={ResetPassword} />
+          <Route path="/profile" component={ProfilePage} />
+          <Route path="/settings/profile" component={SettingsPage} />
+          <Route path="/settings" component={SettingsPage} />
+          <Route path="/Explore" component={Explore} />
+          <Route path="/Explore/:keyword" component={SearchExplore} />
+          <Route path="/Detail/:id" component={Detail} />
+          <Route path="/AboutDeveloper" component={AboutDeveloper} />
+          <Route path="/FAQ" component={FAQ} />
+          <Route path="/:rest*" component={Error} />
+        </Switch>
+      </PexelsContextProvaider>
     </div>
   )
 }

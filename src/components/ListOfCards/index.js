@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import useUser from '../../hooks/useUser'
+import React, { useEffect } from 'react'
 import Card from '../Card'
 import './style.css'
 
-export default function ListOfCards({ globalPexels }) {
-  const { user } = useUser()
-
+export default function ListOfCards({ globalPexels, user }) {
   useEffect(() => {
     if (user && user.savedPexels && globalPexels.length)
       globalPexels.forEach((pexel) => {
@@ -15,11 +12,11 @@ export default function ListOfCards({ globalPexels }) {
           }
         })
       })
-  }, [])
+  }, [user])
 
   if (user)
     return (
-      <div className='list-of-cards'>
+      <div className="list-of-cards">
         {user.savedPexels && globalPexels.length
           ? globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color, isSaved }) => (
               <>
@@ -41,7 +38,7 @@ export default function ListOfCards({ globalPexels }) {
     )
 
   return (
-    <div className='list-of-cards'>
+    <div className="list-of-cards">
       {globalPexels.length
         ? globalPexels.map(({ id, src, photographer, photographer_url, alt, avg_color, isSaved }) => (
             <>

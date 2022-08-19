@@ -3,11 +3,11 @@ import Header from './../components/Header'
 import Main from './../components/Main'
 import Footer from '../components/Footer'
 
-export default function Home({ params }) {
+export default function Home({ params, user }) {
   return (
     <>
       <Header />
-      <Main params={params} id='main-home' />
+      <Main params={params} id="main-home" user={user} />
       <Footer />
     </>
   )

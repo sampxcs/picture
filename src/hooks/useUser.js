@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import UserContext from '../context/UserContext'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, getDocs, deleteDoc, collection, setDoc } from 'firebase/firestore'
@@ -25,14 +25,23 @@ const storage = getStorage()
 
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
+  const [loading, setLoading] = useState(false)
   // const { loading, error, setLoading, setError } = useStates()
   const auth = getAuth()
 
+  console.log(loading)
+
   useEffect(() => {
+    setLoading(true)
+    console.log('loading')
     onStateChanged((userDoc) => {
       if (userDoc) {
+        console.log('Ready')
         getSavedPexels(userDoc.uid).then((savedPexels) => {
+          console.log('saved pexels')
           getProfileInfo(userDoc.uid).then((profileInfo) => {
+            setLoading(false)
+            console.log('profile info')
             const user = { userImpL: userDoc, savedPexels: savedPexels, profileInfo: profileInfo || {} }
             setUser(user)
           })

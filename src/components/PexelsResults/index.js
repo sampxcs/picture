@@ -8,7 +8,7 @@ import Spinner from '../Spinner'
 import { Redirect } from 'wouter'
 import { Helmet } from 'react-helmet'
 
-function PexelsResults({ params }) {
+function PexelsResults({ params, user }) {
   let { keyword } = params
   if (!keyword) keyword = 'Nature'
   const { loading, error, globalPexels, page, setPage } = usePexels({ keyword })
@@ -32,7 +32,7 @@ function PexelsResults({ params }) {
 
   if (error) return <Redirect to="/404" />
 
-  if (loading && page <= 2) {
+  if (loading && page === 1) {
     return (
       <>
         <Helmet>
@@ -43,7 +43,7 @@ function PexelsResults({ params }) {
     )
   }
 
-  if (loading && page > 2) {
+  if (loading && page > 1) {
     return (
       <>
         {keyword === 'Nature' ? (
@@ -60,7 +60,7 @@ function PexelsResults({ params }) {
             <meta name="description" content={`Search result of images and videos of ${keyword}`} />
           </Helmet>
         )}
-        <ListOfCards globalPexels={globalPexels} />
+        <ListOfCards globalPexels={globalPexels} user={user} />
         <Spinner />
       </>
     )
@@ -82,7 +82,7 @@ function PexelsResults({ params }) {
           <meta name="description" content={`Search result of images and videos of ${keyword}`} />
         </Helmet>
       )}
-      <ListOfCards globalPexels={globalPexels} />
+      <ListOfCards globalPexels={globalPexels} user={user} />
       <div id="visor" ref={ref}></div>
     </>
   )
