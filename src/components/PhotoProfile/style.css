@@ -3,8 +3,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  width: 200px;
-  height: 200px;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
 }
 .photo-profile img {
   border-radius: 50%;
@@ -20,4 +21,10 @@
   border: 1px solid var(--light-shadow);
   font-weight: 900;
   color: var(--dark);
+}
+@media (min-width: 660px) {
+  .photo-profile {
+    width: 200px;
+    height: 200px;
+  }
 }

@@ -4,8 +4,8 @@ import SearchForm from '../SearchForm'
 import NavList from '../NavList'
 import { Link, useLocation } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faCompass } from '@fortawesome/free-regular-svg-icons'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import {} from '@fortawesome/free-regular-svg-icons'
+import { faHouse, faCompass } from '@fortawesome/free-solid-svg-icons'
 import useUser from '../../hooks/useUser'
 
 import PhotoProfile from '../PhotoProfile'
@@ -29,30 +29,32 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{ backgroundColor: backgroundNav }} className="nav-top">
-        <div className="nav-container">
-          <Link to="/" className="nav-logo" title="Nature">
+      <nav style={{ backgroundColor: backgroundNav }} className='nav-top'>
+        <div className='nav-container'>
+          <Link to='/' className='nav-logo' title='Nature'>
             NATURE
           </Link>
           <NavList isActive={isActive} />
-          <div className="nav-buttons">
+          <div className='nav-buttons'>
             <SearchForm formNav={true} />
             <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
           </div>
         </div>
       </nav>
-      <nav className="nav-bottom">
-        <div className="nav-container">
-          <Link className="nav-bottom-link" to="/">
+      <nav className='nav-bottom'>
+        <div className='nav-container'>
+          <Link className='nav-bottom-link' to='/'>
             <FontAwesomeIcon icon={faHouse} />
             <small>Home</small>
           </Link>
-          <Link className="nav-bottom-link" to="/explore">
+          <Link className='nav-bottom-link' to='/explore'>
             <FontAwesomeIcon icon={faCompass} />
             <small>Explore</small>
           </Link>
-          <Link className="nav-bottom-link" to="/profile">
-            <div>{user && <PhotoProfile user={user} />}</div>
+          <Link className='nav-bottom-link' to='/profile'>
+            <div>
+              <PhotoProfile user={user} />
+            </div>
             <small>Profile</small>
           </Link>
         </div>

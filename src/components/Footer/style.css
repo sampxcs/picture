@@ -1,7 +1,7 @@
 footer {
   background-color: var(--dark);
   padding: 0 10px 30px;
-  margin-top: 30px;
+  margin: 30px 0 55px;
   display: flex;
   justify-content: space-around;
   color: var(--light-letter);
@@ -22,7 +22,7 @@ footer .footer-container {
   border: 1px solid var(--letter);
   border-radius: 5px;
   padding: 5px;
-  height: 30px;
+  height: 24px;
   overflow: hidden;
 }
 .footer-item h2 {
@@ -38,7 +38,7 @@ footer .footer-container {
   font-size: 0.8em;
 }
 .footer-item:nth-of-type(1) {
-  height: 55px;
+  height: 45px;
   margin-top: 10px;
 }
 .footer-item:hover {
@@ -59,6 +59,11 @@ footer p a {
 footer p {
   overflow-wrap: break-word;
   line-height: 2;
+}
+@media (min-width: 660px) {
+  footer {
+    margin: 30px 0 0;
+  }
 }
 @media (min-width: 870px) {
   .footer-container .footer-item {

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 15px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   transition: 0.2s ease-in-out;
   width: 25px;
   list-style: none;
@@ -20,11 +20,11 @@
   transform: rotate(90deg) translate(4px);
 }
 .hamburguer-menu-active .bar:nth-child(2) {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .bar {
-  background-color: var(--dark);
-  height: 2px;
+  background-color: var(--letter);
+  height: 1px;
   border: none;
   transition: 0.2s ease-in-out;
   width: 60%;

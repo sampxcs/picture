@@ -34,22 +34,25 @@ export default function AddPhotoProfileForm({ setShowModal }) {
   }
 
   const handleDragEnter = (e) => {
-    e.stopPropagation()
     e.preventDefault()
+    e.stopPropagation()
+    console.log('hover')
     setDrag('drag-hover')
   }
 
   const handleDragLeave = (e) => {
-    e.stopPropagation()
     e.preventDefault()
+    e.stopPropagation()
+    console.log('leave')
     setDrag(null)
   }
 
   const handleDrop = (e) => {
-    e.stopPropagation()
     e.preventDefault()
+    e.stopPropagation()
     setDrag(null)
-    console.log(e.dataTransfer.files[0])
+    setPhotoProfile(e.dataTransfer.files[0])
+    setPhotoProfilePreview(URL.createObjectURL(e.dataTransfer.files[0]))
   }
 
   return (
@@ -59,12 +62,24 @@ export default function AddPhotoProfileForm({ setShowModal }) {
         {photoProfile ? (
           <img src={photoProfilePreview} alt={user.name} title={user.name} />
         ) : (
-          <label htmlFor='file' className={drag} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDrop={handleDrop}>
-            Drag your files or click here
-          </label>
+          <>
+            <input
+              type='file'
+              id='file'
+              name='file'
+              accept='image/*'
+              multiple
+              onDragLeave={handleDragLeave}
+              onDragEnter={handleDragEnter}
+              onChange={handleChange}
+              onDrop={handleDrop}
+            />
+            <label htmlFor='file' className={drag}>
+              Drag your files or click here
+            </label>
+          </>
         )}
       </div>
-      <input type='file' id='file' name='file' onChange={handleChange} />
       <ButtonPrimary target='submit' disabled={!photoProfile}>
         {loading ? <Spinner /> : 'Set New Profile Picture'}
       </ButtonPrimary>

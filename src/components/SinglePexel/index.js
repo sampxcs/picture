@@ -64,7 +64,9 @@ export default function SinglePexel({ params }) {
           <Helmet>
             <title>Loading...</title>
           </Helmet>
-          <Spinner />
+          <div className='spinner-container'>
+            <Spinner />
+          </div>
         </>
       )
     } else if (user && user.savedPexels) {

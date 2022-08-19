@@ -8,11 +8,14 @@
   align-items: center;
   gap: 10px;
 }
-.add-photo-profile-form input {
-  display: none;
+.add-photo-profile-form .loader,
+.add-photo-profile-form .loader:after {
+  width: 10px;
+  height: 10px;
 }
 .add-photo-profile-form .drag-zone {
   background-color: var(--light-letter);
+  position: relative;
   overflow: hidden;
   border-radius: 10px;
   display: flex;
@@ -22,22 +25,31 @@
   width: 260px;
   cursor: pointer;
 }
+.add-photo-profile-form input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 10;
+}
 .add-photo-profile-form label {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   border: 2px dotted var(--light-shadow);
   border-radius: 10px;
+  align-items: center;
   justify-content: center;
   color: var(--letter);
-  cursor: pointer;
-  opacity: 0.8;
   font-weight: 600;
+  opacity: 0.8;
 }
-.add-photo-profile-form label:hover,
+.drag-zone:hover label,
 .add-photo-profile-form label[class='drag-hover'] {
-  border: 2px dotted var(--shadow);
+  border: 2px dotted var(--focus-letter);
+  color: var(--focus-letter);
 }
 
 .drag-zone img {

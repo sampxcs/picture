@@ -5,7 +5,7 @@
   color: var(--dark);
 }
 .main-profile {
-  padding: 30px 0;
+  padding: 15px 0;
   border-radius: 20px;
   width: 100%;
   background-color: var(--light-letter);
@@ -35,6 +35,10 @@
   margin: 10px 0 30px;
   border-radius: 10px;
   overflow: hidden;
+}
+.profile-add-content {
+  margin: 0;
+  padding: 15px;
 }
 .profile-description-content {
   width: 100%;
@@ -66,6 +70,7 @@
   .profile-description-content {
     border: 1px solid var(--light-shadow);
     min-height: 200px;
+    margin: 10px 0 30px;
   }
   .profile-description-content .description-text {
     padding: 15px;
