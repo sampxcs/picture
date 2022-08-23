@@ -9,14 +9,13 @@ import CollectionsPlaceholder from '../Placeholders/CollectionsPlaceholder'
 import Collection from '../Collection'
 
 export default function CollectionsProfile({ savedPexels }) {
-  console.log(savedPexels)
   return (
-    <div className='profile-collections'>
+    <div className="profile-collections">
       <hr />
       <h2>Your Collections</h2>
 
       {savedPexels && !savedPexels.length ? null : savedPexels ? (
-        <div className='profile-collections-content'>
+        <div className="profile-collections-content">
           <Collection
             title={
               <h3>
@@ -31,12 +30,12 @@ export default function CollectionsProfile({ savedPexels }) {
           />
         </div>
       ) : (
-        <div className='profile-collections-content'>
+        <div className="profile-collections-content">
           <CollectionsPlaceholder />
         </div>
       )}
-      <div className='profile-add-content'>
-        <ButtonCircle title='Add Collection'>+</ButtonCircle>
+      <div className="profile-add-content">
+        <ButtonCircle title="Add Collection">+</ButtonCircle>
       </div>
     </div>
   )

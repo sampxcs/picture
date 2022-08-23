@@ -63,7 +63,8 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
         <img src={src} alt={alt}></img>
       </Link>
       <>
-        {className === 'card-main' && (
+        {// --------- CARD INFO OF MAIN ---------- //
+        className === 'card-main' && (
           <div className="card-info" title={alt}>
             <div className="card-info-text">
               <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
@@ -91,8 +92,9 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
             <Link to={`/Detail/${id}`} className="maximize"></Link>
           </div>
         )}
-        {className === 'card-detail' && (
-          <div className="card-detail" title={alt}>
+        {// --------- CARD INFO OF DETAIL ---------- //
+        className === 'card-detail' && (
+          <div className={className} title={alt}>
             <div className="card-info" title={alt}>
               <div className="card-info-text">
                 <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
@@ -129,15 +131,17 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
             </div>
           </div>
         )}
-        {className === 'card-collection-explore' && (
-          <div className="card-collection-explore" title={alt}>
+        {// --------- CARD INFO OF EXPLORE ---------- //
+        className === 'card-collection-explore' && (
+          <div className={className} title={alt}>
             <Link to={`/Explore/${title.toLowerCase()}`} className="card-info-explore">
               {title}
             </Link>
           </div>
         )}
-        {className === 'card-collection-profile' && (
-          <div className="card-collection-profile" title={alt}>
+        {// --------- CARD INFO OF PROFILE ---------- //
+        className === 'card-collection-profile' && (
+          <div className={className} title={alt}>
             <div className="card-info-text">
               <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
                 {photographer}

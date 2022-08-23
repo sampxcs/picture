@@ -44,61 +44,61 @@ export default function SettingsProfile({ user, userStatusCode }) {
   }
 
   return (
-    <div className='settings-main-content'>
-      <h2 className='settings-main-title'>Edit profile</h2>
+    <div className="settings-main-content">
+      <h2 className="settings-main-title">Edit profile</h2>
       <hr />
-      <div className='setting-main-content-form'>
-        <form className='settings-main-form' onSubmit={handelSubmit}>
-          <div className='input-content'>
+      <div className="setting-main-content-form">
+        <form className="settings-main-form" onSubmit={handelSubmit}>
+          <div className="input-content">
             <h3>User name</h3>
             <input
-              type='text'
-              placeholder='User name'
-              autoCapitalize='words'
+              type="text"
+              placeholder="User name"
+              autoCapitalize="words"
               value={displayName}
               required
               onChange={(e) => setDisplayName(e.target.value)}
             />
             <small>Your name may appear around Nature where you contribute or are mentioned.</small>
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Public email</h3>
-            <input type='email' placeholder='Enter your user name' value={email} required onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" placeholder="Enter your user name" value={email} required onChange={(e) => setEmail(e.target.value)} />
             {user.emailVerified ? (
-              <small className='verified'>
+              <small className="verified">
                 Verified email <FontAwesomeIcon icon={faCheckCircle} />
               </small>
             ) : (
               <small>
-                Click here to <span className='not-verified'>verify your email</span>
+                Click here to <span className="not-verified">verify your email</span>
               </small>
             )}
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>About me</h3>
             <textarea
-              placeholder='Brief description about you, your likes and your work'
+              placeholder="Brief description about you, your likes and your work"
               value={bio}
-              autoCapitalize='sentences'
+              autoCapitalize="sentences"
               onChange={(e) => setBio(e.target.value)}
             />
             <small>Brief description about you, your likes and your work</small>
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Phone number</h3>
             <input
-              type='tel'
-              placeholder='Add a phone number'
-              autoComplete='tel'
+              type="tel"
+              placeholder="Add a phone number"
+              autoComplete="tel"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <small>Phone number</small>
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Location</h3>
             <select onChange={(e) => setLocation(e.target.value)}>
-              <option disabled selected={!location} value=''>
+              <option disabled selected={!location} value="">
                 Select location
               </option>
               {states.map((state) => (
@@ -107,43 +107,35 @@ export default function SettingsProfile({ user, userStatusCode }) {
                 </option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              placeholder="Location"
-              value={location}
-              autoComplete="country-name"
-              autoCapitalize="words"
-              onChange={(e) => setLocation(e.target.value)}
-            /> */}
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Website</h3>
-            <input type='url' placeholder='URL of your website' value={website} onChange={(e) => setWebsite(e.target.value)} />
+            <input type="url" placeholder="URL of your website" value={website} onChange={(e) => setWebsite(e.target.value)} />
             <small>Enter the URL of your website</small>
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>LinkEdin</h3>
             <input
-              type='url'
-              placeholder='Enter the URL of your LinkEdin profile'
+              type="url"
+              placeholder="Enter the URL of your LinkEdin profile"
               value={linkedin}
               onChange={(e) => setLinkedin(e.target.value)}
             />
             <small>URL of your LinkEdin profile</small>
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Twitter</h3>
-            <input type='text' placeholder='Twitter username' value={twitter} onChange={(e) => setTwitter(e.target.value)} />
+            <input type="text" placeholder="Twitter username" value={twitter} onChange={(e) => setTwitter(e.target.value)} />
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Instagram</h3>
-            <input type='text' placeholder='Instagram username' value={instagram} onChange={(e) => setInstagram(e.target.value)} />
+            <input type="text" placeholder="Instagram username" value={instagram} onChange={(e) => setInstagram(e.target.value)} />
           </div>
-          <div className='input-content'>
+          <div className="input-content">
             <h3>Facebook</h3>
             <input
-              type='url'
-              placeholder='Enter the URL of your Facebook profile'
+              type="url"
+              placeholder="Enter the URL of your Facebook profile"
               value={facebook}
               onChange={(e) => setFacebook(e.target.value)}
             />

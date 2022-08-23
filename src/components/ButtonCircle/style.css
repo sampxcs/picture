@@ -17,6 +17,10 @@
 .btn-circle:hover {
   box-shadow: 3px 3px 30px var(--light-shadow);
 }
+.btn-circle[disabled] {
+  pointer-events: none;
+  opacity: 0.3;
+}
 .btn-circle .blur {
   box-shadow: 3px 3px 15px var(--light-shadow);
   background-color: none;
