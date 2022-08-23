@@ -129,8 +129,8 @@
 .card-collection-profile:hover {
   opacity: 1;
 }
-.card-detail {
-  background-color: aqua;
+.card-detail .card-info {
+  height: max-content;
 }
 @media (min-width: 660px) {
   .card {
@@ -194,6 +194,10 @@
   .card-info-explore {
     font-size: 2em;
     height: 100%;
+  }
+  .card-detail .card-info {
+    height: 100%;
+    width: 30%;
   }
 }
 @media (min-width: 1280px) {

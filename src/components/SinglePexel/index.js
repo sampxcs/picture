@@ -42,7 +42,7 @@ export default function SinglePexel({ params }) {
         <Helmet>
           <title>{`Nature | ${alt}`}</title>
         </Helmet>
-        <div className='single-pexel-container'>
+        <div className="single-pexel-container">
           <div>
             <Card
               className={'card-detail'}
@@ -62,7 +62,7 @@ export default function SinglePexel({ params }) {
   } else {
     const { loading, error, globalPexels } = useSinglePexel({ id })
 
-    if (error) return <Redirect to='/404' />
+    if (error) return <Redirect to="/404" />
 
     if (loading) {
       return (
@@ -70,12 +70,12 @@ export default function SinglePexel({ params }) {
           <Helmet>
             <title>Loading...</title>
           </Helmet>
-          <div className='spinner-container'>
+          <div className="spinner-container">
             <Spinner />
           </div>
         </>
       )
-    } else if (user && user.savedPexels) {
+    } else {
       console.log(loading, error, globalPexels)
       const { src, photographer, photographer_url, alt, avg_color, isSaved } = globalPexels
 
@@ -84,7 +84,7 @@ export default function SinglePexel({ params }) {
           <Helmet>
             <title>{`Nature | ${id}`}</title>
           </Helmet>
-          <div className='single-pexel-container'>
+          <div className="single-pexel-container">
             <div>
               <Card
                 className={'card-detail'}

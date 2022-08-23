@@ -3,7 +3,7 @@ import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faBookmark, faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faBookmark as fasBookmark, faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark as fasBookmark, faHeart as fasHeart, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'wouter'
 
 import useUser from '../../hooks/useUser'
@@ -58,15 +58,15 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
   }
 
   return (
-    <div className='card' style={{ backgroundColor: avg_color }}>
-      <Link to={`/Detail/${id}`} className='img'>
+    <div className="card" style={{ backgroundColor: avg_color }}>
+      <Link to={`/Detail/${id}`} className="img">
         <img src={src} alt={alt}></img>
       </Link>
       <>
         {className === 'card-main' && (
-          <div className='card-info' title={alt}>
-            <div className='card-info-text'>
-              <a className='card-link' href={photographer_url} target='_blank' rel='noopener noreferrer' title={photographer}>
+          <div className="card-info" title={alt}>
+            <div className="card-info-text">
+              <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
                 {photographer}
               </a>
               <Link to={`/Detail/${id}`}>
@@ -76,44 +76,53 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
                 </p>
               </Link>
             </div>
-            <div className='options'>
-              <div className='icon' title='Like' onClick={handleLike}>
-                {like ? <FontAwesomeIcon className='fasHeart' icon={fasHeart} /> : <FontAwesomeIcon className='faHeart' icon={faHeart} />}
+            <div className="options">
+              <div className="icon" title="Like" onClick={handleLike}>
+                {like ? <FontAwesomeIcon className="fasHeart" icon={fasHeart} /> : <FontAwesomeIcon className="faHeart" icon={faHeart} />}
               </div>
-              <div className='icon' title='Save' onClick={handleSave}>
+              <div className="icon" title="Save" onClick={handleSave}>
                 {saved ? (
-                  <FontAwesomeIcon className='faBookmark' icon={fasBookmark} />
+                  <FontAwesomeIcon className="faBookmark" icon={fasBookmark} />
                 ) : (
-                  <FontAwesomeIcon className='faBookmark' icon={faBookmark} />
+                  <FontAwesomeIcon className="faBookmark" icon={faBookmark} />
                 )}
               </div>
             </div>
-            <Link to={`/Detail/${id}`} className='maximize'></Link>
+            <Link to={`/Detail/${id}`} className="maximize"></Link>
           </div>
         )}
         {className === 'card-detail' && (
-          <div className='card-detail' title={alt}>
-            <div className='card-info' title={alt}>
-              <div className='card-info-text'>
-                <a className='card-link' href={photographer_url} target='_blank' rel='noopener noreferrer' title={photographer}>
+          <div className="card-detail" title={alt}>
+            <div className="card-info" title={alt}>
+              <div className="card-info-text">
+                <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
                   {photographer}
                 </a>
                 <Link to={`/Detail/${id}`}>
-                  <p>
-                    {alt}
-                    <span></span>
-                  </p>
+                  <p>{alt}</p>
                 </Link>
+                <br />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsa alias error tenetur, numquam quas minima dolore
+                  impedit perspiciatis sequi eum qui libero, hic nisi obcaecati, enim repudiandae commodi aut?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsa alias error tenetur, numquam quas minima dolore
+                  impedit perspiciatis sequi eum qui libero, hic nisi obcaecati, enim repudiandae commodi aut?
+                </p>
               </div>
-              <div className='options'>
-                <div className='icon' title='Like'>
-                  <FontAwesomeIcon className='faheart' icon={faHeart} />
+              <div className="options">
+                <div className="icon" title="Download">
+                  <FontAwesomeIcon className="faDownload" icon={faArrowDown} />
                 </div>
-                <div className='icon' title='Save' onClick={handleSave}>
+                <div className="icon" title="Like">
+                  <FontAwesomeIcon className="faheart" icon={faHeart} />
+                </div>
+                <div className="icon" title="Save" onClick={handleSave}>
                   {saved ? (
-                    <FontAwesomeIcon className='faBookmark' icon={fasBookmark} />
+                    <FontAwesomeIcon className="faBookmark" icon={fasBookmark} />
                   ) : (
-                    <FontAwesomeIcon className='faBookmark' icon={faBookmark} />
+                    <FontAwesomeIcon className="faBookmark" icon={faBookmark} />
                   )}
                 </div>
               </div>
@@ -121,16 +130,16 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
           </div>
         )}
         {className === 'card-collection-explore' && (
-          <div className='card-collection-explore' title={alt}>
-            <Link to={`/Explore/${title.toLowerCase()}`} className='card-info-explore'>
+          <div className="card-collection-explore" title={alt}>
+            <Link to={`/Explore/${title.toLowerCase()}`} className="card-info-explore">
               {title}
             </Link>
           </div>
         )}
         {className === 'card-collection-profile' && (
-          <div className='card-collection-profile' title={alt}>
-            <div className='card-info-text'>
-              <a className='card-link' href={photographer_url} target='_blank' rel='noopener noreferrer' title={photographer}>
+          <div className="card-collection-profile" title={alt}>
+            <div className="card-info-text">
+              <a className="card-link" href={photographer_url} target="_blank" rel="noopener noreferrer" title={photographer}>
                 {photographer}
               </a>
               <Link to={`/Detail/${id}`}>
@@ -140,10 +149,10 @@ function Card({ id, title, src, alt, photographer, photographer_url, avg_color, 
                 </p>
               </Link>
             </div>
-            <div className='options'>
+            <div className="options">
               <Link to={`/Detail/${id}`}>
-                <div className='icon' title='Maximize'>
-                  <FontAwesomeIcon className='faMaximize' icon={faEye} />
+                <div className="icon" title="Maximize">
+                  <FontAwesomeIcon className="faMaximize" icon={faEye} />
                 </div>
               </Link>
             </div>

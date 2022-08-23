@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { Redirect } from 'wouter'
 import { Helmet } from 'react-helmet'
 
@@ -9,41 +9,24 @@ import useNearScreen from '../../hooks/useNearScreen'
 import ListOfCards from '../ListOfCards'
 import GridPlaceholder from '../Placeholders/GridPlaceholder'
 import Spinner from '../Spinner'
-import useUser from '../../hooks/useUser'
 
 function PexelsResults({ params }) {
   let { keyword } = params
   if (!keyword) keyword = 'Nature'
 
   const { loading, error, globalPexels, page, setPage } = usePexels({ keyword })
-  const { user, userStatusCode } = useUser()
-  //const [ready, setReady] = useState(false)
 
   const { isNearScreen, ref } = useNearScreen({
-    distance: '400px',
+    distance: '100px',
     once: false,
   })
 
   const handleNextPage = useCallback(
     debounce(() => {
-      console.log('set page')
       setPage()
     }, 200),
     []
   )
-
-  useEffect(() => {
-    //setReady(false)
-    if (userStatusCode === 2 && globalPexels.length) {
-      globalPexels.forEach((pexel) => {
-        user.savedPexels.forEach((doc) => {
-          if (doc.id === pexel.id) {
-            pexel.isSaved = doc.id
-          }
-        })
-      })
-    }
-  }, [userStatusCode, isNearScreen])
 
   useEffect(() => {
     isNearScreen && handleNextPage()
@@ -51,7 +34,7 @@ function PexelsResults({ params }) {
 
   if (error) return <Redirect to="/404" />
 
-  if (userStatusCode === 1 || (loading && page === 1)) {
+  if (loading && page === 1) {
     return (
       <>
         <Helmet>
@@ -85,7 +68,7 @@ function PexelsResults({ params }) {
     )
   }
 
-  if (userStatusCode === 2)
+  if (!loading)
     return (
       <>
         {keyword === 'Nature' ? (

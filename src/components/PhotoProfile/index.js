@@ -16,18 +16,16 @@ export default function PhotoProfile({ user, userStatusCode, editable }) {
     user && setSrc(user.userImpL.photoURL)
   }, [user])
 
-  console.log(userStatusCode)
-
   if (userStatusCode === 1)
     return (
-      <div className='photo-profile'>
+      <div className="photo-profile">
         <img src={src} alt={'Profile'} title={'Photo Profile'} />
       </div>
     )
 
   if (userStatusCode === 2)
     return (
-      <div className='photo-profile'>
+      <div className="photo-profile">
         <img
           src={src}
           onError={() => setSrc('/placeholder-profile.jpg')}
@@ -49,7 +47,7 @@ export default function PhotoProfile({ user, userStatusCode, editable }) {
 
   if (userStatusCode === 3)
     return (
-      <div className='photo-profile'>
+      <div className="photo-profile">
         <img src={src} alt={'Profile'} title={'Photo Profile'} />
       </div>
     )

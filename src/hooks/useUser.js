@@ -17,7 +17,6 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth'
 import { firebaseConfig } from '../firebase/client'
-// import useStates from './useStates'
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
@@ -91,7 +90,6 @@ export default function useUser() {
       })
       .catch((error) => {
         const errorCode = error.code
-        const errorMessage = error.message
         console.log(errorCode)
       })
   }, [])
