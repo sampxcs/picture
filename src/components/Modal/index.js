@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './style.css'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import './style.css'
 
 function Modal({ close, children }) {
   return (

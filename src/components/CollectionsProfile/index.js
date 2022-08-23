@@ -1,10 +1,12 @@
 import React from 'react'
-import ButtonCircle from '../ButtonCircle'
 import './style.css'
-import CollectionsPlaceholder from '../Placeholders/CollectionsPlaceholder'
-import Collection from '../Collection'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages } from '@fortawesome/free-solid-svg-icons'
+
+import ButtonCircle from '../ButtonCircle'
+import CollectionsPlaceholder from '../Placeholders/CollectionsPlaceholder'
+import Collection from '../Collection'
 
 export default function CollectionsProfile({ savedPexels }) {
   console.log(savedPexels)

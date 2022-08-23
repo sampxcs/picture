@@ -17,35 +17,37 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth'
 import { firebaseConfig } from '../firebase/client'
-import useStates from './useStates'
+// import useStates from './useStates'
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 const storage = getStorage()
 
+const STATUS_CODES = {
+  UNDEFINED: 0,
+  LOADING: 1,
+  OK: 2,
+  NULL: 3,
+}
+
 export default function useUser() {
   const { user, setUser } = useContext(UserContext)
-  const [loading, setLoading] = useState(false)
-  // const { loading, error, setLoading, setError } = useStates()
+  const [userStatusCode, setUserStatusCode] = useState(STATUS_CODES.UNDEFINED)
   const auth = getAuth()
 
-  console.log(loading)
-
   useEffect(() => {
-    setLoading(true)
-    console.log('loading')
+    setUserStatusCode(STATUS_CODES.LOADING)
     onStateChanged((userDoc) => {
       if (userDoc) {
-        console.log('Ready')
         getSavedPexels(userDoc.uid).then((savedPexels) => {
-          console.log('saved pexels')
           getProfileInfo(userDoc.uid).then((profileInfo) => {
-            setLoading(false)
-            console.log('profile info')
+            setUserStatusCode(STATUS_CODES.OK)
             const user = { userImpL: userDoc, savedPexels: savedPexels, profileInfo: profileInfo || {} }
             setUser(user)
           })
         })
+      } else {
+        setUserStatusCode(STATUS_CODES.NULL)
       }
     })
   }, [])
@@ -88,9 +90,9 @@ export default function useUser() {
         // ...
       })
       .catch((error) => {
-        // const errorCode = error.code
+        const errorCode = error.code
         const errorMessage = error.message
-        console.log(errorMessage)
+        console.log(errorCode)
       })
   }, [])
 
@@ -199,7 +201,7 @@ export default function useUser() {
   }, [])
 
   const deleteSavedPexel = useCallback(async (id) => {
-    await deleteDoc(doc(db, 'saved', id))
+    await deleteDoc(doc(db, 'savedPexels', id))
   }, [])
 
   const updateProfileInfo = useCallback(
@@ -258,6 +260,7 @@ export default function useUser() {
 
   return {
     user,
+    userStatusCode,
     createUserWithEmail,
     signInWithEmail,
     updateProfile,

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 
 import ButtonCircle from '../ButtonCircle'
 import Modal from '../Modal'
-import AddPhotoProfileForm from '../AddPhotoProfileForm/intex'
+import AddPhotoProfileForm from '../AddPhotoProfileForm'
 
-export default function PhotoProfile({ user, editable }) {
+export default function PhotoProfile({ user, userStatusCode, editable }) {
   const [showModal, setShowModal] = useState(false)
   const [src, setSrc] = useState(user ? user.userImpL.photoURL : '/placeholder-profile.jpg')
 
@@ -15,7 +16,16 @@ export default function PhotoProfile({ user, editable }) {
     user && setSrc(user.userImpL.photoURL)
   }, [user])
 
-  if (user) {
+  console.log(userStatusCode)
+
+  if (userStatusCode === 1)
+    return (
+      <div className='photo-profile'>
+        <img src={src} alt={'Profile'} title={'Photo Profile'} />
+      </div>
+    )
+
+  if (userStatusCode === 2)
     return (
       <div className='photo-profile'>
         <img
@@ -36,11 +46,11 @@ export default function PhotoProfile({ user, editable }) {
         )}
       </div>
     )
-  } else {
+
+  if (userStatusCode === 3)
     return (
       <div className='photo-profile'>
-        <img src={src} alt={'Photo Profile'} title={'Photo Profile'} />
+        <img src={src} alt={'Profile'} title={'Photo Profile'} />
       </div>
     )
-  }
 }

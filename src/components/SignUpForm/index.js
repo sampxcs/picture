@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
+import './style.css'
+
 import { Link } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons'
 import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
-import './style.css'
+
 import useUser from '../../hooks/useUser'
+
+import ButtonPrimary from '../ButtonPrimary'
 import Modal from '../Modal'
 import VerificationEmailAlert from '../VerificationEmailAlert'
-import ButtonPrimary from '../ButtonPrimary'
 
 export default function SignUpForm() {
   const [firstname, setFirstname] = useState('')

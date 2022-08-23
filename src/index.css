@@ -71,9 +71,9 @@ hr {
     transform: translateX(0px);
   }
 }
-@keyframes show-left-slide {
+@keyframes show-right-slide {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
   }
   100% {
     transform: translateX(0px);

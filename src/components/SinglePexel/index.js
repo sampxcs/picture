@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import Card from '../Card'
-import Spinner from '../Spinner'
+import React from 'react'
+import './style.css'
+
+import { Redirect } from 'wouter'
+import { Helmet } from 'react-helmet'
+
 import useSinglePexel from '../../hooks/useSinglePexel'
 import useGlobalPexels from '../../hooks/useGlobalPexels'
 import useUser from '../../hooks/useUser'
-import './style.css'
-import { Redirect } from 'wouter'
-import { Helmet } from 'react-helmet'
+
+import Card from '../Card'
+import Spinner from '../Spinner'
 
 export default function SinglePexel({ params }) {
   const { id } = params
   const globalPexels = useGlobalPexels()
   const { user } = useUser()
-  const [savedPexels] = useState(null)
 
   if (user && user.savedPexels && globalPexels.length) {
     globalPexels.forEach((pexel) => {
@@ -21,6 +23,7 @@ export default function SinglePexel({ params }) {
       })
     })
   }
+
   if (user && user.savedPexels) {
     user.savedPexels.forEach((doc) => {
       if (doc.id === globalPexels.id) globalPexels.isSaved = doc.id
@@ -28,9 +31,12 @@ export default function SinglePexel({ params }) {
   }
 
   if (globalPexels && globalPexels.length) {
+    console.log('global pexels in single pexel page =======> ', globalPexels)
     const pexel = globalPexels.find((pexel) => pexel.id === parseInt(id))
     const { src, photographer, photographer_url, alt, avg_color, isSaved } = pexel
+
     console.log(pexel)
+
     return (
       <>
         <Helmet>

@@ -1,9 +1,11 @@
 import React from 'react'
+import './style.css'
+
+import { Link } from 'wouter'
+
 import CardProfile from '../CardProfile'
 import CollectionsProfile from '../CollectionsProfile'
-import './style.css'
 import ButtonCircle from '../ButtonCircle'
-import { Link } from 'wouter'
 
 export default function EditProfile({ savedPexels }) {
   return (

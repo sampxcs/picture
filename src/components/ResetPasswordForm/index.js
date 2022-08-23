@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { Link } from 'wouter'
 import './style.css'
+
+import { Link } from 'wouter'
+
 import useUser from '../../hooks/useUser'
+
+import ButtonPrimary from '../ButtonPrimary'
 import Modal from '../Modal'
 import VerificationEmailAlert from '../VerificationEmailAlert'
-import ButtonPrimary from '../ButtonPrimary'
 
 export default function SignUpForm() {
   const [email, setEmail] = useState('')
@@ -18,12 +21,12 @@ export default function SignUpForm() {
   }
 
   return (
-    <form className="reset-pasword-form" onSubmit={handelSubmit}>
+    <form className='reset-pasword-form' onSubmit={handelSubmit}>
       <h2>Reset Password</h2>
-      <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
       <ButtonPrimary disabled={!email}>Send Reset Password Instructions</ButtonPrimary>
       <p>
-        Already using Nature?, <Link to="/log-in">Sign in!</Link>
+        Already using Nature?, <Link to='/log-in'>Sign in!</Link>
       </p>
       {showModal ? (
         <Modal close={() => setShowModal(false)}>

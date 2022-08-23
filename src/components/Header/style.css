@@ -29,6 +29,7 @@ header {
   color: var(--focus-letter);
   letter-spacing: 0.1em;
   line-height: 0;
+  font-weight: 200;
   font-size: 18px;
   cursor: default;
 }

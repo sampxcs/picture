@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import ButtonPrimary from '../ButtonPrimary'
-import useUser from '../../hooks/useUser'
-import Spinner from '../Spinner'
 import './style.css'
+
+import useUser from '../../hooks/useUser'
+
+import ButtonPrimary from '../ButtonPrimary'
+import Spinner from '../Spinner'
 
 export default function AddPhotoProfileForm({ setShowModal }) {
   const [drag, setDrag] = useState()

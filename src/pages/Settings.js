@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { Helmet } from 'react-helmet'
+import React from 'react'
 import Footer from '../components/Footer/Footer'
-import EditProfile from '../components/EditProfile'
 import useUser from '../hooks/useUser'
 import SettingsPlaceholder from '../components/Placeholders/SettingsPlaceholder'
 import Settings from '../components/SettingsPage'
+import { useLocation } from 'wouter'
 
 export default function SettingsPage() {
-  const { user } = useUser()
+  const { user, userStatusCode } = useUser()
+  const [, pushLocation] = useLocation()
 
-  return (
-    <>
-      {user ? (
-        <>
-          <Settings user={user} />
-          <Footer />
-        </>
-      ) : (
-        <div className='main'>
-          <SettingsPlaceholder />
-        </div>
-      )}
-    </>
-  )
+  if (userStatusCode === 1)
+    return (
+      <div className='main'>
+        <SettingsPlaceholder />
+      </div>
+    )
+
+  if (userStatusCode === 2)
+    return (
+      <>
+        <Settings user={user} userStatusCode={userStatusCode} />
+        <Footer />
+      </>
+    )
+
+  if (userStatusCode === 3) pushLocation('/log-in')
 }

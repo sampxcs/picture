@@ -10,17 +10,21 @@ export default function usePexels({ keyword }) {
   useEffect(() => {
     setIsNextPage(true)
     setLoading(true)
-    getPexels({ query: keyword }).then((data) => {
-      const globalPexels = data.photos
-      if (globalPexels.length) {
-        setGlobalPexels(globalPexels)
-        setLoading(false)
-        setError(false)
-      } else {
-        setLoading(false)
-        setError(true)
-      }
-    })
+    getPexels({ query: keyword })
+      .then((data) => {
+        const globalPexels = data.photos
+        if (globalPexels.length) {
+          setGlobalPexels(globalPexels)
+          setLoading(false)
+          setError(false)
+        } else {
+          setLoading(false)
+          setError(true)
+        }
+      })
+      .catch((e) => {
+        setError(e)
+      })
   }, [keyword])
 
   useEffect(() => {

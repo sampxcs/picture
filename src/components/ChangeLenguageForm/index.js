@@ -1,8 +1,9 @@
 import React from 'react'
+import './style.css'
+
 import { Link } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import './style.css'
 
 export default function Settings() {
   return (

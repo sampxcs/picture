@@ -14,14 +14,14 @@ import Collection from '../Collection'
 
 export default function MainExplore() {
   return (
-    <div className="main-explore">
-      <div className="header-explore">
-        <div className="title-explore">
+    <div className='main-explore'>
+      <div className='header-explore'>
+        <div className='title-explore'>
           <h2>
             Discover the best royalty <br /> free images of nature & videos <br /> shared by creators.
           </h2>
-          <img className="watercolor-leaves-right" src="/watercolorLeaves.png" alt="watercolor leave" />
-          <img className="watercolor-leaves-left" src="/watercolorLeaves.png" alt="watercolor leave" />
+          <img className='watercolor-leaves-right' src='/watercolorLeaves.png' alt='watercolor leave' />
+          <img className='watercolor-leaves-left' src='/watercolorLeaves.png' alt='watercolor leave' />
         </div>
         <SearchForm formHeader={true} />
       </div>
