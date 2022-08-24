@@ -49,16 +49,17 @@
   outline: none;
   border-radius: 5px;
   font-size: 1em;
-  padding: 10px 15px;
+  padding: 10px;
 }
 .input-content textarea {
   padding: 10px;
   min-height: 200px;
   resize: vertical;
 }
-.input-content select::part(listbox) {
-  background-color: aqua;
+.input-content select {
+  cursor: pointer;
 }
+
 @media (min-width: 660px) {
   .settings-main {
     flex-direction: row;

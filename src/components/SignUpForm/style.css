@@ -43,6 +43,23 @@
   color: var(--focus-letter);
   font-weight: 600;
 }
+
+.sign-up-form .input-error {
+  border: 1px solid var(--error);
+}
+.sign-up-form .input-error:focus {
+  outline: 1px solid var(--error);
+}
+.sign-up-form small {
+  text-align: start;
+  display: block;
+  width: 90%;
+  padding: 0 5px;
+  color: var(--error);
+  margin: -10px 0 -5px;
+  max-width: 290px;
+}
+
 @media (min-width: 660px) {
   .sign-up-form {
     width: max-content;

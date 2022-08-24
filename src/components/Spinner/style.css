@@ -27,9 +27,12 @@
   animation: load8 1.1s infinite linear;
 }
 .btn-primary .loader {
-  border-right: 2px solid var(--focus-letter);
-  border-bottom: 2px solid var(--focus-letter);
-  border-left: 2px solid var(--focus-letter);
+  margin: 0 auto;
+  width: 15px;
+  height: 15px;
+  border-right: 1px solid var(--focus-letter);
+  border-bottom: 1px solid var(--focus-letter);
+  border-left: 1px solid var(--focus-letter);
 }
 .main > .loader {
   margin: 90px auto 10px;

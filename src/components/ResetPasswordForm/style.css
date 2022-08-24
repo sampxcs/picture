@@ -19,6 +19,7 @@
   border-radius: 5px;
   padding: 8px 16px;
   width: 90%;
+  max-width: 300px;
 }
 .reset-pasword-form input:focus {
   outline: 1px solid var(--focus-letter);
@@ -44,6 +45,22 @@
   color: var(--focus-letter);
   font-weight: 600;
 }
+
+.reset-pasword-form .input-error {
+  border: 1px solid var(--error);
+}
+.reset-pasword-form .input-error:focus {
+  outline: 1px solid var(--error);
+}
+.reset-pasword-form small {
+  text-align: start;
+  display: block;
+  width: 90%;
+  color: var(--error);
+  margin: -10px 0 -5px;
+  max-width: 290px;
+}
+
 @media (min-width: 660px) {
   .reset-pasword-form {
     margin-top: 15vh;

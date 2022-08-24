@@ -31,12 +31,25 @@
 .login-form input:focus {
   outline: 1px solid var(--focus-letter);
 }
+.login-form .input-error {
+  border: 1px solid var(--error);
+}
+.login-form .input-error:focus {
+  outline: 1px solid var(--error);
+}
 .login-form a {
   text-align: start;
   width: 90%;
   color: var(--focus-letter);
   font-weight: 600;
   max-width: 300px;
+}
+.login-form small {
+  text-align: start;
+  width: 90%;
+  color: var(--error);
+  margin: -10px 0 -5px;
+  max-width: 290px;
 }
 @media (min-width: 660px) {
   .login-form {

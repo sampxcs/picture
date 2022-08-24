@@ -58,7 +58,7 @@ export default function useUser() {
   }, [])
 
   const createUserWithEmail = useCallback(({ firstname, lastname, email, password }) => {
-    createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user
         updateProfile(user, {
@@ -72,15 +72,12 @@ export default function useUser() {
         })
       })
       .catch((error) => {
-        // const errorCode = error.code
-        const errorMessage = error.message
-        console.log(errorMessage)
-        // ..
+        throw new Error(error.code)
       })
   }, [])
 
   const signInWithEmail = useCallback(({ email, password }) => {
-    signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user
@@ -89,70 +86,41 @@ export default function useUser() {
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code
-        console.log(errorCode)
+        throw new Error(error.code)
       })
   }, [])
 
   const signInWithGoogle = useCallback(() => {
     const provider = new GoogleAuthProvider()
-    signInWithPopup(auth, provider)
+    return signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        // const credential = GoogleAuthProvider.credentialFromResult(result)
-        // const token = credential.accessToken
-        // The signed-in user info.
         const user = result.user
         console.log(user)
-        // ...
       })
       .catch((error) => {
-        // Handle Errors here.
-        // const errorCode = error.code
-        // const errorMessage = error.message
-        // The email of the user's account used.
-        // const email = error.customData.email
-        // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error)
-        // ...
+        throw new Error(error)
       })
   }, [])
   const signInWithGitHub = useCallback(() => {
     const provider = new GithubAuthProvider()
-    signInWithPopup(auth, provider)
+    return signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        // const credential = GithubAuthProvider.credentialFromResult(result)
-        // const token = credential.accessToken
-        // The signed-in user info.
         const user = result.user
         console.log(user)
-        // ...
       })
       .catch((error) => {
-        // Handle Errors here.
-        // const errorCode = error.code
-        const errorMessage = error.message
-        // The email of the user's account used.
-        console.log(errorMessage)
-        /// const email = error.customData.email
-        // The AuthCredential type that was used.
-        /// const credential = GoogleAuthProvider.credentialFromError(error)
-        // ...
+        throw new Error(error.code)
       })
   }, [])
 
   const resetPassword = useCallback(({ email }) => {
-    sendPasswordResetEmail(auth, email)
+    return sendPasswordResetEmail(auth, email)
       .then(() => {
         // Password reset email sent!
         // ..
       })
       .catch((error) => {
-        // const errorCode = error.code
-        const errorMessage = error.message
-        console.log(errorMessage)
-        // ..
+        throw new Error(error.code)
       })
   }, [])
 
