@@ -85,13 +85,6 @@
   font-weight: 600;
   text-decoration: underline;
 }
-.mountain-watercolor {
-  position: absolute;
-  bottom: -100px;
-  z-index: -1;
-  left: 0;
-  width: 100%;
-}
 @media (min-width: 680px) {
   .about-header {
     flex-direction: row;

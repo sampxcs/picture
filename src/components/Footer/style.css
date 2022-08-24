@@ -1,7 +1,7 @@
 footer {
   background-color: var(--dark);
   padding: 0 10px 30px;
-  margin: 30px 0 55px;
+  margin: 0 0 55px;
   display: flex;
   justify-content: space-around;
   color: var(--light-letter);

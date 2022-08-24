@@ -12,7 +12,7 @@ export default function ProfilePage() {
 
   if (userStatusCode === 1)
     return (
-      <div className="main">
+      <div className='main'>
         <ProfilePlaceholder />
       </div>
     )
@@ -24,7 +24,7 @@ export default function ProfilePage() {
           <title>Picture | Profile</title>
         </Helmet>
         <Profile user={user} userStatusCode={userStatusCode} />
-        <Footer />
+        {window.innerWidth > 660 && <Footer />}
       </>
     )
 

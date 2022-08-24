@@ -43,7 +43,8 @@ export default function usePexels({ keyword }) {
         }
       })
       .catch((e) => {
-        setError(e)
+        // ERROR WITH THE GET REQUEST IN PEXELS API
+        console.log('ahhhhhhhhhh')
       })
   }, [keyword, userStatusCode])
 

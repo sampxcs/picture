@@ -8,7 +8,7 @@ export default function Home({ params }) {
     <>
       <Header />
       <Main params={params} id='main-home' />
-      <Footer />
+      {window.innerWidth > 660 && <Footer />}
     </>
   )
 }

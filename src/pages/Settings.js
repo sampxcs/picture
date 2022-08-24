@@ -20,7 +20,7 @@ export default function SettingsPage() {
     return (
       <>
         <Settings user={user} userStatusCode={userStatusCode} />
-        <Footer />
+        {window.innerWidth > 660 && <Footer />}
       </>
     )
 

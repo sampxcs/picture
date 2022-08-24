@@ -10,7 +10,7 @@ export default function Detail() {
         <title>Picture | About Developer</title>
       </Helmet>
       <AboutDeveloper />
-      <Footer />
+      {window.innerWidth > 660 && <Footer />}
     </>
   )
 }

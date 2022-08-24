@@ -10,7 +10,7 @@ export default function Explore() {
         <title>Picture | Explore</title>
       </Helmet>
       <MainExplore />
-      <Footer />
+      {window.innerWidth > 660 && <Footer />}
     </>
   )
 }

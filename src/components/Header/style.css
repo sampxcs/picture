@@ -1,6 +1,6 @@
 header {
   align-items: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   height: 25vh;
   min-height: 270px;
@@ -71,6 +71,7 @@ header {
   header {
     height: 40vh;
     min-height: 300px;
+    display: flex;
   }
   .header-title h1 {
     font-size: 110px;
