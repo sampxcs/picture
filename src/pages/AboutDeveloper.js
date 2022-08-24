@@ -7,7 +7,7 @@ export default function Detail() {
   return (
     <>
       <Helmet>
-        <title>Nature | About Developer</title>
+        <title>Picture | About Developer</title>
       </Helmet>
       <AboutDeveloper />
       <Footer />

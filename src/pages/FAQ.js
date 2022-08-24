@@ -6,7 +6,7 @@ export default function Settings() {
   return (
     <>
       <Helmet>
-        <title>Nature | FAQ</title>
+        <title>Picture | FAQ</title>
       </Helmet>
       <header>
         <FAQ />

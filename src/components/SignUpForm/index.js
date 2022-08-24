@@ -98,25 +98,25 @@ export default function SignUpForm() {
   }
 
   return (
-    <form className='sign-up-form' onSubmit={handelSubmit}>
-      <h2>Welcome to Nature</h2>
+    <form className="sign-up-form" onSubmit={handelSubmit}>
+      <h2>Welcome to Picture</h2>
       <h3>Download free photos and videos powered by a community of photographers.</h3>
       <div>
         <input
           className={firstNameError && 'input-error'}
-          type='text'
-          placeholder='First name'
+          type="text"
+          placeholder="First name"
           value={firstname}
           required
           onChange={(e) => onChangeFirstName(e)}
         />
-        <input type='text' placeholder='Last name (optional)' value={lastname} onChange={(e) => setLastname(e.target.value)} />
+        <input type="text" placeholder="Last name (optional)" value={lastname} onChange={(e) => setLastname(e.target.value)} />
       </div>
       {firstNameError && <small>{firstNameError}</small>}
       <input
         className={emailError && 'input-error'}
-        type='email'
-        placeholder='Email'
+        type="email"
+        placeholder="Email"
         value={email}
         required
         onChange={(e) => onChangeEmail(e)}
@@ -124,36 +124,36 @@ export default function SignUpForm() {
       {emailError && <small>{emailError}</small>}
       <input
         className={passwordError && 'input-error'}
-        type='password'
-        placeholder='Password'
+        type="password"
+        placeholder="Password"
         value={password}
         required
         onChange={(e) => onChangePassword(e)}
       />
       {passwordError && <small>{passwordError}</small>}
-      <ButtonPrimary type='submit' disabled={!firstname || !email || !password}>
+      <ButtonPrimary type="submit" disabled={!firstname || !email || !password}>
         {loading ? (
           <Spinner />
         ) : (
           <>
             Create New Account
-            <FontAwesomeIcon className='faArrow' icon={faArrowRightToBracket} />
+            <FontAwesomeIcon className="faArrow" icon={faArrowRightToBracket} />
           </>
         )}
       </ButtonPrimary>
       <p>Or continue with</p>
-      <ButtonPrimary type='button' onClick={handelSubmitWithGoogle}>
+      <ButtonPrimary type="button" onClick={handelSubmitWithGoogle}>
         <FontAwesomeIcon icon={faGoogle} />
         Google
       </ButtonPrimary>
       {googleError && <small>{googleError}</small>}
-      <ButtonPrimary type='button' onClick={handelSubmitWithGitHub}>
+      <ButtonPrimary type="button" onClick={handelSubmitWithGitHub}>
         <FontAwesomeIcon icon={faGithub} />
         GitHub
       </ButtonPrimary>
       {gitHubError && <small>{gitHubError}</small>}
       <p>
-        Have an account?, <Link to='/log-in'>Sign in!</Link>
+        Have an account?, <Link to="/log-in">Sign in!</Link>
       </p>
       {user ? (
         <Modal>

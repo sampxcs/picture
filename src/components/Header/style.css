@@ -4,7 +4,7 @@ header {
   flex-direction: column;
   height: 25vh;
   min-height: 270px;
-  padding-top: 90px;
+  padding-top: 60px;
   justify-content: center;
   animation: show-down 0.6s ease-in-out forwards;
 }
@@ -18,7 +18,7 @@ header {
   color: var(--light-letter);
   font-size: 70px;
   line-height: 1.1;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   cursor: default;
 }
 .header-title h3 {
@@ -43,54 +43,34 @@ header {
   z-index: 10;
 }
 .img-plant-01 {
-  top: 0%;
-  left: 6%;
-  transform: rotate(269deg);
-  width: 13%;
+  top: 32%;
+  left: 8%;
+  transform: rotate(205deg);
+  width: 10%;
 }
 .img-plant-02 {
-  top: 13%;
-  left: 29%;
-  transform: rotate(200deg) rotateX(180deg) rotateY(180deg);
-  width: 10%;
+  top: 23%;
+  left: 22%;
+  transform: rotate(215deg) rotateX(180deg) rotateY(180deg);
+  width: 9%;
 }
 .img-plant-03 {
-  top: -14%;
-  left: 52%;
-  transform: rotate(99deg);
-  width: 15%;
+  top: 35%;
+  left: 47%;
+  transform: rotate(160deg) rotateY(180deg);
+  width: 9%;
 }
 .img-plant-04 {
-  top: 25%;
-  right: 11%;
+  top: 38%;
+  right: 13%;
   transform: rotate(213deg);
   width: 10%;
-}
-.header-nav {
-  margin-top: 25px;
-  display: none;
-  height: 60px;
-  width: 100%;
-  align-items: center;
-  opacity: 0;
-  justify-content: center;
-  gap: 10px;
-  animation: show-down 0.6s ease-in-out 0.3s forwards;
-}
-.header-nav button {
-  width: max-content;
-  border-radius: 60px;
-  border: none;
-  color: var(--dark);
 }
 
 @media (min-width: 660px) {
   header {
     height: 40vh;
-    min-height: 430px;
-  }
-  .header-nav {
-    display: flex;
+    min-height: 300px;
   }
   .header-title h1 {
     font-size: 110px;
@@ -104,6 +84,9 @@ header {
   }
 }
 @media (min-width: 1180px) {
+  header {
+    min-height: 480px;
+  }
   .header-title h1 {
     font-size: 180px;
   }

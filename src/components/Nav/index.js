@@ -33,29 +33,29 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{ backgroundColor: backgroundNav }} className='nav-top'>
-        <div className='nav-container'>
-          <Link to='/' className='nav-logo' title='Nature'>
-            NATURE
+      <nav style={{ backgroundColor: backgroundNav }} className="nav-top">
+        <div className="nav-container">
+          <Link to="/" className="nav-logo" title="Nature">
+            Picture
           </Link>
           <NavList isActive={isActive} />
-          <div className='nav-buttons'>
+          <div className="nav-buttons">
             <SearchForm formNav={true} />
             <HamburgerMenu isActive={isActive} setIsActive={setIsActive} />
           </div>
         </div>
       </nav>
-      <nav className='nav-bottom'>
-        <div className='nav-container'>
-          <Link className='nav-bottom-link' to='/'>
+      <nav className="nav-bottom">
+        <div className="nav-container">
+          <Link className="nav-bottom-link" to="/">
             {location === '/' ? <FasHouse /> : <FaHouse />}
             <small>Home</small>
           </Link>
-          <Link className='nav-bottom-link' to='/explore'>
+          <Link className="nav-bottom-link" to="/explore">
             {location === '/explore' ? <FontAwesomeIcon icon={fasCompass} /> : <FontAwesomeIcon icon={faCompass} />}
             <small>Explore</small>
           </Link>
-          <Link className='nav-bottom-link' to='/profile'>
+          <Link className="nav-bottom-link" to="/profile">
             <div>
               <PhotoProfile user={user} userStatusCode={userStatusCode} />
             </div>

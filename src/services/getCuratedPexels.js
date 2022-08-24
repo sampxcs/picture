@@ -1,10 +1,9 @@
 import { client } from './settings'
 
-export default function getPexels({ query, page = 1 } = {}) {
-  return client.photos.search({ query, per_page: 6, page: page }).then((response) => {
+export default function getCuratedPexels({ page = 1 } = {}) {
+  return client.photos.curated({ per_page: 6, page: page }).then((response) => {
     const photos = response.photos.map((photo) => {
       const src = photo.src.portrait
-      console.log(photo.scr)
       const { id, alt, photographer, photographer_url, avg_color } = photo
       return { src, id, alt, photographer, photographer_url, avg_color }
     })

@@ -7,7 +7,7 @@ export default function Explore() {
   return (
     <>
       <Helmet>
-        <title>Nature | Explore</title>
+        <title>Picture | Explore</title>
       </Helmet>
       <MainExplore />
       <Footer />

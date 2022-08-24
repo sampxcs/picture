@@ -86,13 +86,13 @@ export default function LoginForm() {
   }
 
   return (
-    <form className='login-form' onSubmit={handelSubmit}>
+    <form className="login-form" onSubmit={handelSubmit}>
       <h2>Welcome Back</h2>
-      <h3>Log in to Nature to access your collections.</h3>
+      <h3>Log in to Picture to access your collections.</h3>
       <input
         className={emailError && 'input-error'}
-        type='email'
-        placeholder='Email'
+        type="email"
+        placeholder="Email"
         value={email}
         required
         onChange={(e) => onChangeEmail(e)}
@@ -100,37 +100,37 @@ export default function LoginForm() {
       {emailError && <small>{emailError}</small>}
       <input
         className={passwordError && 'input-error'}
-        type='password'
-        placeholder='Password'
+        type="password"
+        placeholder="Password"
         value={password}
         required
         onChange={(e) => onChangePassword(e)}
       />
       {passwordError && <small>{passwordError}</small>}
-      <Link to='/reset-password'>Forgot your password?</Link>
-      <ButtonPrimary type='submit' disabled={!email || !password}>
+      <Link to="/reset-password">Forgot your password?</Link>
+      <ButtonPrimary type="submit" disabled={!email || !password}>
         {loading ? (
           <Spinner />
         ) : (
           <>
             Sing In
-            <FontAwesomeIcon className='faArrow' icon={faArrowRightToBracket} />
+            <FontAwesomeIcon className="faArrow" icon={faArrowRightToBracket} />
           </>
         )}
       </ButtonPrimary>
       <p>Or continue with</p>
-      <ButtonPrimary type='button' onClick={handelSubmitWithGoogle}>
+      <ButtonPrimary type="button" onClick={handelSubmitWithGoogle}>
         <FontAwesomeIcon icon={faGoogle} />
         Google
       </ButtonPrimary>
       {googleError && <small>{googleError}</small>}
-      <ButtonPrimary type='button' onClick={handelSubmitWithGitHub}>
+      <ButtonPrimary type="button" onClick={handelSubmitWithGitHub}>
         <FontAwesomeIcon icon={faGithub} />
         GitHub
       </ButtonPrimary>
       {gitHubError && <small>{gitHubError}</small>}
       <p>
-        Don't have an account?, <Link to='/sign-up'>Sign up and get started!</Link>
+        Don't have an account?, <Link to="/sign-up">Sign up and get started!</Link>
       </p>
     </form>
   )

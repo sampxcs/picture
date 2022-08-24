@@ -6,9 +6,9 @@ export default function Login() {
   return (
     <>
       <Helmet>
-        <title>Nature | Log in</title>
+        <title>Picture | Log in</title>
       </Helmet>
-      <div className='main'>
+      <div className="main">
         <LoginForm />
       </div>
     </>

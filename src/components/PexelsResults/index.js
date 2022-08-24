@@ -1,9 +1,11 @@
 import React, { useEffect, useCallback } from 'react'
 import { Redirect } from 'wouter'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'wouter'
 
 import debounce from 'just-debounce-it'
 import usePexels from '../../hooks/usePexels'
+import useCuratedPexels from '../../hooks/useCuratedPexels'
 import useNearScreen from '../../hooks/useNearScreen'
 
 import ListOfCards from '../ListOfCards'
@@ -11,13 +13,13 @@ import GridPlaceholder from '../Placeholders/GridPlaceholder'
 import Spinner from '../Spinner'
 
 function PexelsResults({ params }) {
+  const [location] = useLocation()
   let { keyword } = params
-  if (!keyword) keyword = 'Nature'
 
-  const { loading, error, globalPexels, page, setPage } = usePexels({ keyword })
+  const { loading, error, globalPexels, page, setPage } = location === '/' ? useCuratedPexels({}) : usePexels({ keyword })
 
   const { isNearScreen, ref } = useNearScreen({
-    distance: '100px',
+    distance: '400px',
     once: false,
   })
 
@@ -38,7 +40,7 @@ function PexelsResults({ params }) {
     return (
       <>
         <Helmet>
-          <title>{`Loading...`}</title>
+          <title>Loading...</title>
         </Helmet>
         <GridPlaceholder />
       </>
@@ -48,9 +50,9 @@ function PexelsResults({ params }) {
   if (loading && page > 1) {
     return (
       <>
-        {keyword === 'Nature' ? (
+        {location === '/' ? (
           <Helmet>
-            <title>Nature</title>
+            <title>Picture</title>
             <meta
               name="description"
               content="Free photos and videos of nature that you can use wherever you want. Search millions of high-quality, royalty-free images of beautiful nature. It is not necessary to mention the source."
@@ -71,17 +73,17 @@ function PexelsResults({ params }) {
   if (!loading)
     return (
       <>
-        {keyword === 'Nature' ? (
+        {location === '/' ? (
           <Helmet>
-            <title>Nature</title>
+            <title>Picture</title>
             <meta
               name="description"
-              content="Free photos and videos of nature that you can use wherever you want. Search millions of high-quality, royalty-free images of beautiful nature. It is not necessary to mention the source."
+              content="Free photos and videos of everything that you can use wherever you want. Search millions of high-quality, royalty-free images of beautiful nature. It is not necessary to mention the source."
             />
           </Helmet>
         ) : (
           <Helmet>
-            <title>{`Nature | ${decodeURI(keyword)}`}</title>
+            <title>{`Picture | ${decodeURI(keyword)}`}</title>
             <meta name="description" content={`Search result of images and videos of ${keyword}`} />
           </Helmet>
         )}

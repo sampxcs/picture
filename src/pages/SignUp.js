@@ -6,9 +6,9 @@ export default function SignUp() {
   return (
     <>
       <Helmet>
-        <title>Nature | Join</title>
+        <title>Picture | Join</title>
       </Helmet>
-      <div className='main'>
+      <div className="main">
         <SignUpForm />
       </div>
     </>
