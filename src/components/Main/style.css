@@ -23,7 +23,7 @@
   animation: show-down 0.6s ease-in-out 0.3s forwards;
 }
 #main-home {
-  padding-top: 25px;
+  padding-top: 10px;
 }
 @media (min-width: 660px) {
   .main {
