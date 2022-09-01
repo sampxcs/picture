@@ -61,7 +61,9 @@
 .nav-ul > li {
   position: relative;
 }
-
+.nav-top-home .nav-ul > li > a {
+  color: var(--light-letter);
+}
 .nav-ul-list {
   display: none;
   position: absolute;

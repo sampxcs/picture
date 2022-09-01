@@ -15,6 +15,9 @@ nav {
   top: 0;
   border-bottom: 1px solid #00000010;
 }
+.nav-top-active {
+  background-color: var(--light-letter);
+}
 .nav-bottom {
   padding: 5px 20px;
   bottom: 0;
@@ -51,10 +54,9 @@ nav {
   z-index: 100;
 }
 .nav-logo {
-  color: var(--focus-letter);
-  font-family: 'DM Serif Display', serif;
+  color: var(--letter);
   font-size: 1.5em;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
 }
@@ -74,12 +76,15 @@ nav {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 3px 3px 15px var(--light-shadow);
+  background: none;
 }
 
 @media (min-width: 660px) {
   .nav-top {
     height: 70px;
+  }
+  .nav-top-home .nav-logo {
+    color: var(--light-letter);
   }
   .nav-bottom {
     display: none;
@@ -89,7 +94,7 @@ nav {
   }
   .nav-logo {
     position: absolute;
-    left: 30px;
+    left: 0;
   }
   .nav-buttons {
     position: absolute;

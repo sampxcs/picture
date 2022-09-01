@@ -12,14 +12,8 @@ export default function Header() {
       <header>
         <div className="header-primary">
           <div className="header-title">
-            <h1>
-              <span>P</span>i<span>c</span>t<span>ur</span>e
-            </h1>
+            <h1>Picture</h1>
             <h3>The Beauty of Everything</h3>
-            <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-01" />
-            <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-02" />
-            <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-03" />
-            <img src="/tree.png" alt="Nature" title="Nature" className="img-plant-04" />
           </div>
           <SearchForm formHeader={true} />
         </div>
@@ -62,6 +56,12 @@ export default function Header() {
               <Link to="/Explore/Macro">Macro</Link>
             </li>
           </ul>
+        </div>
+        <div className="header-background-container">
+          <img
+            className="header-background"
+            src="https://images.pexels.com/photos/2854418/pexels-photo-2854418.jpeg?auto=compress&cs=tinysrgb&w=6000&lazy=load"
+          />
         </div>
       </header>
     </>

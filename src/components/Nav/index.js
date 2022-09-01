@@ -5,6 +5,7 @@ import { Link, useLocation } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass } from '@fortawesome/free-regular-svg-icons'
 import { faCompass as fasCompass } from '@fortawesome/free-solid-svg-icons'
+import classNames from 'classnames'
 
 import useUser from '../../hooks/useUser'
 
@@ -18,12 +19,18 @@ import HamburgerMenu from '../HamburguerMenu'
 
 export default function Nav() {
   const [isActive, setIsActive] = useState(false)
-  const [backgroundNav, setBackgroundNav] = useState('transparent')
+  const [navActive, setNavActive] = useState(false)
   const [location] = useLocation()
   const { user, userStatusCode } = useUser()
 
+  const CLASSNAMES = classNames({
+    'nav-top': true,
+    'nav-top-home': location === '/' && !navActive,
+    'nav-top-active': navActive,
+  })
+
   window.addEventListener('scroll', () => {
-    window.scrollY > 0 ? setBackgroundNav('var(--light-letter)') : setBackgroundNav('transparent')
+    window.scrollY > 0 ? setNavActive(true) : setNavActive(false)
   })
 
   useEffect(() => {
@@ -33,7 +40,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{ backgroundColor: backgroundNav }} className="nav-top">
+      <nav className={CLASSNAMES}>
         <div className="nav-container">
           <Link to="/" className="nav-logo" title="Nature">
             Picture

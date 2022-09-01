@@ -8,9 +8,8 @@
 .collection-title {
   animation: show 0.6s ease-in-out forwards;
   color: var(--dark);
-  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
   margin-top: 0;
-  font-weight: 200;
   padding: 0 30px;
   display: flex;
   align-items: flex-start;

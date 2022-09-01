@@ -2,13 +2,13 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 3px 3px 15px var(--light-shadow);
-  background-color: var(--light-letter);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .search-form-nav {
   border-radius: 50px;
+  box-shadow: none;
 }
 .search-form-nav input {
   border: none;
@@ -21,6 +21,7 @@
 .search-form-nav.active {
   position: absolute;
   left: -5px;
+  box-shadow: 3px 3px 15px var(--light-shadow);
   justify-content: space-between;
   z-index: 500;
   width: calc(100vw - 30px);
@@ -31,8 +32,8 @@
 }
 .search-form-nav.active .btn-circle {
   border-radius: 0;
+  background-color: var(--light-letter);
 }
-
 .search-form-nav .search-icon {
   height: 15px;
   width: 15px;
@@ -76,7 +77,7 @@
 .search-form-header .btn-circle {
   box-shadow: none;
   border-radius: 0;
-  width: 40px;
+  width: 50px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -110,6 +111,20 @@
   .search-form-nav.active input {
     display: block;
     width: 200px;
+  }
+  .nav-top-home .search-form-nav .search-icon-circle {
+    border: 2px solid var(--light-letter);
+  }
+  .nav-top-home .search-form-nav .search-icon-line {
+    height: 2px;
+    background-color: var(--light-letter);
+  }
+  .search-form-nav.active .search-icon-circle {
+    border: 1px solid var(--letter);
+  }
+  .search-form-nav.active .search-icon-line {
+    height: 1px;
+    background-color: var(--letter);
   }
   .search-form-header input {
     width: 300px;
