@@ -41,7 +41,7 @@
 
 .search-icon-circle {
   border-radius: 50%;
-  border: 1px solid var(--letter);
+  border: 1px solid var(--dark);
   display: block;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .search-icon-line {
-  background-color: var(--letter);
+  background-color: var(--dark);
   display: block;
   height: 1px;
 }
@@ -120,11 +120,11 @@
     background-color: var(--light-letter);
   }
   .search-form-nav.active .search-icon-circle {
-    border: 1px solid var(--letter);
+    border: 1px solid var(--dark);
   }
   .search-form-nav.active .search-icon-line {
     height: 1px;
-    background-color: var(--letter);
+    background-color: var(--dark);
   }
   .search-form-header input {
     width: 300px;

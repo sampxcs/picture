@@ -23,7 +23,7 @@
   transform: translateY(-2px);
 }
 .bar {
-  background-color: var(--letter);
+  background-color: var(--dark);
   height: 1px;
   border: none;
   transition: 0.2s ease-in-out;

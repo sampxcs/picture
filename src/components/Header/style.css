@@ -88,7 +88,7 @@ header {
   header {
     height: 60vh;
     min-height: 390px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .header-primary {
     display: flex;
@@ -115,7 +115,7 @@ header {
     min-height: 480px;
   }
   .header-title h1 {
-    font-size: 180px;
+    font-size: 140px;
   }
   .header-title h3 {
     font-size: 28px;

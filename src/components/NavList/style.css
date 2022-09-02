@@ -64,6 +64,9 @@
 .nav-top-home .nav-ul > li > a {
   color: var(--light-letter);
 }
+.nav-ul > li > a {
+  color: var(--dark);
+}
 .nav-ul-list {
   display: none;
   position: absolute;
@@ -74,7 +77,6 @@
 .nav-ul-list hr {
   border: 1px solid #00000008;
 }
-
 .nav-ul-list ul {
   position: relative;
   z-index: 100;

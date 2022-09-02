@@ -42,9 +42,11 @@ export default function Nav() {
     <>
       <nav className={CLASSNAMES}>
         <div className="nav-container">
-          <Link to="/" className="nav-logo" title="Nature">
-            Picture
+          <div className="nav-logo">
+          <Link to="/" title="Nature">
+            <img src={!navActive && location === '/' && window.innerWidth > 660 ? 'Picture-logo-regular-white.png' : 'Picture-logo-regular-black.png'} />
           </Link>
+          </div>
           <NavList isActive={isActive} />
           <div className="nav-buttons">
             <SearchForm formNav={true} />

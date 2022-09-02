@@ -54,11 +54,12 @@ nav {
   z-index: 100;
 }
 .nav-logo {
-  color: var(--letter);
-  font-size: 1.5em;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.nav-logo img {
+  width: 100%
 }
 .nav-buttons {
   display: flex;
@@ -83,9 +84,6 @@ nav {
   .nav-top {
     height: 70px;
   }
-  .nav-top-home .nav-logo {
-    color: var(--light-letter);
-  }
   .nav-bottom {
     display: none;
   }
@@ -94,6 +92,8 @@ nav {
   }
   .nav-logo {
     position: absolute;
+    width: 40px;
+    height: 40px;
     left: 0;
   }
   .nav-buttons {
