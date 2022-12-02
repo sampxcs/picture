@@ -8,7 +8,7 @@ export default function Footer() {
     <footer>
       <div className='footer-container'>
         <div className='footer-item'>
-          <h2>NATURE</h2>
+          <h2>PICTURE</h2>
           <h3>The beauthy of everyting.</h3>
           <ul>
             <li>
@@ -25,7 +25,7 @@ export default function Footer() {
                 Photos provided by Pexels
               </a>
             </li>
-            <li>&copy; NATURE 2022</li>
+            <li>&copy; PICTURE 2022</li>
           </ul>
         </div>
         <div className='footer-item'>
